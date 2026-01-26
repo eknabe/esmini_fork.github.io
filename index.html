@@ -568,7 +568,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_friction">5.8. Friction</a></li>
 <li><a href="#_environment_conditions">5.9. Environment conditions</a></li>
 <li><a href="#_tunnels">5.10. Tunnels</a></li>
-<li><a href="#_sumo_integration">5.11. SUMO integration</a></li>
+<li><a href="#_2d_shape_outline">5.11. 2D shape outline</a></li>
+<li><a href="#_sumo_integration">5.12. SUMO integration</a></li>
 </ul>
 </li>
 <li><a href="#_positioning">6. Positioning</a>
@@ -865,6 +866,16 @@ Example:<br>
 </div>
 </td>
 </tr>
+<tr>
+<td class="hdlist1">
+<strong>dat2csv</strong>
+</td>
+<td class="hdlist2">
+<p>Convert esmini recording (.dat) file to standard .csv format
+Example:<br>
+<code>./bin/dat2csv sim.dat</code></p>
+</td>
+</tr>
 </table>
 </div>
 </div>
@@ -907,13 +918,6 @@ Example:<br>
 </div>
 </div>
 </dd>
-<dt class="hdlist1"><strong>dat2csv</strong></dt>
-<dd>
-<p>Convert esmini recording (.dat) file to standard .csv format<br>
-Example:<br>
-<code>./scripts/dat2csv sim.dat</code><br>
-will create sim.csv.</p>
-</dd>
 <dt class="hdlist1"><strong>osi2csv.py</strong></dt>
 <dd>
 <p>Convert OSI trace file (from esmini) to .csv format<br>
@@ -932,10 +936,6 @@ Example:<br>
 <code>./bin/esmini --headless --osc ./resources/xosc/acc-test.xosc --fixed_timestep 0.05 --osi_file sim.osi</code> (will create an osi trace file)<br>
 <code>./scripts/osi2csv.py sim.osi</code> (convert to .csv)<br>
 <code>./scripts/plot_csv.py sim.csv --param ax</code> will plot the x component of acceleration vector.</p>
-</dd>
-<dt class="hdlist1"><strong>dat2xosc.py</strong></dt>
-<dd>
-<p>Convert any scenario to a fixed trajectory based scenario. See more info in <a href="https://github.com/esmini/esmini/blob/dev/scripts/dat2xosc.py">script</a>.</p>
 </dd>
 <dt class="hdlist1"><strong>move_to_origin.py</strong></dt>
 <dd>
@@ -1549,14 +1549,12 @@ Mesa3D is normally installed with Linux distributions. Check OpenGL support with
 <code>./bin/esmini --window 60 60 800 400 --osc ./resources/xosc/slow-lead-vehicle.xosc --fixed_timestep 0.05 --record sim.dat</code></p>
 </div>
 <div class="paragraph">
-<p>To convert the .dat file into .csv, do either of:<br>
-<code>./bin/dat2csv sim.dat</code><br>
-or<br>
-<code>python ./scripts/dat2csv.py sim.dat</code></p>
+<p>To convert the .dat file into .csv, do:<br>
+<code>./bin/dat2csv sim.dat</code></p>
 </div>
 <div class="paragraph">
 <p>Only a subset of the .dat file information is extracted. To extract some more info, e.g. road coordinates, run:
-<code>./scripts/dat2csv --extended sim.dat</code><br></p>
+<code>./bin/dat2csv sim.dat --extended</code><br></p>
 </div>
 <div class="paragraph">
 <p>You can create .dat files from multiple scenarios in a single command, like this on Linux (bash):</p>
@@ -4104,7 +4102,52 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sumo_integration">5.11. SUMO integration</h3>
+<h3 id="_2d_shape_outline">5.11. 2D shape outline</h3>
+<div class="paragraph">
+<p>In addition to bounding box, OSI supports defining a more precise 2D shape outline (<a href="https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1BaseMoving.html#a584e39108fe12db4933390975a172c63">base_polygon</a>) for entities, by specifying a set 2D (x,y) points in the entity&#8217;s local coordinate system.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/esmini/esmini.github.io/raw/main/images/outlines_car.jpg" alt="outlines car">
+</div>
+<div class="title">Outline example</div>
+</div>
+<div class="paragraph">
+<p>This is, for example, useful for NCAP scenarios where a more precise collision detection is required, see <a href="https://www.euroncap.com/media/95012/ca-004-data-acquisition-and-assessment-criteria-calculation-v11.pdf#page=9">Euro NCAP Data Acquisition
+And Assessment Criteria Calculation</a></p>
+</div>
+<div class="paragraph">
+<p>Currently OpenSCENARIO XML does not support defining 2D shape outlines in a standardized way. However, the Property elements of <a href="https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/generated/content/EntityObject.html">EntityObject</a> (Vehicle, Pedestrian, MiscObject) can be utilized for this purpose. From version 2.58.0 esmini supports reading 2D shape outlines defined as property with name <code>outline</code> and value on the format: <code>x0,y0;x1,y1;x2,y2,&#8230;&#8203;</code>. Example of four points:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;Property</span> <span class="attribute-name">name</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">outline</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">-1.5,-2.0;1.5,-2.0;1.5,2.0;-1.5,2.0</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>resulting in a rectangular shape outline 3x4 meters, centered at the reference point of the entity.</p>
+</div>
+<div class="paragraph">
+<p>A full example, shown in image above, can be found in the esmini demo vehicle catalog <a href="https://github.com/esmini/esmini/blob/cf7387b5071870128959712739002fa1c685c0e1/resources/xosc/Catalogs/Vehicles/VehicleCatalog.xosc#L53-L87">VehicleCatalog.xosc/car_white_with_outline</a>. Points calculated using this <a href="https://docs.google.com/spreadsheets/d/1Bc6T6FH1yP6PzW9zeZdmwzWGdaDU6vs17frhorkltHI/edit?usp=sharing">Google sheet</a> (<code>File &#8594; Make a copy</code> to edit your own values).</p>
+</div>
+<div class="paragraph">
+<p>The test scenario <a href="https://github.com/esmini/esmini/blob/dev/EnvironmentSimulator/Unittest/xosc/shape_outlines.xosc">shape_outlines.xosc</a> includes a few more examples for various entity types. Video clip <a href="https://youtu.be/YZX2P4F5Rj8">here</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/esmini/esmini.github.io/raw/main/images/outlines.jpg" alt="outlines">
+</div>
+<div class="title">Further outline examples</div>
+</div>
+<div class="paragraph">
+<p>Note that the outline is independent and does not have to exactly match the 3D model of the entity.</p>
+</div>
+<div class="paragraph">
+<p>The visualization of the 2D shape outlines is activated by default. It can be disabled by option <code>--hide_obj_outline</code> and toggled on/off in <code>esmini</code> and <code>replayer</code> with <code>;</code> (shift + comma).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_sumo_integration">5.12. SUMO integration</h3>
 <div class="paragraph">
 <p><a href="https://eclipse.dev/sumo/">SUMO</a> is a great open source traffic simulation tool. It has been integrated with esmini, making it possible to run SUMO simulations in esmini, and even mix or co-simulate SUMO vehicles with OpenSCENARIO vehicles.</p>
 </div>
@@ -4115,7 +4158,7 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 <p>This chapter explains how to create a SUMO simulation and then how to use it in esmini. For just using SUMO simulations there is no need to install SUMO, it is already embedded with esmini (as long as it has not been explicitly excluded, see <a href="#_slim_esmini_customize_configration">Slim esmini - customize configration</a>). Only to create SUMO content it has to be installed.</p>
 </div>
 <div class="sect3">
-<h4 id="_install_sumo">5.11.1. Install SUMO</h4>
+<h4 id="_install_sumo">5.12.1. Install SUMO</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4128,7 +4171,7 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 </div>
 </div>
 <div class="sect3">
-<h4 id="_try_example_from_esmini">5.11.2. Try example from esmini</h4>
+<h4 id="_try_example_from_esmini">5.12.2. Try example from esmini</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4150,7 +4193,7 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 </div>
 </div>
 <div class="sect3">
-<h4 id="_running_the_same_scenario_in_esmini">5.11.3. Running the same scenario in esmini</h4>
+<h4 id="_running_the_same_scenario_in_esmini">5.12.3. Running the same scenario in esmini</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4163,7 +4206,7 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_a_sumo_simulation">5.11.4. Create a SUMO simulation</h4>
+<h4 id="_create_a_sumo_simulation">5.12.4. Create a SUMO simulation</h4>
 <div class="paragraph">
 <p>First, there is a great complete guide at <a href="https://sumo.dlr.de/docs/" class="bare">https://sumo.dlr.de/docs/</a></p>
 </div>
@@ -4252,7 +4295,7 @@ python tools/randomTrips.py ...</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_connect_a_sumo_simulation_to_a_scenario_in_esmini">5.11.5. Connect a SUMO simulation to a scenario in esmini</h4>
+<h4 id="_connect_a_sumo_simulation_to_a_scenario_in_esmini">5.12.5. Connect a SUMO simulation to a scenario in esmini</h4>
 <div class="paragraph">
 <p>Currently, as of esmini v2.37.1, SUMO is integrated in terms of a controller. To add a SUMO simulation, define an entity as usual, assign the SumoController and set its "filepath" property to the sumocfg file.</p>
 </div>
@@ -8213,7 +8256,7 @@ replayer:
 <div class="content">
 <pre class="CodeRay highlight"><code>Usage: esmini [options]
 Options:
-  --osc &lt;filename&gt;
+  [--osc] &lt;filename&gt;
       OpenSCENARIO filename (required) - if path includes spaces, enclose with &quot;&quot;
   --aa_mode [mode]  (default if value omitted: 4)
       Anti-alias mode=number of multisamples (subsamples, 0=off)
@@ -8269,6 +8312,8 @@ Options:
       Hide trajectories from start. Toggle key 'n'
   --hide_ghost
       Do not visualize ghost
+  --hide_obj_outline
+      Hide any object 2D shape outlines (toggle key ';')
   --ignore_heading_for_traj_motion
       Ignore heading when deciding motion direction along trajectory
   --ignore_odr_offset
@@ -8456,7 +8501,7 @@ Mouse control
 <div class="content">
 <pre class="CodeRay highlight"><code>Usage: replayer [options]
 Options:
-  --file &lt;filename&gt;
+  [--file] &lt;filename&gt;
       Simulation recording data file (.dat)
   --aa_mode [mode]  (default if value omitted: 4)
       Anti-alias mode=number of multisamples (subsamples, 0=off)
@@ -8488,6 +8533,8 @@ Options:
       Show this help message (-h works as well)
   --hide_trajectories
       Hide trajectories from start (toggle with key 'n')
+  --hide_obj_outline
+      Hide any object 2D shape outlines (toggle key ';')
   --info_text [mode]  (default if option or value omitted: 1)
       Show on-screen info text. Modes: 0=None 1=current 2=per_object 3=both. Toggle key 'i'
   --logfile_path [path]  (default if option or value omitted: replayer_log.txt)
@@ -8530,6 +8577,8 @@ Options:
       When external scenegraph 3D model is loaded, skip creating signs from OpenDRIVE
   --version
       Show version and quit
+  --view_ghost_restart
+      Ghost restarts will be shown with separate ghosts
   --wireframe
       Global wireframe mode, toggle key 'w'
 
@@ -8626,7 +8675,7 @@ Options:
       Search path prefix for assets, e.g. OpenDRIVE files.
   --help
       Show this help message (-h works as well)
-  --odr &lt;odr_filename&gt;
+  [--odr] &lt;odr_filename&gt;
       OpenDRIVE filename (required)
   --aa_mode [mode]  (default if value omitted: 4)
       Anti-alias mode=number of multisamples (subsamples, 0=off)
@@ -13256,15 +13305,15 @@ try update RubyGems as follows:<br>
 <h2 id="_version">18. Version</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ESMINI_GIT_TAG=""<br>
-ESMINI_GIT_REV="v2.57.2-1-ce91fb41-dirty"</p>
+<p>ESMINI_GIT_TAG="v2.58.0"<br>
+ESMINI_GIT_REV="v2.58.0-0-51a0a5d3"</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-01-09 16:33:40 +0100
+Last updated 2026-01-26 13:59:52 +0100
 </div>
 </div>
 </body>
