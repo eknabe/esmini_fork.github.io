@@ -629,16 +629,14 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </li>
 <li><a href="#_build_guide">11. Build guide</a>
 <ul class="sectlevel2">
-<li><a href="#_build_configurations_in_visual_studio_and_visual_studio_code">11.1. Build configurations in Visual Studio and Visual Studio Code</a></li>
-<li><a href="#_build_configurations_from_command_line">11.2. Build configurations from command line</a></li>
-<li><a href="#_external_dependencies">11.3. External dependencies</a></li>
-<li><a href="#_additional_platform_dependencies">11.4. Additional platform dependencies</a></li>
-<li><a href="#_run_and_debug_with_linux_and_visual_studio_code">11.5. Run and Debug with Linux and visual studio code</a></li>
-<li><a href="#_dynamic_protobuf_linking">11.6. Dynamic protobuf linking</a></li>
-<li><a href="#_slim_esmini_customize_configration">11.7. Slim esmini - customize configration</a></li>
-<li><a href="#_msys2_mingw_w64_support">11.8. MSYS2 / MinGW-w64 support</a></li>
-<li><a href="#_build_esmini_project">11.9. Build esmini project</a></li>
-<li><a href="#_centos_7_linux">11.10. CentOS 7 (Linux)</a></li>
+<li><a href="#_external_dependencies">11.1. External dependencies</a></li>
+<li><a href="#_additional_platform_dependencies">11.2. Additional platform dependencies</a></li>
+<li><a href="#_debug_with_linux_and_vscode">11.3. Debug with Linux and VSCode</a></li>
+<li><a href="#_dynamic_protobuf_linking">11.4. Dynamic protobuf linking</a></li>
+<li><a href="#_slim_esmini_customize_configration">11.5. Slim esmini - customize configration</a></li>
+<li><a href="#_msys2_mingw_w64_support">11.6. MSYS2 / MinGW-w64 support</a></li>
+<li><a href="#_build_esmini_project">11.7. Build esmini project</a></li>
+<li><a href="#_centos_7_linux">11.8. CentOS 7 (Linux)</a></li>
 </ul>
 </li>
 <li><a href="#_for_esmini_developers_and_contributors">12. For esmini developers and contributors</a>
@@ -650,38 +648,45 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_implementation_guidelines">12.5. Implementation guidelines</a></li>
 </ul>
 </li>
-<li><a href="#_esmini_lib_programming">13. esmini lib programming</a>
+<li><a href="#_inner_workings">13. Inner workings</a>
 <ul class="sectlevel2">
-<li><a href="#_about_the_lib_itself">13.1. About the lib itself</a></li>
-<li><a href="#_how_to_interact_with_esmini_lib_api">13.2. How to interact with esmini lib API</a></li>
-<li><a href="#_functionality">13.3. Functionality</a></li>
-<li><a href="#_simplest_example">13.4. Simplest example</a></li>
+<li><a href="#_main_modules">13.1. Main modules</a></li>
+<li><a href="#_how_the_modules_interact">13.2. How the modules interact</a></li>
+<li><a href="#_on_execution_flow">13.3. On execution flow</a></li>
 </ul>
 </li>
-<li><a href="#_hello_world_programming_tutorial">14. Hello World programming tutorial</a>
+<li><a href="#_esmini_lib_programming">14. esmini lib programming</a>
 <ul class="sectlevel2">
-<li><a href="#preparations">14.1. Preparations</a></li>
-<li><a href="#_how_to_build_run_and_debug_hello_world">14.2. How to build, run and debug "Hello World"</a></li>
-<li><a href="#_examples_2">14.3. Examples</a></li>
-<li><a href="#_python_binding">14.4. Python binding</a></li>
-<li><a href="#_c_binding">14.5. C# binding</a></li>
+<li><a href="#_about_the_lib_itself">14.1. About the lib itself</a></li>
+<li><a href="#_how_to_interact_with_esmini_lib_api">14.2. How to interact with esmini lib API</a></li>
+<li><a href="#_functionality">14.3. Functionality</a></li>
+<li><a href="#_simplest_example">14.4. Simplest example</a></li>
 </ul>
 </li>
-<li><a href="#_scenario_construction_tips">15. Scenario construction tips</a>
+<li><a href="#_hello_world_programming_tutorial">15. Hello World programming tutorial</a>
 <ul class="sectlevel2">
-<li><a href="#_opendrive">15.1. OpenDRIVE</a></li>
-<li><a href="#_openscenario_xml">15.2. OpenSCENARIO XML</a></li>
-<li><a href="#_scenario_creation_tips_examples">15.3. Examples</a></li>
+<li><a href="#preparations">15.1. Preparations</a></li>
+<li><a href="#_how_to_build_run_and_debug_hello_world">15.2. How to build, run and debug "Hello World"</a></li>
+<li><a href="#_examples_2">15.3. Examples</a></li>
+<li><a href="#_python_binding">15.4. Python binding</a></li>
+<li><a href="#_c_binding">15.5. C# binding</a></li>
 </ul>
 </li>
-<li><a href="#_run_asam_openscenario_examples">16. Run ASAM OpenSCENARIO examples</a></li>
-<li><a href="#_about_this_document">17. About this document</a>
+<li><a href="#_scenario_construction_tips">16. Scenario construction tips</a>
 <ul class="sectlevel2">
-<li><a href="#_how_to_generate_html_from_asciidoc">17.1. How to generate HTML from AsciiDoc</a></li>
-<li><a href="#_how_to_view_previous_versions">17.2. How to view previous versions</a></li>
+<li><a href="#_opendrive">16.1. OpenDRIVE</a></li>
+<li><a href="#_openscenario_xml">16.2. OpenSCENARIO XML</a></li>
+<li><a href="#_scenario_creation_tips_examples">16.3. Examples</a></li>
 </ul>
 </li>
-<li><a href="#_version">18. Version</a></li>
+<li><a href="#_run_asam_openscenario_examples">17. Run ASAM OpenSCENARIO examples</a></li>
+<li><a href="#_about_this_document">18. About this document</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_generate_html_from_asciidoc">18.1. How to generate HTML from AsciiDoc</a></li>
+<li><a href="#_how_to_view_previous_versions">18.2. How to view previous versions</a></li>
+</ul>
+</li>
+<li><a href="#_version">19. Version</a></li>
 </ul>
 </div>
 </div>
@@ -846,8 +851,13 @@ Example:<br>
 <p>Replay recorded esmini scenarios. Main difference from esmini is the ability to freely move forward and backward in the scenario at various speeds.<br>
 Example:<br>
 <code>./bin/replayer --window 60 60 800 400 --file sim.dat</code><br></p>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/esmini/esmini.github.io/raw/main/images/replayer_gui.jpg" alt="replayer gui">
+</div>
+</div>
 <div class="paragraph">
-<p>See <a href="#_use_cases">Use cases</a> how to create recordings (<code>.dat</code> files) from esmini.</p>
+<p>See <a href="#_use_cases">Use cases</a> how to create recordings (<code>.dat</code> files) from esmini and <a href="#_replay_scenario">Replay scenario</a> for further details about replaying.</p>
 </div>
 </td>
 </tr>
@@ -1619,13 +1629,13 @@ Mesa3D is normally installed with Linux distributions. Check OpenGL support with
 <p>The <code>--res_path</code> is a special path directive should normally point to esmini/resources folder, where it will look for the OpenDRIVE file, 3D models, traffic signal mappings and more. It also works to add one or multiple --path &lt;path&gt; directives, like for esmini.</p>
 </div>
 <div class="paragraph">
-<p>Once loaded the scenario recording will start playing in normal speed. Here are a few key commands:</p>
+<p>Once loaded the scenario recording will start playing in normal speed. Here are a few key commands, with gui equivalent in paranthesis:</p>
 </div>
 <div class="hdlist">
 <table>
 <tr>
 <td class="hdlist1">
-<strong>Space</strong>
+<strong>Space (pause/play)</strong>
 </td>
 <td class="hdlist2">
 <p>Toggle pause/play simulation</p>
@@ -1680,7 +1690,7 @@ Mesa3D is normally installed with Linux distributions. Check OpenGL support with
 <table>
 <tr>
 <td class="hdlist1">
-<strong>Left</strong>
+<strong>Left (&lt;)</strong>
 </td>
 <td class="hdlist2">
 <p>Pause and move to previous frame</p>
@@ -1688,7 +1698,7 @@ Mesa3D is normally installed with Linux distributions. Check OpenGL support with
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Right</strong>
+<strong>Right (&gt;)</strong>
 </td>
 <td class="hdlist2">
 <p>Pause and move to next frame</p>
@@ -1696,23 +1706,39 @@ Mesa3D is normally installed with Linux distributions. Check OpenGL support with
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Shift + Left</strong>
+<strong>Shift + Left (&lt;&lt;)</strong>
 </td>
 <td class="hdlist2">
-<p>Pause and jump 10 frames back</p>
+<p>Pause and jump 0.1s back</p>
 </td>
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Shift + Right</strong>
+<strong>Shift + Right (&gt;&gt;)</strong>
 </td>
 <td class="hdlist2">
-<p>Pause and jump 10 frames forward</p>
+<p>Pause and jump 0.1s forward</p>
 </td>
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Ctrl + Left</strong>
+<strong>Ctrl + Shift + Left (&lt;&lt;&lt;)</strong>
+</td>
+<td class="hdlist2">
+<p>Pause and jump 1.0s back</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Ctrl + Shift + Right (&gt;&gt;&gt;)</strong>
+</td>
+<td class="hdlist2">
+<p>Pause and jump 1.0s forward</p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Ctrl + Left (|&lt;)</strong>
 </td>
 <td class="hdlist2">
 <p>Jump to beginning</p>
@@ -1720,7 +1746,7 @@ Mesa3D is normally installed with Linux distributions. Check OpenGL support with
 </tr>
 <tr>
 <td class="hdlist1">
-<strong>Ctrl + Right</strong>
+<strong>Ctrl + Right (&gt;|)</strong>
 </td>
 <td class="hdlist2">
 <p>Jump to end</p>
@@ -1794,7 +1820,7 @@ Your browser does not support the video tag.
 <code>./bin/replayer --window 60 60 800 400 --file sim.dat --res_path ./resources --collision</code></p>
 </div>
 <div class="paragraph">
-<p><strong>Note:</strong> The --disable_controllers flag is just specified to disable the interactive controller that normally is activated in that specific scenario. For more information about controllers, see <a href="https://github.com/esmini/esmini/blob/master/docs/Controllers.md">Controllers in esmini</a>.</p>
+<p><strong>Note:</strong> The --disable_controllers flag is just specified to disable the interactive controller that normally is activated in that specific scenario. For more information about controllers, see <a href="#_controllers">Controllers</a>.</p>
 </div>
 <div class="paragraph">
 <p>Combine esmini and replayer in a one-liner command:<br>
@@ -5401,29 +5427,29 @@ esmini supports two coordinate systems for the lateral distance action:</p>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="xml">typedef struct
 {
-    float global_pos_x;       // target position, in global coordinate system
-    float global_pos_y;       // target position, in global coordinate system
-    float global_pos_z;       // target position, in global coordinate system
-    float local_pos_x;        // target position, relative vehicle (pivot position object) coordinate system
-    float local_pos_y;        // target position, relative vehicle (pivot position object) coordinate system
-    float local_pos_z;        // target position, relative vehicle (pivot position object) coordinate system
-    float angle;              // heading angle to target from and relative vehicle (pivot position object) coordinate system
-    float road_heading;       // road heading at steering target point
-    float road_pitch;         // road pitch (inclination) at steering target point
-    float road_roll;          // road roll (camber) at target point
-    float trail_heading;      // trail heading (only when used for trail lookups, else equals road_heading)
-    float curvature;          // road curvature at steering target point
-    float speed_limit;        // speed limit given by OpenDRIVE speed max entry in m/s
-    id_t  roadId;             // target position, road ID
-    id_t  junctionId;         // target position, junction ID (SE_ID_UNDEFINED if not in a junction)
-    int   laneId;             // target position, lane ID
-    float laneOffset;         // target position, lane offset (lateral distance from lane center)
-    float s;                  // target position, s (longitudinal distance along reference line)
-    float t;                  // target position, t (lateral distance from reference line)
-    int   road_type;          // road type given by OpenDRIVE road type, maps to roadmanager::Road::RoadType
-    int   road_rule;          // road rule given by OpenDRIVE rule entry, maps to roadmanager::Road::RoadRule
-    int   lane_type;          // lane type given by OpenDRIVE lane type, maps to roadmanager::Road::LaneType
-    float trail_wheel_angle;  // trail wheel angle (only when used for trail lookups, e.g. ghost, else 0)
+    double global_pos_x;       // target position, in global coordinate system
+    double global_pos_y;       // target position, in global coordinate system
+    double global_pos_z;       // target position, in global coordinate system
+    double local_pos_x;        // target position, relative vehicle (pivot position object) coordinate system
+    double local_pos_y;        // target position, relative vehicle (pivot position object) coordinate system
+    double local_pos_z;        // target position, relative vehicle (pivot position object) coordinate system
+    double angle;              // heading angle to target from and relative vehicle (pivot position object) coordinate system
+    double road_heading;       // road heading at steering target point
+    double road_pitch;         // road pitch (inclination) at steering target point
+    double road_roll;          // road roll (camber) at target point
+    double trail_heading;      // trail heading (only when used for trail lookups, else equals road_heading)
+    double curvature;          // road curvature at steering target point
+    double speed_limit;        // speed limit given by OpenDRIVE speed max entry in m/s
+    id_t   roadId;             // target position, road ID
+    id_t   junctionId;         // target position, junction ID (SE_ID_UNDEFINED if not in a junction)
+    int    laneId;             // target position, lane ID
+    double laneOffset;         // target position, lane offset (lateral distance from lane center)
+    double s;                  // target position, s (longitudinal distance along reference line)
+    double t;                  // target position, t (lateral distance from reference line)
+    int    road_type;          // road type given by OpenDRIVE road type, maps to roadmanager::Road::RoadType
+    int    road_rule;          // road rule given by OpenDRIVE rule entry, maps to roadmanager::Road::RoadRule
+    int    lane_type;          // lane type given by OpenDRIVE lane type, maps to roadmanager::Road::LaneType
+    double trail_wheel_angle;  // trail wheel angle (only when used for trail lookups, e.g. ghost, else 0)
 } SE_RoadInfo;</code></pre>
 </div>
 </div>
@@ -8615,8 +8641,10 @@ Key shortcuts
     y:             Toggle show / hide OSI road points
     p:             Toggle show / hide environment 3D model
     i:             Toggle on-screen info text modes
+    Shift + i:     Toggle show / hide on-screen GUI
     n:             Toggle show active trajectories
     , (comma):     Switch entity view : Model only / Bounding box / Model + Bounding box / None
+    ; (shift + ,): Toggle show/hide object outlines
     K:             Print current camera position and orientation to console
     x:             Cycle axis indicator view mode (off, on, xray)
     ESC:           quit
@@ -8878,43 +8906,24 @@ Note: In addition to &lt;filename&gt; one of the arguments --list_params and --p
 <div class="sect1">
 <h2 id="_build_guide">11. Build guide</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_build_configurations_in_visual_studio_and_visual_studio_code">11.1. Build configurations in Visual Studio and Visual Studio Code</h3>
 <div class="paragraph">
-<p>From esmini version 2.29.0 a set of cmake presets are provided. These can be utilized from Visual Studio Code and Visual Studio (from 2019 version 16.10 onwards, see more info <a href="https://learn.microsoft.com/en-us/cpp/build/cmake-presets-vs?view=msvc-170">here</a>) with the CMake Tools extension.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_build_configurations_from_command_line">11.2. Build configurations from command line</h3>
-<div class="paragraph">
-<p><a href="https://cmake.org/">CMake</a> tool is used to create standard make configurations. A few example "create&#8230;&#8203;" batch scripts are supplied (in <code>scripts</code> folder) as examples how to generate desired build setup from command line.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>VisualStudio / win64 / Windows SDK v10 / Release and Debug</p>
-</li>
-<li>
-<p>Ubuntu and Kubuntu (tested on 18.04) / gcc / Release and Debug</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>However, it should be possible to configure custom variants using cmake. For example to use Visual Studio 2019 run the following commands from command prompt (CMD or PowerShell), assuming starting point is esmini root folder:</p>
+<p>esmini is primarily utilizing cmake for build configuration. The simplest way to get going, in a terminal from esmini root folder:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>mkdir build
+<pre>git clone https://github.com/esmini/esmini
+cd esmini
+mkdir build
 cd build
-cmake .. -G "Visual Studio 16 2019"
+cmake ..
 cmake --build . --config Release --target install</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This will first generate Visual Studio solution and then compile esmini using MSVC toolset v142 (default with Visual Studio 2019). Default architecture should be x64.</p>
+<p>This will first fetch the esmini code from github, then configure and then build the complete esmini tool suite. And it should work on any supported platform (Win, Mac, Ubuntu).</p>
 </div>
 <div class="paragraph">
-<p>If you want to compile with MSVC 2017 toolset just add directive to the generator as follows:</p>
+<p>You can specify further details, like compiler version. For example: On windows to select MSVC 2017 toolset, indpendent of Visual Studio IDE version, just add directive to the generator as follows:</p>
 </div>
 <div class="paragraph">
 <p><code>
@@ -8929,16 +8938,11 @@ cmake .. -G "Visual Studio 16 2019" -T v141
 </div>
 <div class="paragraph">
 <p><code>
-cmake .. -G "Visual Studio 16 2019" -T v141 -A x64
+cmake .. -G "Visual Studio 17 2022" -T v142 -A x64
 </code></p>
 </div>
 <div class="paragraph">
-<p>If you want to compile with MSVC 2015 (v140) toolset and for win32 use the following generator command:</p>
-</div>
-<div class="paragraph">
-<p><code>
-cmake -G "Visual Studio 16 2019" -T v140 -A Win32 ..
-</code></p>
+<p>To build esmini for MSVC 2019 with Visual Studio 2022.</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -8991,9 +8995,8 @@ cmake -G "Visual Studio 16 2019" -T v140 -A Win32 ..
 </li>
 </ul>
 </div>
-</div>
 <div class="sect2">
-<h3 id="_external_dependencies">11.3. External dependencies</h3>
+<h3 id="_external_dependencies">11.1. External dependencies</h3>
 <div class="paragraph">
 <p>esmini is designed to link all dependencies statically. Main reason is to have a all-inclusive library for easy integration either as a shared library/DLL (e.g. plugin in Unity, or S-function in Simulink) or statically linked into a native application.</p>
 </div>
@@ -9038,7 +9041,7 @@ to<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_additional_platform_dependencies">11.4. Additional platform dependencies</h3>
+<h3 id="_additional_platform_dependencies">11.2. Additional platform dependencies</h3>
 <div class="paragraph">
 <p>Linux Ubuntu</p>
 </div>
@@ -9055,122 +9058,89 @@ to<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_run_and_debug_with_linux_and_visual_studio_code">11.5. Run and Debug with Linux and visual studio code</h3>
+<h3 id="_debug_with_linux_and_vscode">11.3. Debug with Linux and VSCode</h3>
 <div class="paragraph">
-<p>To run from the visual studio, the steps below might help with setup configuration.</p>
+<p>Here follows a brief step-by-step guide for building, running and debugging esmini with Visual Studio Code on Linux (tested on Ubuntu).</p>
+</div>
+<div class="paragraph">
+<p>Prerequisites: Visual Studio Code (VSCode) and the <code>CMake Tools</code> extension.</p>
 </div>
 <div class="sect3">
-<h4 id="_with_preset">11.5.1. With preset</h4>
+<h4 id="_build_and_install_all_targets">11.3.1. Build and install all targets</h4>
 <div class="paragraph">
-<p><strong>Note:</strong> Make sure cmake.preset set to auto to recognize the presets (defined in the <code>CMakePresets.json</code> file). Open setting (Ctrl + ,) type <code>cmake.preset</code>, set <code>auto</code> in drop down box. This is a global setting.</p>
+<p>Note: Install means just copy binaries to local esmini bin folder, not install system wide. Root rights not needed.</p>
 </div>
 <div class="paragraph">
-<p>To run:</p>
+<p>Before building esmini the configuration needs to be established, e.g. what build framework to use and what variant (debug/release) to build.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open the Command Palette (Ctrl+Shift+P) and run CMake: Configure. Select <code>ubuntu_release</code></p>
+<p>From esmini root folder: <code>code .</code></p>
 </li>
 <li>
-<p>Shift + F7 to select and build specific target</p>
-<div class="ulist">
-<ul>
-<li>
-<p>e.g. <code>install</code> to build and copy all targets to bin folder</p>
-</li>
-</ul>
-</div>
+<p>Select a "Kit". Usually by Open the Command Palette (Ctrl+Shift+P) and write <code>CMake: Select a Kit</code>. Select the compiler you want to use. For example GCC 11.3.0. Generator will be selected automatically, typically <code>Ninja</code>, if installed, over <code>Make</code>.</p>
 </li>
 <li>
-<p>Configure custom run arguments (create launch.json)</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Open the run and debug window (Ctrl+Shift+D)</p>
+<p>Ctrl+Shift+P &#8594; <code>CMake: Select Variant</code> command. Select <code>Release</code></p>
 </li>
 <li>
-<p>Select <code>create a launch.json file</code></p>
+<p>Ctrl+Shift+P &#8594; <code>CMake: Set Build Target</code>. Select <code>install</code></p>
 </li>
 <li>
-<p>In the drop down list, select <code>C++ (GDB/LLDB)</code></p>
-</li>
-<li>
-<p>Select <code>Add Configuration&#8230;&#8203;</code> (in the lower right corner of the sub window)</p>
-</li>
-<li>
-<p>Select <code>C/C++: (gdb) Launch</code></p>
-</li>
-<li>
-<p>Change <code>program</code> setting as <code>"${workspaceFolder}/build/EnvironmentSimulator/Applications/esmini/esmini"</code></p>
-</li>
-<li>
-<p>Change <code>args</code> as <code>["--window", "60", "60", "800", "400", "--osc", "../resources/xosc/cut-in.xosc"]</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Press F5</p>
+<p>Click the Build button from the Status bar*</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>For Debug,
-Repeat step 1 and select <code>ubuntu_debug</code>. Repeat step 2 to build debug binaries and then step 4. Breakpoints can be added to the program specified in the <code>launch.json</code> file (do step 3 if not already done).</p>
-</div>
-<div class="paragraph">
-<p>Build target can also be changed in the status bar, click <code>Set the default build target</code>. If not cmake commands are visible in status bar, check global settings: Ctrl + ,  then write "cmake status bar" to find <code>Status Bar Visibility</code> setting. Set to <code>visible</code>.</p>
-</div>
-<div class="paragraph">
-<p>Another way to set build target is via Ctrl+Shift+P, then write "set build target" to find <code>CMake: Set Build Target</code> setting. Select it and choose build target in the drop down list that should appear.</p>
+<p>* If not all cmake commands are visible in status bar, check global settings: Ctrl + "," then write "cmake status bar" to find <code>Status Bar Visibility</code> setting. Set to <code>visible</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_without_preset">11.5.2. Without preset</h4>
+<h4 id="_build_and_debug_specific_target">11.3.2. Build and Debug specific target</h4>
 <div class="paragraph">
-<p>Make sure <code>cmake.preset</code> set to never to ignore the preset file (<code>CMakePresets.json</code>):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Open setting (Ctrl+,) type cmake.preset, select <code>never</code> in drop down box</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Note:</strong> This is a global setting, i.e. will affect other VSCode instances. Reset to <code>auto</code> if needed. Another way to ignore the presets is simply to remove the <code>CMakePresets.json</code> file and restart VSCode.</p>
-</div>
-<div class="paragraph">
-<p>To run:</p>
+<p>First we need to prepare a launch configuration:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open the Command Palette (Ctrl+Shift+P) and run <code>CMake: Select a Kit</code>. Select the compiler you want to use. For example GCC 11.3.0</p>
+<p>In esmini root folder, create a subfolder named <code>.vscode</code></p>
 </li>
 <li>
-<p>Open the Command Palette (Ctrl+Shift+P) run the <code>CMake: Select Variant</code> command. Select <code>Release</code></p>
+<p>In <code>.vscode</code> folder, create a file named <code>settings.json</code>, and add the following:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="console">{
+    &quot;cmake.debugConfig&quot;: {
+        &quot;args&quot;: [&quot;${workspaceFolder}/resources/xosc/cut-in.xosc&quot;, &quot;--config_file_path&quot;, &quot;${workspaceFolder}/config.yml&quot;]
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above arguments assumes esmini being the debug target. It can easily be modified for another target, e.g. <code>odrviewer</code> or <code>replayer</code>. Just change the arguments accordingly. Further, by refering to <code>config.yml</code> you can easily change options and arguments in there.</p>
+</div>
+<div class="paragraph">
+<p>Now we can select and debug target:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ctrl+Shift+P &#8594; <code>CMake: Select Variant</code> command. Select <code>Debug</code></p>
 </li>
 <li>
-<p>Open the Command Palette (Ctrl+Shift+P) run the <code>CMake: Set Build Target</code>. Select <code>install</code></p>
+<p>Ctrl+Shift+P &#8594; <code>CMake: Set Launch/Debug Target `. Select `esmini</code> (or another target of choice)</p>
 </li>
 <li>
-<p>Open the Command Palette (Ctrl+Shift+P) and run the <code>CMake: Build</code> command, or select the Build button from the Status bar. (If cmake commands are not visible in status bar, check global settings: Ctrl + ,  then write "cmake status bar" to find <code>Status Bar Visibility</code> setting. Set to <code>visible</code>.)</p>
-</li>
-<li>
-<p>To configure launch arguments, see step 3 in <a href="#_with_preset">With preset</a>.</p>
-</li>
-<li>
-<p>Press F5</p>
+<p>Click the Debug (bug) button from the Status bar</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>For debug:</p>
-</div>
-<div class="paragraph">
-<p>Repeat step 2 and select <code>Debug</code>. Repeat step 3 to 6. Breakpoints can be added to the program specified in the <code>launch.json</code>.</p>
+<p>Run without debug (e.g. skipping breakpoints): Click the Play button from the Status bar</p>
 </div>
 <div class="paragraph">
 <p>For more info see: <a href="https://code.visualstudio.com/docs/cpp/CMake-linux" class="bare">https://code.visualstudio.com/docs/cpp/CMake-linux</a></p>
@@ -9178,7 +9148,7 @@ Repeat step 1 and select <code>ubuntu_debug</code>. Repeat step 2 to build debug
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dynamic_protobuf_linking">11.6. Dynamic protobuf linking</h3>
+<h3 id="_dynamic_protobuf_linking">11.4. Dynamic protobuf linking</h3>
 <div class="paragraph">
 <p>When linking esmini with software already dependent on Google protobuf there might be need for dynamic linking of shared protobuf library. This can be achieved by defining cmake symbol DYN_PROTOBUF as following example:</p>
 </div>
@@ -9218,7 +9188,7 @@ The dynamic versions of protobuf were added Aug 31 2021. So you might need to up
 </div>
 </div>
 <div class="sect2">
-<h3 id="_slim_esmini_customize_configration">11.7. Slim esmini - customize configration</h3>
+<h3 id="_slim_esmini_customize_configration">11.5. Slim esmini - customize configration</h3>
 <div class="paragraph">
 <p>The external dependencies OSG, OSI, SUMO and implot are optional. Also the unit test suite is optional, in effect making the dependecy to googletest framework optional as well. All these options are simply controlled by the following cmake options:</p>
 </div>
@@ -9258,7 +9228,7 @@ Disabling an external dependency will disable corresponding functionality. So, f
 </div>
 </div>
 <div class="sect2">
-<h3 id="_msys2_mingw_w64_support">11.8. MSYS2 / MinGW-w64 support</h3>
+<h3 id="_msys2_mingw_w64_support">11.6. MSYS2 / MinGW-w64 support</h3>
 <div class="paragraph">
 <p>esmini slim can be compiled and executed in the MSYS2 environment. Try following steps:</p>
 </div>
@@ -9314,7 +9284,7 @@ cmake --build . --config Release --target install</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_build_esmini_project">11.9. Build esmini project</h3>
+<h3 id="_build_esmini_project">11.7. Build esmini project</h3>
 <div class="paragraph">
 <p>First generate build configuration (see above)</p>
 </div>
@@ -9385,7 +9355,7 @@ make -j4 install</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_centos_7_linux">11.10. CentOS 7 (Linux)</h3>
+<h3 id="_centos_7_linux">11.8. CentOS 7 (Linux)</h3>
 <div class="paragraph">
 <p>CentOS 7 has some limitations, e.g. old versions of C/C++ compiler toolkits and runtimes. So it&#8217;s not possible to link with provided 3rd party binary libraries targeting Ubuntu 18++.
 However, by disabling some featuers in esmini, e.g. OSI and SUMO, it can still be used for previewing scenarios.</p>
@@ -9637,20 +9607,12 @@ cd ..
 <div class="sect5">
 <h6 id="_for_linux_and_macos">For Linux and macOS</h6>
 <div class="paragraph">
-<p>Download Cppcheck 2.17.1 source from:</p>
-</div>
-<div class="paragraph">
-<p><a href="https://github.com/danmar/cppcheck/archive/refs/tags/2.17.1.tar.gz" class="bare">https://github.com/danmar/cppcheck/archive/refs/tags/2.17.1.tar.gz</a></p>
-</div>
-<div class="paragraph">
-<p>Extract it to your home directory (for example, to ~/cppcheck-2.17.1).</p>
-</div>
-<div class="paragraph">
-<p>Build it:</p>
+<p>Example how to clone and build cppcheck 2.17.1, from home directory:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="txt">cd ~/cppcheck-2.17.1
+<pre class="CodeRay highlight"><code data-lang="txt">git clone --branch 2.17.1 --depth 1 https://github.com/danmar/cppcheck.git
+cd cppcheck
 mkdir build
 cd build
 cmake ..
@@ -9661,13 +9623,13 @@ cmake --build .</code></pre>
 <p>To temporarily use your locally built Cppcheck 2.17 without changing your system default, run the following from your esmini root folder:</p>
 </div>
 <div class="paragraph">
-<p><code>PATH="$HOME/cppcheck-2.17.1/build/bin:$PATH" pre-commit run cppcheck --all-files</code></p>
+<p><code>PATH="$HOME/cppcheck/build/bin:$PATH" pre-commit run cppcheck --all-files</code></p>
 </div>
 <div class="paragraph">
 <p>To make this change more permanent, you can add the following line to your shell configuration file (e.g. ~/.bashrc):</p>
 </div>
 <div class="paragraph">
-<p><code>export PATH="$HOME/cppcheck-2.17.1/build/bin":$PATH</code></p>
+<p><code>export PATH="$HOME/cppcheck/build/bin":$PATH</code></p>
 </div>
 </div>
 <div class="sect5">
@@ -9753,6 +9715,17 @@ pre-commit run black --all-files</code></pre>
 </div>
 <div class="paragraph">
 <p>The smoke test script is found here: <a href="https://github.com/esmini/esmini/blob/master/test/smoke_test.py">test/smoke_test.py</a></p>
+</div>
+<div class="paragraph">
+<p>In addition, there&#8217;s a basic test of the C# esminiLib wrapper. It&#8217;s available on Windows. Compile and run from esmini root folder as:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="console">cmake test/CSharpWrappers -B test/CSharpWrappers/build
+cmake --build test/CSharpWrappers/build --config Release
+cd bin
+../test/CSharpWrappers/build/Release/libesmini_cs_wrapper_test.exe</code></pre>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -10065,10 +10038,238 @@ or<br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_esmini_lib_programming">13. esmini lib programming</h2>
+<h2 id="_inner_workings">13. Inner workings</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_about_the_lib_itself">13.1. About the lib itself</h3>
+<h3 id="_main_modules">13.1. Main modules</h3>
+<div class="paragraph">
+<p>The class diagram below shows the main <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/Modules">modules</a> of esmini.</p>
+</div>
+<div class="paragraph">
+<p>It illustrates how the main esmini application uses PlayerBase to orchestrate the simulation. PlayerBase in turn utilizes ScenarioEngine for the simulation logic and ViewerBase for visualization. Both ScenarioEngine and ViewerBase depend on RoadManager for road network data. Controllers are managed by the ScenarioEngine, and CommonMini provides utility functions used by several other modules.</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/mermaid/svg/eNp1kEFLxDAQhe_9FSF7UbCX7ckKgrvrsbCoeCkiYzPtBtOkJC2r_94m3ZqkdCeXecw3L3lpNHQn8nZIyFhm-Gqcfuo6wSvouZJuYAtNyyX_bIHLkk6C3Fh1Sz8chJIlsQ3dK42kUGwQaOi_01HAL-odGCyp7y8utl4rlKC5epYNlyMU6wB853ienXwfAC8KWAESGtQlDUSA7JXstRICtSlpICKkbZUsxsSWmPtl7OCDSJo-BjGnudduHIdaI3yiZHKIVxwTPPgaEsS-7jKHmi7yN686LMbL7eBNq_NKgDEHrAnDGgbRk5oLkW_qe3vuzLj7jfkmy7JLn54560_5tvt5-AOZI9TO" alt="Diagram">
+</div>
+</div>
+<div class="sect3">
+<h4 id="_roadmanager">13.1.1. RoadManager</h4>
+<div class="paragraph">
+<p>Implementation of <a href="https://www.asam.net/standards/detail/opendrive/">OpenDRIVE</a> data model and interface. Coverage is not complete at all. The goal is to provide needed and most useful features for esmini. Functionality grows continuously. While being based on 1.4 version it will probably support newer features when needed, so we avoid tagging a specific version.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_scenarioengine">13.1.2. ScenarioEngine</h4>
+<div class="paragraph">
+<p>This is where the dynamics of the scenario takes place. It parses the <a href="https://www.asam.net/standards/detail/openscenario-xml/">OpenSCENARIO XML</a> file, creates a data model of the entities, triggers and actions. And finally steps the scenario, evaluating the triggers and executing the actions accordingly.</p>
+</div>
+<div class="paragraph">
+<p>ScenarioEngine also takes care of reporting ground truth on OSI standard protocol in various ways:
+1. API functions to fetch the OSI structures
+2. Saving to OSI trace file
+3. Sending OSI data over IP/UDP to an external host.</p>
+</div>
+<div class="paragraph">
+<p>Another feature is ideal sensors, defined by a view frustum positioned anywhere on an entity via the API. It will detect any other entity being inside the view frustum. Please note current limitation that only entity reference point is considered for detection, so an entity might be partly inside the frustum and still not detected.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_controllers_2">13.1.3. Controllers</h4>
+<div class="paragraph">
+<p>Implementation of OpenSCENARIO controller concept, which is a way of handing over control of individual entities such as vehicles and pedestrians to an external/custom function instead of the Default Controller, which is embedded the ScenarioEngine.</p>
+</div>
+<div class="paragraph">
+<p>The base class <a href="https://github.com/esmini/esmini/blob/master/EnvironmentSimulator/Modules/Controllers/Controller.hpp#L32-L171"><code>Controller</code></a> defines the interface (API) for a controller and also implements some common functionality, such as assigning and activating the controller.</p>
+</div>
+<div class="paragraph">
+<p>Then there is a collection of more or less useful controllers. Some might provide useful functionality, e.g. interactive driving with arrow keys, while other can at least provide ideas on how to implement a custom controller.</p>
+</div>
+<div class="paragraph">
+<p>More information about the controller concept and the provided controllers, please see <a href="https://esmini.github.io/#_controllers">User guide - Controllers</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_viewerbase">13.1.4. ViewerBase</h4>
+<div class="paragraph">
+<p>Provides a basic 3D viewer to preview scenarios. It&#8217;s based on the excellent <a href="http://www.openscenegraph.org/">OpenSceneGraph</a> open source graphics library. Let&#8217;s say that it prioritizes stability, performance and portability over flashiness - fitting the purposes of esmini.</p>
+</div>
+<div class="paragraph">
+<p>Briefly the module provides the following features:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Optional 3D visual representation of the road network and surroundings. <code>.osgb</code> (OpenSceneGraph binary) file format is directly supported, but indirectly many file formats are supported by conversion using the <a href="http://www.openscenegraph.org/index.php/documentation/user-guides/55-osgconv">osgconv</a> tool (not included in esmini). See more info in <a href="https://esmini.github.io/#_openscenegraph_and_3d_models">User guide - OpenSceneGraph and 3D models</a>.</p>
+</li>
+<li>
+<p>3D visual representation of scenario entities. Either using supplied 3D models or esmini will create stand-in dummy model, e.g. a 3D bounding box according to specified dimensions.</p>
+</li>
+<li>
+<p>Road feature visualization. E.g. OpenDRIVE geometries, lanes and road marks. These features are indicated by points and lines in a very simple way. So it does not replace the value of a 3D model, but at least it gives some guidance when 3D model is not available. It can also be useful for debugging issues in the OpenDRIVE road network definition.</p>
+</li>
+<li>
+<p>Keyboard input. First OSG provides a set of key shortcuts to control visual features, e.g. enable/disable textures or wireframe/shading mode. Then esmini adds a set of shortcuts to control various functionality such as toggling road features visualization or changing camera behavior. A complete list of keyboard shortcuts is found in <a href="https://github.com/esmini/esmini/blob/master/docs/readme.txt">docs/readme.txt</a>. The keyboard input is also routed to Controllers, which is useful for interactive driving modes.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_playerbase">13.1.5. PlayerBase</h4>
+<div class="paragraph">
+<p>This module ties together the ScenarioEngine with the Viewer also providing high a level API for initializing, stepping and controlling a scenario in a custom player application.</p>
+</div>
+<div class="paragraph">
+<p>The initial purpose of this module was to collect common code from various early example applications.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_commonmini">13.1.6. CommonMini</h4>
+<div class="paragraph">
+<p>Collection of handy functions shared between modules and applications, for example:
+- Argument parser
+- Timers
+- Threads and Mutex
+- Math operations
+- Logger</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters">13.1.7. Parameters</h4>
+<div class="paragraph">
+<p>esmini supports three parameter types: integer, double and string. A parameter is declared in the OpenSCENARIO file, in the global ParameterDeclaration. Values can be set by ParameterAction/ParameterSetAction. And it can be used in ParameterCondition to trig storyboard elements. For a simple example see use of "DummyParameter" in <a href="https://github.com/esmini/esmini/blob/master/resources/xosc/lane_change.xosc">lane_change.xosc</a> and <a href="https://github.com/esmini/esmini/blob/master/EnvironmentSimulator/Applications/esmini-dyn/main.cpp">esmini-dyn/main.cpp</a> (enable DEMONSTRATE_PARAMETER to test).</p>
+</div>
+<div class="paragraph">
+<p>To set and read values via esminiLib/C++ you can do as following examples:</p>
+</div>
+<div class="sect4">
+<h5 id="_integer">integer</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>int number = 99;
+SE_Parameter param;
+param.name = &quot;MyIntParameter&quot;;
+param.value = &amp;number;
+SE_SetParameter(param);
+SE_GetParameter(&amp;param);
+printf(&quot;param value: %d\n&quot;, number);
+// or by casting the value
+printf(&quot;param value: %d\n&quot;, *((int*)param.value));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_double">double</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>double number = 1.5;
+SE_Parameter param;
+param.name = &quot;MyDoubleParameter&quot;;
+param.value = &amp;number;
+SE_SetParameter(param);
+SE_GetParameter(&amp;param);
+printf(&quot;param value: %.2f\n&quot;, number);
+// or by casting the value
+printf(&quot;param value: %.2f\n&quot;, *((double*)param.value));</code></pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_string">string</h5>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>std::string myString = &quot;Hello&quot;;
+SE_Parameter param;
+param.name = &quot;MyStringParameter&quot;;
+param.value = &amp;myString;
+SE_SetParameter(param);
+SE_GetParameter(&amp;param);
+printf(&quot;param value: %s\n&quot;, myString.c_str());
+// or by casting the value
+printf(&quot;param value: %s\n&quot;, (*((std::string*)param.value)).c_str());</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_the_modules_interact">13.2. How the modules interact</h3>
+<div class="paragraph">
+<p>Consider a custom application/tool utilizing esmini as a library. The interaction is illustrated below through a few sequence diagrams. Note that the signals are named conceptually. For exact function names and arguments, see header files and code examples.</p>
+</div>
+<div class="paragraph">
+<p>First we look at high level interaction between app and esmini lib.</p>
+</div>
+<div class="paragraph">
+<p>A simplistic scenario player application (C/C++/C#/Python) utilizing esmini lib:</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/mermaid/svg/eNply7EOgzAMBNCdr_AIQ3-gAxISCxJbv8AEC50UHDdx_79pusFNJ927Iu-PaJAZfGQ-O6oxzo4AY3ViM-JCk1lEYEfSG4nYfkTKCcWKrYH6e4xjnZ60KLwvQZQz0tDWmJK1cqEvF-v_RHT_Ag4lMQY=" alt="Diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>A typical test tool involving a system under test (Ego):</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/mermaid/svg/eNptjkFqw0AMRfc9hZbjRS6QRSDQUAKFQE0OII9FqmKPFI18_8qTEAjJrDT8975U6bpQyfTJeDGcPyCeojlnViwOqApYYa86cUZnKS_IxMOKUJ258DcPDQhvs9tFtIVjYU81U0Fj6Vo6iWgbnskfUjE_XKR3dErdG6R30rfBF_lp-KPsza2pgxRHVbclewUxOPXH9Us4P_QQN-FHyxaMfLEC0joCXEue1zTsrGMkEDfeGEgDVhpBQvVfsntBve2gMv4DcbFujg==" alt="Diagram">
+</div>
+</div>
+<div class="paragraph">
+<p>Now, let&#8217;s zoom in. Adding some features and looking inside esminiLib to see interaction between modules:</p>
+</div>
+<div class="imageblock kroki">
+<div class="content">
+<img src="https://kroki.io/mermaid/svg/eNqNVF1v2zAMfN-vELAXF93aYkVeNqBA6gRDgQ0zmrXvtMO62mRJk5Ru-fejJH9bzWYggWIeyTvyFIu_Digr3HCoDTRvGD2l-sNMXWYfVqt34XN9dcbyg3WqYaC14BU4rmTA0qPBOF5xDdL5MAPL1jMUyn1fGW3DJf_CS5afn1_mb69Xny6Lo3tWkq2Lu1RRQVgqGhNfA2kBRzQeV4TTLVhM4Sx6zK5CCYarray5TOIqZ4RH5ko6o4RAY1OwF46_Y9vHeMqU9rJBnPXKw4Em8_7mhqR8ZHeSu8y2DCKM3lM0akgCYogwFtt4fG-xfXePsO9UzWMFGIv0BQ06NBusBJ09S9siiXMnLiQR2ZC1SMhBiBKqn23eVNdXkFwfBLih1yOIA9oBHXV6Tv8Cd5aZikgp9JuazGSkph9b3NME1nWYjHbnUGdXF2T4jMxGdnHEcLaCoWGhrIt2W8t9NAAVjxtVSrMdb7xEGlwo3LEaMxwNMUz9Qe-pI9vWKvZO4MKw71Er4wi286hhwoPjZglB2QCbOm4WXI5kiPUL2b7Qvqj3d8Prmq5HCuNz19XYagn5g-V2TpljqcDsg6r8GWSN3nO3E8_1q1v02uATHIQbLu2cVNzdTJJ_2RaJ499Kxx3HE5z7CQXe38ofWLkE0dcuSEyYAlN3Y4EbK5-7aGH2KOb_skc0P6OLfcMSbIpl55uT0ImLTiJpNaOiwfc2UakjuAR4Vt0yZtGx5tE9s2QB_7v7K_gLnuYHPQ==" alt="Diagram">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_on_execution_flow">13.3. On execution flow</h3>
+<div class="paragraph">
+<p>Actions are executed in order of appearance in the storyboard structure. All state updates are applied directly on the entities. So, if an action is based on the state of another entity, it will depend on whether the action is executed before or after the other entity&#8217;s state is updated. This is especially important to consider when using relative actions, like <code>SpeedAction</code> with <code>RelativeTargetSpeed</code>, which is based on the speed of another entity. The resulting speed will depend on whether the referenced entity has been updated or not.</p>
+</div>
+<div class="paragraph">
+<p>Example:<br>
+SpeedAction (assigned to entity A) with RelativeTargetSpeed, refering to entity B, in continuous mode and step dynamics (instant change to target speed).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;SpeedActionTarget&gt;</span>
+   <span class="tag">&lt;RelativeTargetSpeed</span> <span class="attribute-name">entityRef</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">B</span><span class="delimiter">&quot;</span></span>
+                        <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.1</span><span class="delimiter">&quot;</span></span>
+                        <span class="attribute-name">speedTargetValueType</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">factor</span><span class="delimiter">&quot;</span></span>
+                        <span class="attribute-name">continuous</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
+<span class="tag">&lt;/SpeedActionTarget&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You expect speed of A to be exactly 10% faster than B. Now, assume speed of B is suddenly updated from 100 to 50 km/h. In the same timestep, resulting speed of A will depend on whether it&#8217;s being calculated before or after speed change for B.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If the A action is applied first: speed(A) = 110<br>
+unexpected result due to B has not been updated yet, still speed = 100</p>
+</li>
+<li>
+<p>If the B action is applied first: speed(A) = 55<br>
+expected result since B has already new speed = 50 when evaluating A action</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Conclusion: Consider order of the storyboard elements when designing scenarios, especially when involving relative actions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_esmini_lib_programming">14. esmini lib programming</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_about_the_lib_itself">14.1. About the lib itself</h3>
 <div class="paragraph">
 <p>The main idea with esmini lib is to provide a limited, simplifed but useful API to the complex world of esmini, OpenSCENARIO and traffic simulation. By making use of only standard C types it has been possible to wrap and use the library in numerous environments, like for example MATLAB, Simulink and Unity (C#).</p>
 </div>
@@ -10090,7 +10291,7 @@ or<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_how_to_interact_with_esmini_lib_api">13.2. How to interact with esmini lib API</h3>
+<h3 id="_how_to_interact_with_esmini_lib_api">14.2. How to interact with esmini lib API</h3>
 <div class="paragraph">
 <p>Below is a typical interaction between a custom application (e.g. vehicle simulator) and esmini (providing simulation of the environment, like road and traffic).</p>
 </div>
@@ -10237,7 +10438,7 @@ or<br>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.0</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Register state of Ego, protect it from default controller (but do not apply state yet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update state of Ego, protect it from default controller</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -10301,19 +10502,6 @@ or<br>
 <ul>
 <li>
 <p>update simulation time</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>apply states from external entities (Ego)</p>
 </li>
 </ul>
 </div></div></td>
@@ -10376,7 +10564,7 @@ or<br>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.2</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0.1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Register state of Ego, protect it from default controller (but do not apply state yet)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Update state of Ego, protect it from default controller</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"></td>
@@ -10452,19 +10640,6 @@ or<br>
 <td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
 <ul>
 <li>
-<p>apply states from external entities (Ego)</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.2</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0.2</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
 <p>save to dat, send OSI</p>
 </li>
 </ul>
@@ -10494,7 +10669,7 @@ or<br>
 </table>
 </div>
 <div class="sect2">
-<h3 id="_functionality">13.3. Functionality</h3>
+<h3 id="_functionality">14.3. Functionality</h3>
 <div class="paragraph">
 <p>No systematic documentation available. See header files <a href="https://github.com/esmini/esmini/blob/master/EnvironmentSimulator/Libraries/esminiLib/esminiLib.hpp">esminiLib.hpp</a> and <a href="https://github.com/esmini/esmini/blob/master/EnvironmentSimulator/Libraries/esminiRMLib/esminiRMLib.hpp">esminiRMLib.hpp</a> for API details.</p>
 </div>
@@ -10502,7 +10677,7 @@ or<br>
 <p>The following section covers some specific use cases of the library.</p>
 </div>
 <div class="sect3">
-<h4 id="_save_or_grab_images">13.3.1. Save or grab images</h4>
+<h4 id="_save_or_grab_images">14.3.1. Save or grab images</h4>
 <div class="paragraph">
 <p>Screenshots can be controlled via the API:</p>
 </div>
@@ -10563,7 +10738,7 @@ or<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_custom_camera_positions">13.3.2. Custom camera positions</h4>
+<h4 id="_custom_camera_positions">14.3.2. Custom camera positions</h4>
 <div class="paragraph">
 <p>Similarly as with camera related launch arguments, <a href="#_camera_control">camera positioning</a> can be controlled via esmini lib API.</p>
 </div>
@@ -10606,7 +10781,7 @@ Set/change object to focus on</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_osi_data">13.3.3. OSI data</h4>
+<h4 id="_osi_data">14.3.3. OSI data</h4>
 <div class="paragraph">
 <p>OSI data can be retrieved in three ways:</p>
 </div>
@@ -10760,7 +10935,7 @@ crop dynamic OSI groundtruth around an entity (<strong>default</strong> is to in
 </div>
 </div>
 <div class="sect3">
-<h4 id="_program_options">13.3.4. Program Options</h4>
+<h4 id="_program_options">14.3.4. Program Options</h4>
 <div class="paragraph">
 <p>On top of setting options from command line, esmini (from v2.41.0) supports setting options from esminiLib and esminiRMLib as well. This new functionality is added to set and unset options during runtime. This is useful, for example, to enable or disable logging to console, or to change log level etc between scenario runs via API. In addition, it is now possible to make option settings persistent over multiple runs of scenarios. There are two variants of the API functions i.e. one to set option value with persistence and one without. The API functions are:</p>
 </div>
@@ -10790,7 +10965,7 @@ crop dynamic OSI groundtruth around an entity (<strong>default</strong> is to in
 </div>
 </div>
 <div class="sect3">
-<h4 id="_simple_ideal_sensors">13.3.5. Simple ideal sensors</h4>
+<h4 id="_simple_ideal_sensors">14.3.5. Simple ideal sensors</h4>
 <div class="paragraph">
 <p>OSI provides information needed for sensor models at bounding box level for both moving and stationary objects, including ones defined in OpenDRIVE. Sensor models can then detect overlap, occlusion and collisions between those bounding boxes. Although sensor models are not within scope of esmini, there is a code example on how to retrieve and extract OSI data. It can perhaps be a starting point: <a href="https://github.com/esmini/esmini/blob/dev/EnvironmentSimulator/code-examples/osi-groundtruth/osi-groundtruth.cpp">osi-groundtruth.cpp</a></p>
 </div>
@@ -10834,7 +11009,7 @@ crop dynamic OSI groundtruth around an entity (<strong>default</strong> is to in
 </div>
 </div>
 <div class="sect3">
-<h4 id="_logging_2">13.3.6. Logging</h4>
+<h4 id="_logging_2">14.3.6. Logging</h4>
 <div class="paragraph">
 <p>By default, both file and console logging are enabled. Default log filename is <code>log.txt</code>. Default location is current folder, normally the folder from which the application was started.</p>
 </div>
@@ -10902,7 +11077,7 @@ crop dynamic OSI groundtruth around an entity (<strong>default</strong> is to in
 </div>
 </div>
 <div class="sect2">
-<h3 id="_simplest_example">13.4. Simplest example</h3>
+<h3 id="_simplest_example">14.4. Simplest example</h3>
 <div class="paragraph">
 <p>Below example is just to show the simplicity of using esmini library. For more information and realistic examples, e.g. involving cmake, please go ahead to <a href="#_hello_world_programming_tutorial">Hello World programming tutorial</a>.</p>
 </div>
@@ -10957,13 +11132,13 @@ crop dynamic OSI groundtruth around an entity (<strong>default</strong> is to in
 </div>
 </div>
 <div class="sect1">
-<h2 id="_hello_world_programming_tutorial">14. Hello World programming tutorial</h2>
+<h2 id="_hello_world_programming_tutorial">15. Hello World programming tutorial</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This tutorial shows how to utilize esmini as a shared (dynamically loaded) library for use in a custom application. It can be used with or without esmini embedded viewer.</p>
 </div>
 <div class="sect2">
-<h3 id="preparations">14.1. Preparations</h3>
+<h3 id="preparations">15.1. Preparations</h3>
 <div class="paragraph">
 <p>The simplest preparation is to get the demo package from <a href="https://github.com/esmini/esmini/releases/latest">the latest relase</a> and then head on to the steps below.</p>
 </div>
@@ -11003,9 +11178,9 @@ crop dynamic OSI groundtruth around an entity (<strong>default</strong> is to in
 </div>
 </div>
 <div class="sect2">
-<h3 id="_how_to_build_run_and_debug_hello_world">14.2. How to build, run and debug "Hello World"</h3>
+<h3 id="_how_to_build_run_and_debug_hello_world">15.2. How to build, run and debug "Hello World"</h3>
 <div class="sect3">
-<h4 id="_windowsvisual_studio">14.2.1. Windows/Visual Studio</h4>
+<h4 id="_windowsvisual_studio">15.2.1. Windows/Visual Studio</h4>
 <div class="sect4">
 <h5 id="_first_step_create_the_solution_file">First step: Create the solution file</h5>
 <div class="paragraph">
@@ -11112,7 +11287,7 @@ or any other folder containing the esmini library</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_linux">14.2.2. Linux</h4>
+<h4 id="_linux">15.2.2. Linux</h4>
 <div class="sect4">
 <h5 id="_first_step_create_the_makefile">First step: Create the Makefile</h5>
 <div class="paragraph">
@@ -11219,16 +11394,16 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_next_step">14.2.3. Next step</h4>
+<h4 id="_next_step">15.2.3. Next step</h4>
 <div class="paragraph">
 <p>Now that you can build and run Hello World, it&#8217;s time to explore some functionality of esmini. Next section presents a few code examples to try out, e.g. by modifying main.cpp.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_examples_2">14.3. Examples</h3>
+<h3 id="_examples_2">15.3. Examples</h3>
 <div class="sect3">
-<h4 id="_hello_world_load_and_play_a_scenario">14.3.1. Hello world - load and play a scenario</h4>
+<h4 id="_hello_world_load_and_play_a_scenario">15.3.1. Hello world - load and play a scenario</h4>
 <div class="listingblock">
 <div class="title">Example 1. <a href="https://github.com/esmini/esmini/tree/master/Hello-World_coding-example/main.cpp">Hello-World_coding-example/main.cpp</a></div>
 <div class="content">
@@ -11254,7 +11429,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_add_optional_argument_to_load_any_scenario">14.3.2. Add optional argument to load any scenario</h4>
+<h4 id="_add_optional_argument_to_load_any_scenario">15.3.2. Add optional argument to load any scenario</h4>
 <div class="listingblock">
 <div class="title">Example 2. <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/code-examples/hello_world/hw2_arguments.cpp">EnvironmentSimulator/code-examples/hello_world/hw2_arguments.cpp</a></div>
 <div class="content">
@@ -11295,7 +11470,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_fetch_state_of_scenario_objects">14.3.3. Fetch state of scenario objects</h4>
+<h4 id="_fetch_state_of_scenario_objects">15.3.3. Fetch state of scenario objects</h4>
 <div class="paragraph">
 <p>This example shows how to retrieve the state of scenario objects.</p>
 </div>
@@ -11329,14 +11504,14 @@ then:<br>
 
             SE_GetObjectState(SE_GetId(j), &amp;state);
             printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">time [%.2f] object[%d] id %d pos[%.2f, %.2f] %.2f %.2f odometer: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>,
-                   <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.timestamp),
+                   state.timestamp,
                    j,
                    SE_GetId(j),
-                   <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.x),
-                   <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.y),
-                   <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.wheel_angle),
-                   <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.wheel_rot),
-                   <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(SE_GetObjectOdometer(SE_GetId(j))));
+                   state.x,
+                   state.y,
+                   state.wheel_angle,
+                   state.wheel_rot,
+                   SE_GetObjectOdometer(SE_GetId(j)));
         }
     }
 
@@ -11348,7 +11523,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_external_control_of_ego">14.3.4. External control of Ego</h4>
+<h4 id="_external_control_of_ego">15.3.4. External control of Ego</h4>
 <div class="paragraph">
 <p>A silly example showing how you can just take control over vehicle state via the API. The Ego car will move one meter along the Y-axis for each frame while rotating&#8230;&#8203;</p>
 </div>
@@ -11368,7 +11543,7 @@ then:<br>
 {
     <span class="directive">const</span> <span class="predefined-type">char</span>*            filename = argc &gt; <span class="integer">1</span> ? argv[<span class="integer">1</span>] : <span class="string"><span class="delimiter">&quot;</span><span class="content">../resources/xosc/cut-in_external.xosc</span><span class="delimiter">&quot;</span></span>;
     SE_ScenarioObjectState state;
-    <span class="predefined-type">double</span>                 z = <span class="float">0</span><span class="float">.0f</span>;
+    <span class="predefined-type">double</span>                 z = <span class="float">0</span><span class="float">.0</span>;
 
     <span class="keyword">if</span> (SE_Init(filename, <span class="integer">0</span>, <span class="integer">1</span>, <span class="integer">0</span>, <span class="integer">0</span>) != <span class="integer">0</span>)
     {
@@ -11377,19 +11552,14 @@ then:<br>
 
     <span class="keyword">for</span> (<span class="predefined-type">int</span> i = <span class="integer">0</span>; i &lt; <span class="integer">500</span> &amp;&amp; SE_GetQuitFlag() != <span class="integer">1</span>; i++)
     {
-        SE_ReportObjectPos(SE_GetId(<span class="integer">0</span>), <span class="float">0</span><span class="float">.0f</span>, <span class="float">8</span><span class="float">.0f</span>, <span class="keyword">static_cast</span>&lt;<span class="predefined-type">float</span>&gt;(i), <span class="keyword">static_cast</span>&lt;<span class="predefined-type">float</span>&gt;(z), <span class="predefined-type">float</span>(<span class="float">1</span><span class="float">.57</span> + <span class="float">0</span><span class="float">.01</span> * i), <span class="float">0</span><span class="float">.0f</span>, <span class="float">0</span><span class="float">.0f</span>);
+        SE_ReportObjectPos(SE_GetId(<span class="integer">0</span>), <span class="float">8</span><span class="float">.0</span>, i, z, <span class="float">1</span><span class="float">.57</span> + <span class="float">0</span><span class="float">.01</span> * i, <span class="float">0</span><span class="float">.0</span>, <span class="float">0</span><span class="float">.0</span>);
 
         SE_Step();
 
         <span class="comment">// fetch position in terms of road coordinates</span>
         SE_GetObjectState(SE_GetId(<span class="integer">0</span>), &amp;state);
 
-        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">road_id: %d s: %.3f lane_id %d lane_offset: %.3f z: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>,
-               state.roadId,
-               <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.s),
-               state.laneId,
-               <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.laneOffset),
-               <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.z));
+        printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">road_id: %d s: %.3f lane_id %d lane_offset: %.3f z: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, state.roadId, state.s, state.laneId, state.laneOffset, state.z);
 
         <span class="keyword">if</span> (i == <span class="integer">100</span>)
         {
@@ -11427,7 +11597,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_control_controllers">14.3.5. Control controllers</h4>
+<h4 id="_control_controllers">15.3.5. Control controllers</h4>
 <div class="paragraph">
 <p>Try to run cut-in_interactive.xosc, as below.</p>
 </div>
@@ -11482,7 +11652,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ideal_sensors">14.3.6. Ideal sensors</h4>
+<h4 id="_ideal_sensors">15.3.6. Ideal sensors</h4>
 <div class="listingblock">
 <div class="title">Example 7. <a href="https://github.com/esmini/esmini/tree/master//EnvironmentSimulator/code-examples/hello_world/hw7_ideal_sensors.cpp">EnvironmentSimulator/code-examples/hello_world/hw7_ideal_sensors.cpp</a></div>
 <div class="content">
@@ -11495,8 +11665,8 @@ then:<br>
 {
     SE_Init(<span class="string"><span class="delimiter">&quot;</span><span class="content">../resources/xosc/cut-in.xosc</span><span class="delimiter">&quot;</span></span>, <span class="integer">0</span>, <span class="integer">1</span>, <span class="integer">0</span>, <span class="integer">0</span>);
 
-    SE_AddObjectSensor(<span class="integer">0</span>, <span class="float">2</span><span class="float">.0f</span>, <span class="float">1</span><span class="float">.0f</span>, <span class="float">0</span><span class="float">.5f</span>, <span class="float">1</span><span class="float">.57f</span>, <span class="float">1</span><span class="float">.0f</span>, <span class="integer">5</span><span class="float">0</span><span class="float">.0f</span>, <span class="float">1</span><span class="float">.57f</span>, MAX_HITS);
-    SE_AddObjectSensor(<span class="integer">0</span>, -<span class="float">1</span><span class="float">.0f</span>, <span class="float">0</span><span class="float">.0f</span>, <span class="float">0</span><span class="float">.5f</span>, <span class="float">3</span><span class="float">.14f</span>, <span class="float">0</span><span class="float">.5f</span>, <span class="integer">2</span><span class="float">0</span><span class="float">.0f</span>, <span class="float">1</span><span class="float">.57f</span>, MAX_HITS);
+    SE_AddObjectSensor(<span class="integer">0</span>, <span class="float">2</span><span class="float">.0</span>, <span class="float">1</span><span class="float">.0</span>, <span class="float">0</span><span class="float">.5</span>, <span class="float">1</span><span class="float">.57</span>, <span class="float">1</span><span class="float">.0</span>, <span class="integer">5</span><span class="float">0</span><span class="float">.0</span>, <span class="float">1</span><span class="float">.57</span>, MAX_HITS);
+    SE_AddObjectSensor(<span class="integer">0</span>, -<span class="float">1</span><span class="float">.0</span>, <span class="float">0</span><span class="float">.0</span>, <span class="float">0</span><span class="float">.5</span>, <span class="float">3</span><span class="float">.14</span>, <span class="float">0</span><span class="float">.5</span>, <span class="integer">2</span><span class="float">0</span><span class="float">.0</span>, <span class="float">1</span><span class="float">.57</span>, MAX_HITS);
 
     <span class="comment">// Turn on visualization of object sensors, toggle key 'r'</span>
     SE_ViewerShowFeature(<span class="integer">1</span>, <span class="predefined-constant">true</span>);
@@ -11517,11 +11687,7 @@ then:<br>
                 SE_ScenarioObjectState state;
 
                 SE_GetObjectState(objList[k], &amp;state);
-                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">object[%d] pos: (%.2f, %.2f) heading: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>,
-                       objList[k],
-                       <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.x),
-                       <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.y),
-                       <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(state.h));
+                printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">object[%d] pos: (%.2f, %.2f) heading: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>, objList[k], state.x, state.y, state.h);
             }
         }
     }
@@ -11537,7 +11703,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_collision_detection">14.3.7. Collision detection</h4>
+<h4 id="_collision_detection">15.3.7. Collision detection</h4>
 <div class="paragraph">
 <p>There are two approaches to collision detection that fit different use cases:</p>
 </div>
@@ -11607,7 +11773,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_simple_speed_control">14.3.8. Simple speed control</h4>
+<h4 id="_simple_speed_control">15.3.8. Simple speed control</h4>
 <div class="paragraph">
 <p>As an alternative to the external control examples above, you can control the speed of an object directly. Just note that any triggered scenario actions involving the object might conflict with speed settings via lib API. Recommendation is control an object either via API or scenario file. That said, the combination can be useful for some use cases.</p>
 </div>
@@ -11622,8 +11788,8 @@ then:<br>
 
 <span class="predefined-type">int</span> main(<span class="predefined-type">int</span> argc, <span class="predefined-type">char</span> **argv)
 {
-    <span class="predefined-type">float</span> acc   = <span class="integer">10</span>;    <span class="comment">// initial acceleration</span>
-    <span class="predefined-type">float</span> speed = <span class="float">2</span><span class="float">.0f</span>;  <span class="comment">// initial speed</span>
+    <span class="predefined-type">double</span> acc   = <span class="integer">10</span>;   <span class="comment">// initial acceleration</span>
+    <span class="predefined-type">double</span> speed = <span class="float">2</span><span class="float">.0</span>;  <span class="comment">// initial speed</span>
 
     <span class="keyword">if</span> (argc &gt; <span class="integer">1</span>)
     {
@@ -11640,11 +11806,11 @@ then:<br>
         speed += acc * SE_GetSimTimeStep();  <span class="comment">// get latest time step from simulation</span>
 
         <span class="comment">// modulate speed by changing sign of acceleration now and then</span>
-        <span class="keyword">if</span> (speed &lt; <span class="float">2</span><span class="float">.0f</span>)
+        <span class="keyword">if</span> (speed &lt; <span class="float">2</span><span class="float">.0</span>)
         {
             acc = <span class="integer">10</span>;
         }
-        <span class="keyword">else</span> <span class="keyword">if</span> (speed &gt; <span class="integer">2</span><span class="float">0</span><span class="float">.0f</span>)
+        <span class="keyword">else</span> <span class="keyword">if</span> (speed &gt; <span class="integer">2</span><span class="float">0</span><span class="float">.0</span>)
         {
             acc = -<span class="integer">10</span>;
         }
@@ -11672,7 +11838,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_inject_actions">14.3.9. Inject actions</h4>
+<h4 id="_inject_actions">15.3.9. Inject actions</h4>
 <div class="paragraph">
 <p>This example demonstrates how you can control longitudinal and lateral motion by applying the following actions:</p>
 </div>
@@ -11721,9 +11887,11 @@ then:<br>
 <span class="preprocessor">#include</span> <span class="include">&lt;string.h&gt;</span>
 <span class="preprocessor">#include</span> <span class="include">&lt;iostream&gt;</span>
 
+<span class="preprocessor">#define</span> SMALL_NUMBER <span class="float">1</span>e-<span class="integer">6</span>
+
 <span class="predefined-type">int</span> main(<span class="predefined-type">int</span> argc, <span class="predefined-type">char</span> **argv)
 {
-    <span class="predefined-type">float</span> dt = -<span class="float">1</span><span class="float">.0f</span>;  <span class="comment">// default to variable timestep</span>
+    <span class="predefined-type">double</span> dt = -<span class="float">1</span><span class="float">.0</span>;  <span class="comment">// default to variable timestep</span>
 
     <span class="keyword">if</span> (argc &gt; <span class="integer">2</span>)
     {
@@ -11736,7 +11904,7 @@ then:<br>
         {
             <span class="keyword">if</span> (i &lt; argc - <span class="integer">1</span> &amp;&amp; strcmp(argv[i], <span class="string"><span class="delimiter">&quot;</span><span class="content">--fixed_timestep</span><span class="delimiter">&quot;</span></span>) == <span class="integer">0</span>)
             {
-                dt = <span class="keyword">static_cast</span>&lt;<span class="predefined-type">float</span>&gt;(atof(argv[i + <span class="integer">1</span>]));  <span class="comment">// use any provided fixed timestep</span>
+                dt = atof(argv[i + <span class="integer">1</span>]);  <span class="comment">// use any provided fixed timestep</span>
             }
         }
     }
@@ -11755,33 +11923,33 @@ then:<br>
     }
 
     <span class="predefined-type">int</span> state = <span class="integer">0</span>;
-    <span class="keyword">while</span> (SE_GetQuitFlag() == <span class="integer">0</span> &amp;&amp; SE_GetSimulationTime() &lt; <span class="integer">1</span><span class="float">7</span><span class="float">.0f</span>)
+    <span class="keyword">while</span> (SE_GetQuitFlag() == <span class="integer">0</span> &amp;&amp; SE_GetSimulationTime() &lt; <span class="integer">1</span><span class="float">7</span><span class="float">.0</span>)
     {
-        <span class="keyword">if</span> (state == <span class="integer">0</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">2</span><span class="float">.0f</span>)
+        <span class="keyword">if</span> (state == <span class="integer">0</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">2</span><span class="float">.0</span> + SMALL_NUMBER)
         {
             printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Injecting lane offset action</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
             SE_LaneOffsetActionStruct lane_offset;
-            lane_offset.id               = <span class="integer">0</span>;       <span class="comment">// id of object to perform action</span>
-            lane_offset.offset           = -<span class="float">0</span><span class="float">.45f</span>;  <span class="comment">// target offset in m</span>
-            lane_offset.maxLateralAcc    = <span class="float">0</span><span class="float">.5f</span>;    <span class="comment">// max lateral acceleration in m/s^2</span>
-            lane_offset.transition_shape = <span class="integer">0</span>;       <span class="comment">// cubic</span>
+            lane_offset.id               = <span class="integer">0</span>;      <span class="comment">// id of object to perform action</span>
+            lane_offset.offset           = -<span class="float">0</span><span class="float">.45</span>;  <span class="comment">// target offset in m</span>
+            lane_offset.maxLateralAcc    = <span class="float">0</span><span class="float">.5</span>;    <span class="comment">// max lateral acceleration in m/s^2</span>
+            lane_offset.transition_shape = <span class="integer">0</span>;      <span class="comment">// cubic</span>
             SE_InjectLaneOffsetAction(&amp;lane_offset);
             state++;
         }
-        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">1</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">7</span><span class="float">.0f</span>)
+        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">1</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">7</span><span class="float">.0</span> + SMALL_NUMBER)
         {
             printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Injecting lane change action</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
             SE_LaneChangeActionStruct lane_change;
-            lane_change.id               = <span class="integer">0</span>;     <span class="comment">// id of object to perform action</span>
-            lane_change.mode             = <span class="integer">1</span>;     <span class="comment">// relative (own vehicle)</span>
-            lane_change.target           = <span class="integer">1</span>;     <span class="comment">// target lane id (relative)</span>
-            lane_change.transition_shape = <span class="integer">2</span>;     <span class="comment">// sinusoidal</span>
-            lane_change.transition_dim   = <span class="integer">2</span>;     <span class="comment">// time</span>
-            lane_change.transition_value = <span class="float">3</span><span class="float">.0f</span>;  <span class="comment">// s</span>
+            lane_change.id               = <span class="integer">0</span>;    <span class="comment">// id of object to perform action</span>
+            lane_change.mode             = <span class="integer">1</span>;    <span class="comment">// relative (own vehicle)</span>
+            lane_change.target           = <span class="integer">1</span>;    <span class="comment">// target lane id (relative)</span>
+            lane_change.transition_shape = <span class="integer">2</span>;    <span class="comment">// sinusoidal</span>
+            lane_change.transition_dim   = <span class="integer">2</span>;    <span class="comment">// time</span>
+            lane_change.transition_value = <span class="float">3</span><span class="float">.0</span>;  <span class="comment">// s</span>
             SE_InjectLaneChangeAction(&amp;lane_change);
             state++;
         }
-        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">2</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">8</span><span class="float">.0f</span>)
+        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">2</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">8</span><span class="float">.0</span> + SMALL_NUMBER)
         {
             <span class="keyword">if</span> (SE_InjectedActionOngoing(<span class="integer">5</span>))  <span class="comment">// 5 = LAT_LANE_CHANGE</span>
             {
@@ -11791,42 +11959,42 @@ then:<br>
             {
                 printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Injecting lane change action 2</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
                 SE_LaneChangeActionStruct lane_change;
-                lane_change.id               = <span class="integer">0</span>;     <span class="comment">// id of object to perform action</span>
-                lane_change.mode             = <span class="integer">1</span>;     <span class="comment">// relative (own vehicle)</span>
-                lane_change.target           = -<span class="integer">1</span>;    <span class="comment">// target lane id (relative)</span>
-                lane_change.transition_shape = <span class="integer">2</span>;     <span class="comment">// sinusoidal</span>
-                lane_change.transition_dim   = <span class="integer">2</span>;     <span class="comment">// time</span>
-                lane_change.transition_value = <span class="float">3</span><span class="float">.0f</span>;  <span class="comment">// s</span>
+                lane_change.id               = <span class="integer">0</span>;    <span class="comment">// id of object to perform action</span>
+                lane_change.mode             = <span class="integer">1</span>;    <span class="comment">// relative (own vehicle)</span>
+                lane_change.target           = -<span class="integer">1</span>;   <span class="comment">// target lane id (relative)</span>
+                lane_change.transition_shape = <span class="integer">2</span>;    <span class="comment">// sinusoidal</span>
+                lane_change.transition_dim   = <span class="integer">2</span>;    <span class="comment">// time</span>
+                lane_change.transition_value = <span class="float">3</span><span class="float">.0</span>;  <span class="comment">// s</span>
                 SE_InjectLaneChangeAction(&amp;lane_change);
             }
             state++;
         }
-        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">3</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">9</span><span class="float">.5f</span>)  <span class="comment">// slightly overlapping lane change action</span>
+        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">3</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="float">9</span><span class="float">.5</span> + SMALL_NUMBER)  <span class="comment">// slightly overlapping lane change action</span>
         {
             printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Injecting speed action - soft brake</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
             SE_SpeedActionStruct speed;
-            speed.id               = <span class="integer">0</span>;     <span class="comment">// id of object to perform action</span>
-            speed.speed            = <span class="float">0</span><span class="float">.0f</span>;  <span class="comment">// target speed in m/s</span>
-            speed.transition_shape = <span class="integer">0</span>;     <span class="comment">// cubic</span>
-            speed.transition_dim   = <span class="integer">1</span>;     <span class="comment">// rate</span>
-            speed.transition_value = <span class="float">3</span><span class="float">.0f</span>;  <span class="comment">// m/s^2</span>
+            speed.id               = <span class="integer">0</span>;    <span class="comment">// id of object to perform action</span>
+            speed.speed            = <span class="float">0</span><span class="float">.0</span>;  <span class="comment">// target speed in m/s</span>
+            speed.transition_shape = <span class="integer">0</span>;    <span class="comment">// cubic</span>
+            speed.transition_dim   = <span class="integer">1</span>;    <span class="comment">// rate</span>
+            speed.transition_value = <span class="float">3</span><span class="float">.0</span>;  <span class="comment">// m/s^2</span>
             SE_InjectSpeedAction(&amp;speed);
             state++;
         }
-        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">4</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="integer">1</span><span class="float">1</span><span class="float">.0f</span>)  <span class="comment">// slightly overlapping lane change action</span>
+        <span class="keyword">else</span> <span class="keyword">if</span> (state == <span class="integer">4</span> &amp;&amp; SE_GetSimulationTime() &gt; <span class="integer">1</span><span class="float">1</span><span class="float">.0</span> + SMALL_NUMBER)  <span class="comment">// slightly overlapping lane change action</span>
         {
             printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Injecting speed action - hard brake</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>);
             SE_SpeedActionStruct speed;
-            speed.id               = <span class="integer">0</span>;     <span class="comment">// id of object to perform action</span>
-            speed.speed            = <span class="float">0</span><span class="float">.0f</span>;  <span class="comment">// target speed in m/s</span>
-            speed.transition_shape = <span class="integer">1</span>;     <span class="comment">// cubic</span>
-            speed.transition_dim   = <span class="integer">1</span>;     <span class="comment">// rate</span>
-            speed.transition_value = <span class="float">8</span><span class="float">.0f</span>;  <span class="comment">// m/s^2</span>
+            speed.id               = <span class="integer">0</span>;    <span class="comment">// id of object to perform action</span>
+            speed.speed            = <span class="float">0</span><span class="float">.0</span>;  <span class="comment">// target speed in m/s</span>
+            speed.transition_shape = <span class="integer">1</span>;    <span class="comment">// cubic</span>
+            speed.transition_dim   = <span class="integer">1</span>;    <span class="comment">// rate</span>
+            speed.transition_value = <span class="float">8</span><span class="float">.0</span>;  <span class="comment">// m/s^2</span>
             SE_InjectSpeedAction(&amp;speed);
             state++;
         }
 
-        <span class="keyword">if</span> (dt &lt; <span class="float">0</span><span class="float">.0f</span>)
+        <span class="keyword">if</span> (dt &lt; <span class="float">0</span><span class="float">.0</span>)
         {
             SE_Step();
         }
@@ -11852,7 +12020,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_driver_model">14.3.10. Driver model</h4>
+<h4 id="_driver_model">15.3.10. Driver model</h4>
 <div class="paragraph">
 <p>Using a simple vehicle model this example demonstrates how a driver model can interact with the scenario in terms of pedal and steering input. This time we use the <code>ExternalController</code> again to ensure any scenario actions is not conflicting with the driver model.</p>
 </div>
@@ -11990,7 +12158,7 @@ then:<br>
     <span class="directive">const</span> <span class="predefined-type">double</span> defaultTargetSpeed = <span class="integer">5</span><span class="float">0</span><span class="float">.0</span>;
     <span class="directive">const</span> <span class="predefined-type">double</span> curveWeight        = <span class="integer">3</span><span class="float">0</span><span class="float">.0</span>;
     <span class="directive">const</span> <span class="predefined-type">double</span> throttleWeight     = <span class="float">0</span><span class="float">.1</span>;
-    <span class="directive">const</span> <span class="predefined-type">float</span>  duration           = <span class="integer">3</span><span class="float">5</span><span class="float">.0f</span>;
+    <span class="directive">const</span> <span class="predefined-type">double</span> duration           = <span class="integer">3</span><span class="float">5</span><span class="float">.0</span>;
     <span class="predefined-type">bool</span>         ghostMode[<span class="integer">3</span>]       = {<span class="predefined-constant">false</span>, <span class="predefined-constant">true</span>, <span class="predefined-constant">true</span>};
 
     SE_SimpleVehicleState  vehicleState = {<span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span>, <span class="integer">0</span>};
@@ -12014,7 +12182,7 @@ then:<br>
         <span class="comment">// Initialize the vehicle model, fetch initial state from the scenario</span>
         SE_GetObjectState(<span class="integer">0</span>, &amp;objectState);
         <span class="directive">void</span>* vehicleHandle = SE_SimpleVehicleCreate(objectState.x, objectState.y, objectState.h, <span class="float">4</span><span class="float">.0</span>, <span class="float">0</span><span class="float">.0</span>);
-        SE_SimpleVehicleSteeringRate(vehicleHandle, <span class="float">6</span><span class="float">.0f</span>);
+        SE_SimpleVehicleSteeringRate(vehicleHandle, <span class="float">6</span><span class="float">.0</span>);
 
         <span class="comment">// show some road features, including road sensor</span>
         SE_ViewerShowFeature(<span class="integer">4</span> + <span class="integer">8</span>, <span class="predefined-constant">true</span>);  <span class="comment">// NODE_MASK_TRAIL_DOTS (1 &lt;&lt; 2) &amp; NODE_MASK_ODR_FEATURES (1 &lt;&lt; 3),</span>
@@ -12023,39 +12191,39 @@ then:<br>
         <span class="keyword">while</span> (SE_GetSimulationTime() &lt; duration &amp;&amp; SE_GetQuitFlag() != <span class="integer">1</span>)
         {
             <span class="comment">// Get simulation delta time since last call (first will be minimum timestep)</span>
-            <span class="predefined-type">float</span> dt = SE_GetSimTimeStep();
+            <span class="predefined-type">double</span> dt = SE_GetSimTimeStep();
 
             <span class="comment">// Get road information at a point some speed dependent distance ahead</span>
             <span class="predefined-type">double</span> targetSpeed;
             <span class="keyword">if</span> (ghostMode[i] == <span class="predefined-constant">true</span>)
             {
                 <span class="comment">// ghost version</span>
-                <span class="predefined-type">float</span> ghost_speed = <span class="float">0</span><span class="float">.0f</span>;
-                <span class="predefined-type">float</span> timestamp   = <span class="float">0</span><span class="float">.0f</span>;
+                <span class="predefined-type">double</span> ghost_speed = <span class="float">0</span><span class="float">.0</span>;
+                <span class="predefined-type">double</span> timestamp   = <span class="float">0</span><span class="float">.0</span>;
 
                 <span class="keyword">if</span> (i % <span class="integer">2</span> == <span class="integer">0</span>)  <span class="comment">// alternate between time based and position based look ahead modes</span>
                 {
                     <span class="comment">// Time based look ahead</span>
-                    SE_GetRoadInfoGhostTrailTime(<span class="integer">0</span>, SE_GetSimulationTime() + <span class="float">0</span><span class="float">.25f</span>, &amp;roadInfo, &amp;ghost_speed);
+                    SE_GetRoadInfoGhostTrailTime(<span class="integer">0</span>, SE_GetSimulationTime() + <span class="float">0</span><span class="float">.25</span>, &amp;roadInfo, &amp;ghost_speed);
                 }
                 <span class="keyword">else</span>
                 {
                     <span class="comment">// Position based Time based look ahead</span>
-                    SE_GetRoadInfoAlongGhostTrail(<span class="integer">0</span>, <span class="integer">5</span> + <span class="float">0</span><span class="float">.75f</span> * vehicleState.speed, &amp;roadInfo, &amp;ghost_speed, &amp;timestamp);
+                    SE_GetRoadInfoAlongGhostTrail(<span class="integer">0</span>, <span class="integer">5</span> + <span class="float">0</span><span class="float">.75</span> * vehicleState.speed, &amp;roadInfo, &amp;ghost_speed, &amp;timestamp);
                 }
                 targetSpeed = ghost_speed;
             }
             <span class="keyword">else</span>
             {
                 <span class="comment">// Look ahead along the road, to establish target info for the driver model</span>
-                SE_GetRoadInfoAtDistance(<span class="integer">0</span>, <span class="integer">5</span> + <span class="float">0</span><span class="float">.75f</span> * vehicleState.speed, &amp;roadInfo, <span class="integer">0</span>, <span class="predefined-constant">true</span>);
+                SE_GetRoadInfoAtDistance(<span class="integer">0</span>, <span class="integer">5</span> + <span class="float">0</span><span class="float">.75</span> * vehicleState.speed, &amp;roadInfo, <span class="integer">0</span>, <span class="predefined-constant">true</span>);
 
                 <span class="comment">// Slow down when curve ahead - CURVE_WEIGHT is the tuning parameter</span>
-                targetSpeed = defaultTargetSpeed / (<span class="integer">1</span> + curveWeight * <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(fabs(roadInfo.angle)));
+                targetSpeed = defaultTargetSpeed / (<span class="integer">1</span> + curveWeight * fabs(roadInfo.angle));
             }
 
             <span class="comment">// Accelerate or decelerate towards target speed - THROTTLE_WEIGHT tunes magnitude</span>
-            <span class="predefined-type">double</span> throttle = throttleWeight * (targetSpeed - <span class="keyword">static_cast</span>&lt;<span class="predefined-type">double</span>&gt;(vehicleState.speed));
+            <span class="predefined-type">double</span> throttle = throttleWeight * (targetSpeed - vehicleState.speed);
 
             <span class="comment">// Step vehicle model with driver input, but wait until time &gt; 0</span>
             <span class="keyword">if</span> (SE_GetSimulationTime() &gt; <span class="integer">0</span> &amp;&amp; !SE_GetPauseFlag())
@@ -12069,7 +12237,7 @@ then:<br>
             SE_SimpleVehicleGetState(vehicleHandle, &amp;vehicleState);
 
             <span class="comment">// Report updated vehicle position and heading. z, pitch and roll will be aligned to the road</span>
-            SE_ReportObjectPosXYH(<span class="integer">0</span>, <span class="integer">0</span>, vehicleState.x, vehicleState.y, vehicleState.h);
+            SE_ReportObjectPosXYH(<span class="integer">0</span>, vehicleState.x, vehicleState.y, vehicleState.h);
 
             <span class="comment">// The following values are not necessary to report.</span>
             <span class="comment">// If not reported, esmini will calculate based on motion over time</span>
@@ -12132,7 +12300,7 @@ then:<br>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_osi_groundtruth">14.3.11. OSI groundtruth</h4>
+<h4 id="_osi_groundtruth">15.3.11. OSI groundtruth</h4>
 <div class="paragraph">
 <p>To access OSI data we first need to complement the build script (CMakeLists.txt) with OSI include and library info. For example:</p>
 </div>
@@ -12221,8 +12389,8 @@ target_link_libraries(${TARGET} esminiLib protobuf open_simulation_interface_pic
 
     <span class="keyword">for</span> (<span class="predefined-type">int</span> i = <span class="integer">0</span>; i &lt; <span class="integer">4</span>; i++)
     {
-        SE_StepDT(<span class="float">0</span><span class="float">.01f</span>);  <span class="comment">// ground truth will be automatically updated each step if we have either an OSIFile or fetched a pointer to the</span>
-                           <span class="comment">// osi3::GroundTruth struct</span>
+        SE_StepDT(<span class="float">0</span><span class="float">.01</span>);  <span class="comment">// ground truth will be automatically updated each step if we have either an OSIFile or fetched a pointer to the</span>
+                          <span class="comment">// osi3::GroundTruth struct</span>
 
         <span class="comment">// Print timestamp</span>
         printf(<span class="string"><span class="delimiter">&quot;</span><span class="content">Frame %d timestamp: %.2f</span><span class="char">\n</span><span class="delimiter">&quot;</span></span>,
@@ -12273,22 +12441,15 @@ target_link_libraries(${TARGET} esminiLib protobuf open_simulation_interface_pic
 </div>
 </div>
 <div class="sect2">
-<h3 id="_python_binding">14.4. Python binding</h3>
+<h3 id="_python_binding">15.4. Python binding</h3>
 <div class="paragraph">
 <p>A Python wrapper for esmini can easily be created using "ctypes" (thanks David Kaplan for the tip!). This section presents a few examples to get you started.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Make sure the esminiLib is present in <code>esmini/bin</code> folder</p>
-</li>
-<li>
-<p>Run the script examples from the <code>esmini/Hello-World_coding-example</code> folder</p>
-</li>
-</ul>
-</div>
 <div class="sect3">
-<h4 id="_minimalistic_esmini_python_player">14.4.1. Minimalistic esmini Python player</h4>
+<h4 id="_minimalistic_esmini_python_player">15.4.1. Minimalistic esmini Python player</h4>
+<div class="paragraph">
+<p>The script below works on Windows.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="Python"><span class="keyword">import</span> <span class="include">ctypes</span>
@@ -12299,6 +12460,19 @@ se.SE_Init(<span class="binary"><span class="modifier">b</span><span class="deli
 <span class="keyword">for</span> i <span class="keyword">in</span> <span class="predefined">range</span> (<span class="integer">500</span>):
     se.SE_Step()</code></pre>
 </div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Create the file <code>esmini-win-player.py</code> in <code>esmini/Hello-World_coding-example</code> folder, copy the code into it.</p>
+</li>
+<li>
+<p>Make sure the esminiLib is present in <code>esmini/bin</code> folder.</p>
+</li>
+<li>
+<p>Run the script from its folder as: <code>python esmini-win-player.py</code></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p><strong>Note:</strong> Library name varies with the platform as mentioned above (see <a href="#preparations">Preparations</a>)</p>
@@ -12345,27 +12519,37 @@ se.SE_Init(sys.argv[<span class="integer">1</span>].encode(<span class="string">
     se.SE_Step()</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>That was a minimalistic introduction. Following examples are located under the <code>EnvironmentSimulator/code-examples</code> folder. To run them, again make sure the esminiLib is present in <code>esmini/bin</code> folder. Run each script from its folder.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="_initialize_esmini_by_flexible_argument_list">14.4.2. Initialize esmini by flexible argument list</h4>
+<h4 id="_initialize_esmini_by_flexible_argument_list">15.4.2. Initialize esmini by flexible argument list</h4>
 <div class="paragraph">
 <p>Instead of using the limited <code>SE_Init()</code> function you can pass any arguments using <code>SE_InitWithArgs()</code></p>
 </div>
 <div class="listingblock">
 <div class="title">Example 14. <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/code-examples/hello_world/init_by_args.py">EnvironmentSimulator/code-examples/hello_world/init_by_args.py</a></div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="python"><span class="comment"># initialize esmini with arguments instead of a few limited arguments</span>
-<span class="comment"># using ideas from: https://comp.lang.python.narkive.com/RUdYlz64/trying-to-pass-sys-argv-as-int-argc-char-argv-using-ctypes</span>
+<pre class="CodeRay highlight"><code data-lang="python"><span class="docstring"><span class="delimiter">'''</span><span class="content">
+</span><span class="content">   demonstrate how to initialize esmini with arguments instead of a few limited arguments</span><span class="content">
+</span><span class="content">   using ideas from: https://comp.lang.python.narkive.com/RUdYlz64/trying-to-pass-sys-argv-as-int-argc-char-argv-using-ctypes</span><span class="content">
+</span><span class="content">
+</span><span class="content">   Instruction:</span><span class="content">
+</span><span class="content">     - make sure the esmini shared library (esminiLib.dll or esminiLib.so) is present in esmini/bin folder</span><span class="content">
+</span><span class="content">     - if not, either compile esmini (see User guide) or fetch bin package release</span><span class="content">
+</span><span class="content">     - from this folder (where this code module is), run: python ./init_by_args.py</span><span class="content">
+</span><span class="delimiter">'''</span></span>
 
 <span class="keyword">import</span> <span class="include">ctypes</span> <span class="keyword">as</span> ct
 <span class="keyword">import</span> <span class="include">sys</span>
 
 <span class="keyword">if</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux</span><span class="delimiter">&quot;</span></span> <span class="keyword">or</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux2</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">darwin</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">win32</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">else</span>:
     print(<span class="string"><span class="delimiter">&quot;</span><span class="content">Unsupported platform: {}</span><span class="delimiter">&quot;</span></span>.format(platform))
     quit()
@@ -12396,25 +12580,33 @@ argc = <span class="predefined">len</span>(argv)
 </div>
 </div>
 <div class="sect3">
-<h4 id="_forward_command_line_arguments">14.4.3. Forward command line arguments</h4>
+<h4 id="_forward_command_line_arguments">15.4.3. Forward command line arguments</h4>
 <div class="paragraph">
 <p>How to just forward any argument provided from command line:</p>
 </div>
 <div class="listingblock">
 <div class="title">Example 15. <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/code-examples/hello_world/forward_cmd_args.py">EnvironmentSimulator/code-examples/hello_world/forward_cmd_args.py</a></div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="python"><span class="comment"># forward command line arguments to esmini</span>
-<span class="comment"># using ideas from: https://comp.lang.python.narkive.com/RUdYlz64/trying-to-pass-sys-argv-as-int-argc-char-argv-using-ctypes</span>
+<pre class="CodeRay highlight"><code data-lang="python"><span class="docstring"><span class="delimiter">'''</span><span class="content">
+</span><span class="content">   demonstrate how to forward command line arguments to esmini</span><span class="content">
+</span><span class="content">   using ideas from: https://comp.lang.python.narkive.com/RUdYlz64/trying-to-pass-sys-argv-as-int-argc-char-argv-using-ctypes</span><span class="content">
+</span><span class="content">
+</span><span class="content">   Instruction:</span><span class="content">
+</span><span class="content">     - make sure the esmini shared library (esminiLib.dll or esminiLib.so) is present in esmini/bin folder</span><span class="content">
+</span><span class="content">     - if not, either compile esmini (see User guide) or fetch bin package release</span><span class="content">
+</span><span class="content">     - from this folder (where this code module is), run: python ./forward_cmd_args.py &lt;esmini command line arguments&gt;</span><span class="content">
+</span><span class="content">     - Example: python ./forward_cmd_args.py ../../../resources/xosc/cut-in.xosc --road_features on --bounding_boxes</span><span class="content">
+</span><span class="delimiter">'''</span></span>
 
 <span class="keyword">import</span> <span class="include">ctypes</span> <span class="keyword">as</span> ct
 <span class="keyword">import</span> <span class="include">sys</span>
 
 <span class="keyword">if</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux</span><span class="delimiter">&quot;</span></span> <span class="keyword">or</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux2</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">darwin</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">win32</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">else</span>:
     print(<span class="string"><span class="delimiter">&quot;</span><span class="content">Unsupported platform: {}</span><span class="delimiter">&quot;</span></span>.format(platform))
     quit()
@@ -12439,22 +12631,31 @@ argv = (ct.POINTER(ct.c_char) * (argc + <span class="integer">1</span>))()
 </div>
 </div>
 <div class="sect3">
-<h4 id="_get_object_states">14.4.4. Get object states</h4>
+<h4 id="_get_object_states">15.4.4. Get object states</h4>
 <div class="paragraph">
 <p>How to retrieve the state of all scenario objects:</p>
 </div>
 <div class="listingblock">
 <div class="title">Example 16. <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/code-examples/hello_world/get_states.py">EnvironmentSimulator/code-examples/hello_world/get_states.py</a></div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="python"><span class="keyword">import</span> <span class="include">ctypes</span>
+<pre class="CodeRay highlight"><code data-lang="python"><span class="docstring"><span class="delimiter">'''</span><span class="content">
+</span><span class="content">   demonstrate how to get scenario object states</span><span class="content">
+</span><span class="content">
+</span><span class="content">   Instruction:</span><span class="content">
+</span><span class="content">     - make sure the esmini shared library (esminiLib.dll or esminiLib.so) is present in esmini/bin folder</span><span class="content">
+</span><span class="content">     - if not, either compile esmini (see User guide) or fetch bin package release</span><span class="content">
+</span><span class="content">     - from this folder (where this code module is), run: python ./get_states.py</span><span class="content">
+</span><span class="delimiter">'''</span></span>
+
+<span class="keyword">import</span> <span class="include">ctypes</span>
 <span class="keyword">from</span> <span class="include">sys</span> <span class="keyword">import</span> <span class="include">platform</span>
 
 <span class="keyword">if</span> platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux</span><span class="delimiter">&quot;</span></span> <span class="keyword">or</span> platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux2</span><span class="delimiter">&quot;</span></span>:
-    se = ctypes.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
+    se = ctypes.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">darwin</span><span class="delimiter">&quot;</span></span>:
-    se = ctypes.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
+    se = ctypes.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">win32</span><span class="delimiter">&quot;</span></span>:
-    se = ctypes.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
+    se = ctypes.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">else</span>:
     print(<span class="string"><span class="delimiter">&quot;</span><span class="content">Unsupported platform: {}</span><span class="delimiter">&quot;</span></span>.format(platform))
     quit()
@@ -12465,30 +12666,31 @@ argv = (ct.POINTER(ct.c_char) * (argc + <span class="integer">1</span>))()
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">model_id</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">control</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">timestamp</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">p</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">timestamp</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">p</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">roadId</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">junctionId</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">t</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">t</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">laneId</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">laneOffset</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">speed</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetX</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetY</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetZ</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">width</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">length</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">height</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">laneOffset</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">speed</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetX</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetY</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetZ</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">width</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">length</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">height</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">objectType</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">objectCategory</span><span class="delimiter">&quot;</span></span>, ctypes.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheelAngle</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheelRot</span><span class="delimiter">&quot;</span></span>, ctypes.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheelAngle</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheelRot</span><span class="delimiter">&quot;</span></span>, ctypes.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">visibilityMask</span><span class="delimiter">&quot;</span></span>, ctypes.c_int)
     ]
 
 se.SE_Init(<span class="binary"><span class="modifier">b</span><span class="delimiter">&quot;</span><span class="content">../resources/xosc/cut-in.xosc</span><span class="delimiter">&quot;</span></span>, <span class="integer">0</span>, <span class="integer">1</span>, <span class="integer">0</span>, <span class="integer">0</span>)
@@ -12506,7 +12708,7 @@ obj_state = SEScenarioObjectState()  <span class="comment"># object that will be
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_use_of_esminirmlib_roadmanager">14.4.5. Example use of esminiRMLib (RoadManager)</h4>
+<h4 id="_example_use_of_esminirmlib_roadmanager">15.4.5. Example use of esminiRMLib (RoadManager)</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -12520,15 +12722,24 @@ obj_state = SEScenarioObjectState()  <span class="comment"># object that will be
 <div class="listingblock">
 <div class="title">Example 17. <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/code-examples/hello_world/use_roadmanager.py">EnvironmentSimulator/code-examples/hello_world/use_roadmanager.py</a></div>
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="python"><span class="keyword">import</span> <span class="include">ctypes</span> <span class="keyword">as</span> ct
+<pre class="CodeRay highlight"><code data-lang="python"><span class="docstring"><span class="delimiter">'''</span><span class="content">
+</span><span class="content">   demonstrate how to use esmini esminiRMLib (road manager lib) in a Python context</span><span class="content">
+</span><span class="content">
+</span><span class="content">   Instruction:</span><span class="content">
+</span><span class="content">     - make sure the esmini shared library (esminiLib.dll or esminiLib.so) is present in esmini/bin folder</span><span class="content">
+</span><span class="content">     - if not, either compile esmini (see User guide) or fetch bin package release</span><span class="content">
+</span><span class="content">     - from this folder (where this code module is), run: python ./use_roadmanager.py</span><span class="content">
+</span><span class="delimiter">'''</span></span>
+
+<span class="keyword">import</span> <span class="include">ctypes</span> <span class="keyword">as</span> ct
 <span class="keyword">import</span> <span class="include">sys</span>
 
 <span class="keyword">if</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux</span><span class="delimiter">&quot;</span></span> <span class="keyword">or</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux2</span><span class="delimiter">&quot;</span></span>:
-    rm = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiRMLib.so</span><span class="delimiter">&quot;</span></span>)
+    rm = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiRMLib.so</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">darwin</span><span class="delimiter">&quot;</span></span>:
-    rm = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiRMLib.dylib</span><span class="delimiter">&quot;</span></span>)
+    rm = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiRMLib.dylib</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">win32</span><span class="delimiter">&quot;</span></span>:
-    rm = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/esminiRMLib.dll</span><span class="delimiter">&quot;</span></span>)
+    rm = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/esminiRMLib.dll</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">else</span>:
     print(<span class="string"><span class="delimiter">&quot;</span><span class="content">Unsupported platform: {}</span><span class="delimiter">&quot;</span></span>.format(sys.platform))
     sys.exit(-<span class="integer">1</span>)
@@ -12536,27 +12747,27 @@ obj_state = SEScenarioObjectState()  <span class="comment"># object that will be
 <span class="comment"># Definition of RM_PositionData struct - should match esminiRMLib::RM_PositionData struct</span>
 <span class="keyword">class</span> <span class="class">RM_PositionData</span>(ct.Structure):
     _fields_ = [
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">p</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h_relative</span><span class="delimiter">&quot;</span></span>, ct.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">p</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h_relative</span><span class="delimiter">&quot;</span></span>, ct.c_double),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">road_id</span><span class="delimiter">&quot;</span></span>, ct.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">junction_id</span><span class="delimiter">&quot;</span></span>, ct.c_int),  <span class="comment"># -1 if not in a junction</span>
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">lane_id</span><span class="delimiter">&quot;</span></span>, ct.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">lane_offset</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, ct.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">lane_offset</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, ct.c_double),
     ]
 
 <span class="comment"># Specify argument types to a few functions</span>
-rm.RM_SetWorldPosition.argtypes = [ct.c_int, ct.c_float, ct.c_float, ct.c_float, ct.c_float, ct.c_float, ct.c_float]
-rm.RM_SetLanePosition.argtypes = [ct.c_int, ct.c_int, ct.c_int, ct.c_float, ct.c_float]
+rm.RM_SetWorldPosition.argtypes = [ct.c_int, ct.c_double, ct.c_double, ct.c_double, ct.c_double, ct.c_double, ct.c_double]
+rm.RM_SetLanePosition.argtypes = [ct.c_int, ct.c_int, ct.c_int, ct.c_double, ct.c_double]
 
 
 <span class="comment"># Initialize esmini RoadManger with given OpenDRIVE file</span>
-odr = <span class="string"><span class="delimiter">'</span><span class="content">../resources/xodr/straight_500m.xodr</span><span class="delimiter">'</span></span>
+odr = <span class="string"><span class="delimiter">'</span><span class="content">../../../resources/xodr/straight_500m.xodr</span><span class="delimiter">'</span></span>
 <span class="keyword">if</span> rm.RM_Init(odr.encode()) == -<span class="integer">1</span>:   <span class="comment"># encode() converts string to pure byte array</span>
     print(<span class="string"><span class="delimiter">&quot;</span><span class="content">Failed to load OpenDRIVE file </span><span class="delimiter">&quot;</span></span>, )
     sys.exit(-<span class="integer">1</span>)
@@ -12584,7 +12795,7 @@ print(<span class="string"><span class="delimiter">'</span><span class="content"
 </div>
 </div>
 <div class="sect3">
-<h4 id="_storyboard_element_state_callback">14.4.6. Storyboard element state callback</h4>
+<h4 id="_storyboard_element_state_callback">15.4.6. Storyboard element state callback</h4>
 <div class="paragraph">
 <p>The following code shows how to get notification of storyboard events using StoryBoardElementStateChangeCallback.</p>
 </div>
@@ -12632,7 +12843,7 @@ se.SE_RegisterStoryBoardElementStateChangeCallback(callback_func)</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_osi_groundtruth_2">14.4.7. OSI groundtruth</h4>
+<h4 id="_osi_groundtruth_2">15.4.7. OSI groundtruth</h4>
 <div class="paragraph">
 <p>OSI groundtruth can also be retrieved and processed via Python. The following code shows one way of doing it. This example also shows how the simulation can be encapsulated in a class.</p>
 </div>
@@ -12640,11 +12851,17 @@ se.SE_RegisterStoryBoardElementStateChangeCallback(callback_func)</code></pre>
 <div class="title">Example 19. <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/code-examples/hello_world/osi_groundtruth.py">EnvironmentSimulator/code-examples/hello_world/osi_groundtruth.py</a> (complete code)</div>
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="python"><span class="docstring"><span class="delimiter">'''</span><span class="content">
+</span><span class="content">   demonstrate how to fetch OSI data from esmini in Python context</span><span class="content">
+</span><span class="content">
 </span><span class="content">   Python dependencies:</span><span class="content">
 </span><span class="content">      pip install protobuf==3.20.2</span><span class="content">
 </span><span class="content">
-</span><span class="content">   Note: No need to install OSI as long as</span><span class="content">
-</span><span class="content">   esmini/scripts/osi3 folder is available</span><span class="content">
+</span><span class="content">   Note: No need to install OSI as long as esmini/scripts/osi3 folder is available</span><span class="content">
+</span><span class="content">
+</span><span class="content">   Instruction:</span><span class="content">
+</span><span class="content">     - make sure the esmini shared library (esminiLib.dll or esminiLib.so) is present in esmini/bin folder</span><span class="content">
+</span><span class="content">     - if not, either compile esmini (see User guide) or fetch bin package release</span><span class="content">
+</span><span class="content">     - from this folder (where this code module is), run: python ./osi_groundtruth.py</span><span class="content">
 </span><span class="delimiter">'''</span></span>
 
 <span class="keyword">import</span> <span class="include">os</span>
@@ -12659,11 +12876,11 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), <span cl
 
 <span class="comment"># Import esmini lib</span>
 <span class="keyword">if</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux</span><span class="delimiter">&quot;</span></span> <span class="keyword">or</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">linux2</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.so</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">darwin</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/libesminiLib.dylib</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">elif</span> sys.platform == <span class="string"><span class="delimiter">&quot;</span><span class="content">win32</span><span class="delimiter">&quot;</span></span>:
-    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
+    se = ct.CDLL(<span class="string"><span class="delimiter">&quot;</span><span class="content">../../../bin/esminiLib.dll</span><span class="delimiter">&quot;</span></span>)
 <span class="keyword">else</span>:
     print(<span class="string"><span class="delimiter">&quot;</span><span class="content">Unsupported platform: {}</span><span class="delimiter">&quot;</span></span>.format(platform))
     quit()
@@ -12672,7 +12889,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), <span cl
 <span class="comment"># Specify argument and return types of some esmini functions</span>
 se.SE_GetOSIGroundTruth.restype = ct.c_void_p
 se.SE_GetOSIGroundTruth.argtypes = [ct.c_void_p]
-se.SE_StepDT.argtypes = [ct.c_float]
+se.SE_StepDT.argtypes = [ct.c_double]
 
 <span class="keyword">class</span> <span class="class">Sim</span>:
     <span class="keyword">def</span> <span class="function">__init__</span>(<span class="predefined-constant">self</span>, scenario):
@@ -12723,7 +12940,7 @@ se.SE_StepDT.argtypes = [ct.c_float]
 </div>
 </div>
 <div class="sect3">
-<h4 id="_object_state_callback">14.4.8. Object state callback</h4>
+<h4 id="_object_state_callback">15.4.8. Object state callback</h4>
 <div class="paragraph">
 <p><mark>Advanced</mark></p>
 </div>
@@ -12739,30 +12956,30 @@ se.SE_StepDT.argtypes = [ct.c_float]
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">id</span><span class="delimiter">&quot;</span></span>, ct.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">model_id</span><span class="delimiter">&quot;</span></span>, ct.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">control</span><span class="delimiter">&quot;</span></span>, ct.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">timestamp</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">p</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>, ct.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">timestamp</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">x</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">y</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">z</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">h</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">p</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">r</span><span class="delimiter">&quot;</span></span>, ct.c_double),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">roadId</span><span class="delimiter">&quot;</span></span>, ct.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">junctionId</span><span class="delimiter">&quot;</span></span>, ct.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">t</span><span class="delimiter">&quot;</span></span>, ct.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">t</span><span class="delimiter">&quot;</span></span>, ct.c_double),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">laneId</span><span class="delimiter">&quot;</span></span>, ct.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">laneOffset</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">speed</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetX</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetY</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetZ</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">width</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">length</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">height</span><span class="delimiter">&quot;</span></span>, ct.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">laneOffset</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">s</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">speed</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetX</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetY</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">centerOffsetZ</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">width</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">length</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">height</span><span class="delimiter">&quot;</span></span>, ct.c_double),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">objectType</span><span class="delimiter">&quot;</span></span>, ct.c_int),
         (<span class="string"><span class="delimiter">&quot;</span><span class="content">objectCategory</span><span class="delimiter">&quot;</span></span>, ct.c_int),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheel_angle</span><span class="delimiter">&quot;</span></span>, ct.c_float),
-        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheel_rot</span><span class="delimiter">&quot;</span></span>, ct.c_float),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheel_angle</span><span class="delimiter">&quot;</span></span>, ct.c_double),
+        (<span class="string"><span class="delimiter">&quot;</span><span class="content">wheel_rot</span><span class="delimiter">&quot;</span></span>, ct.c_double),
     ]
 
 
@@ -12771,7 +12988,7 @@ se.SE_StepDT.argtypes = [ct.c_float]
 <span class="keyword">def</span> <span class="function">callback</span>(state_ptr, b):
     state = state_ptr.contents
     print(<span class="string"><span class="delimiter">&quot;</span><span class="content">callback for obj {}: x={:.2f} y={:.2f} h={:.2f}</span><span class="delimiter">&quot;</span></span>.format(state.id, state.x, state.y, state.h))
-    se.SE_ReportObjectPosXYH(ct.c_int(state.id), ct.c_float(state.timestamp), ct.c_float(state.x + <span class="float">0.02</span>), ct.c_float(state.y), ct.c_float(state.h + <span class="float">0.001</span>))
+    se.SE_ReportObjectPosXYH(ct.c_int(state.id), ct.c_double(state.x + <span class="float">0.02</span>), ct.c_double(state.y), ct.c_double(state.h + <span class="float">0.001</span>))
 
 callback_type = ct.CFUNCTYPE(<span class="predefined-constant">None</span>, ct.POINTER(SEScenarioObjectState), ct.c_void_p)
 callback_func = callback_type(callback)
@@ -12787,12 +13004,12 @@ se.SE_RegisterObjectCallback(<span class="integer">0</span>, callback_func, <spa
 </div>
 </div>
 <div class="sect2">
-<h3 id="_c_binding">14.5. C# binding</h3>
+<h3 id="_c_binding">15.5. C# binding</h3>
 <div class="paragraph">
 <p>A C# wrapper for the esminiLib is provided (<a href="https://github.com/esmini/esmini/blob/master/EnvironmentSimulator/Libraries/esminiLib/ESMiniWrapper.cs">ESMiniWrapper.cs</a>). Coverage is limited, but it might serve as a good starting point.</p>
 </div>
 <div class="sect3">
-<h4 id="_osi_groundtruth_with_c">14.5.1. OSI groundtruth with C#</h4>
+<h4 id="_osi_groundtruth_with_c">15.5.1. OSI groundtruth with C#</h4>
 <div class="listingblock">
 <div class="title">Example 21. <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/code-examples/osi-groundtruth-cs/osi-gt.cs">EnvironmentSimulator/code-examples/osi-groundtruth-cs/osi-gt.cs</a> (complete code)</div>
 <div class="content">
@@ -12866,8 +13083,8 @@ cmake --build . --config Release</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>cd ..\..\..\..\bin
-..\EnvironmentSimulator\code-examples\osi-groundtruth-cs\build\Release\osi-groundtruth.exe</code></pre>
+<pre class="CodeRay highlight"><code>cd ../../../../bin
+../EnvironmentSimulator/code-examples/osi-groundtruth-cs/build/Release/osi-groundtruth</code></pre>
 </div>
 </div>
 </div>
@@ -12914,7 +13131,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_scenario_construction_tips">15. Scenario construction tips</h2>
+<h2 id="_scenario_construction_tips">16. Scenario construction tips</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>We often get questions regarding construction of scenarios. We also have seen many scenarios that could be improved in various ways.</p>
@@ -12932,7 +13149,7 @@ will create C# versions of all proto files</p>
 <p>In this section we present a few learnings and ideas on how scenarios can be designed in a way unlocking the full potential of the standards in terms of quality, flexibility, efficiency, and control.</p>
 </div>
 <div class="sect2">
-<h3 id="_opendrive">15.1. OpenDRIVE</h3>
+<h3 id="_opendrive">16.1. OpenDRIVE</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -12955,7 +13172,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_openscenario_xml">15.2. OpenSCENARIO XML</h3>
+<h3 id="_openscenario_xml">16.2. OpenSCENARIO XML</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -12976,7 +13193,7 @@ will create C# versions of all proto files</p>
 <p>We also get questions what are the most important actions and conditions. It&#8217;s hard to rank, but here follows a few ones we found useful.</p>
 </div>
 <div class="sect3">
-<h4 id="_actions">15.2.1. Actions</h4>
+<h4 id="_actions">16.2.1. Actions</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -13007,7 +13224,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_conditions">15.2.2. Conditions</h4>
+<h4 id="_conditions">16.2.2. Conditions</h4>
 <div class="paragraph">
 <p>Make use of the AND/OR logics based on combination of conditions and condition groups as described <a href="https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/07_components_scenario/07_06_conditions_triggers.html#_triggers_and_condition_groups">here</a>.</p>
 </div>
@@ -13045,7 +13262,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_scenario_creation_tips_examples">15.3. Examples</h3>
+<h3 id="_scenario_creation_tips_examples">16.3. Examples</h3>
 <div class="paragraph">
 <p>Here follows a few scenario examples highlighting various useful features.</p>
 </div>
@@ -13053,7 +13270,7 @@ will create C# versions of all proto files</p>
 <p>To run the examples, grab and unzip the latest esmini <strong>demo</strong> (not bin) package, from <a href="https://github.com/esmini/esmini/releases/latest">here</a>. The run instructions assume you’re located in esmini root folder.</p>
 </div>
 <div class="sect3">
-<h4 id="_example_1_scenario_nurb_straight_road">15.3.1. Example 1: scenario_nurb_straight_road</h4>
+<h4 id="_example_1_scenario_nurb_straight_road">16.3.1. Example 1: scenario_nurb_straight_road</h4>
 <div class="paragraph">
 <p>Scenariofile: <a href="https://github.com/esmini/esmini/blob/dev/resources/scenario_construct_examples/scenario_nurb_straight_road.xosc">scenario_nurb_straight_road.xosc</a></p>
 </div>
@@ -13088,7 +13305,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_2_scenario_nurb_curved_road">15.3.2. Example 2: scenario_nurb_curved_road</h4>
+<h4 id="_example_2_scenario_nurb_curved_road">16.3.2. Example 2: scenario_nurb_curved_road</h4>
 <div class="paragraph">
 <p>Scenariofile: <a href="https://github.com/esmini/esmini/blob/dev/resources/scenario_construct_examples/scenario_nurb_curved_road.xosc">scenario_nurb_curved_road.xosc</a></p>
 </div>
@@ -13108,7 +13325,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_3_scenario_runner_with_acts">15.3.3. Example 3: scenario_runner_with_acts</h4>
+<h4 id="_example_3_scenario_runner_with_acts">16.3.3. Example 3: scenario_runner_with_acts</h4>
 <div class="paragraph">
 <p>Scenariofile: <a href="https://github.com/esmini/esmini/blob/dev/resources/scenario_construct_examples/scenario_runner_with_acts.xosc">scenario_runner_with_acts.xosc</a></p>
 </div>
@@ -13131,7 +13348,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_4_ltap_od">15.3.4. Example 4: ltap-od</h4>
+<h4 id="_example_4_ltap_od">16.3.4. Example 4: ltap-od</h4>
 <div class="paragraph">
 <p>Scenariofile: <a href="https://github.com/esmini/esmini/blob/dev/resources/xosc/ltap-od.xosc">ltap-od.xosc</a></p>
 </div>
@@ -13163,7 +13380,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_example_5_cut_in">15.3.5. Example 5: cut-in</h4>
+<h4 id="_example_5_cut_in">16.3.5. Example 5: cut-in</h4>
 <div class="paragraph">
 <p>Scenariofile: <a href="https://github.com/esmini/esmini/blob/dev/resources/xosc/cut-in.xosc">cut-in.xosc</a></p>
 </div>
@@ -13198,7 +13415,7 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_run_asam_openscenario_examples">16. Run ASAM OpenSCENARIO examples</h2>
+<h2 id="_run_asam_openscenario_examples">17. Run ASAM OpenSCENARIO examples</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>With some limitations (see details <a href="https://github.com/esmini/esmini/blob/master/osc_coverage.txt">here</a>) esmini can play the example scenarios provided with the ASAM OpenSCENARIO v1.1 release bundle.</p>
@@ -13225,13 +13442,13 @@ will create C# versions of all proto files</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_about_this_document">17. About this document</h2>
+<h2 id="_about_this_document">18. About this document</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <a href="https://github.com/esmini/esmini/blob/master/docs/user_guide.adoc">source</a> of this document is written in the <a href="https://asciidoc-py.github.io/index.html">asciidoc</a> format.</p>
 </div>
 <div class="sect2">
-<h3 id="_how_to_generate_html_from_asciidoc">17.1. How to generate HTML from AsciiDoc</h3>
+<h3 id="_how_to_generate_html_from_asciidoc">18.1. How to generate HTML from AsciiDoc</h3>
 <div class="paragraph">
 <p>The html is generated with <a href="https://asciidoctor.org/">asciidoctor</a>. Code snippets, images and other resources are included in the process. Also the version numbers are automatically inserted to avoid "human errors".</p>
 </div>
@@ -13278,7 +13495,8 @@ will create C# versions of all proto files</p>
 <li>
 <p>Then run:<br>
 <code>gem install asciidoctor</code><br>
-<code>gem install coderay</code><br></p>
+<code>gem install coderay</code><br>
+<code>gem install asciidoctor-kroki</code></p>
 <div class="paragraph">
 <p>Troubleshooting: If you get an error like<br>
 <code>Unable to download data from <a href="https://rubygems.org/" class="bare">https://rubygems.org/</a> - SSL_connect &#8230;&#8203;</code><br>
@@ -13293,11 +13511,11 @@ try update RubyGems as follows:<br>
 </table>
 </div>
 <div class="paragraph">
-<p>Generate html: <code>asciidoctor user_guide.adoc -o index.html</code></p>
+<p>Generate html: <code>asciidoctor -r asciidoctor-kroki user_guide.adoc -o index.html</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_how_to_view_previous_versions">17.2. How to view previous versions</h3>
+<h3 id="_how_to_view_previous_versions">18.2. How to view previous versions</h3>
 <div class="paragraph">
 <p>Full commit history is found <a href="https://github.com/esmini/esmini.github.io/commits/main">here</a></p>
 </div>
@@ -13317,18 +13535,18 @@ try update RubyGems as follows:<br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_version">18. Version</h2>
+<h2 id="_version">19. Version</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ESMINI_GIT_TAG="v2.60.0"<br>
-ESMINI_GIT_REV="v2.60.0-0-77b4bbc0"</p>
+<p>ESMINI_GIT_TAG="v3.0.0"<br>
+ESMINI_GIT_REV="v3.0.0-0-8bd9297b"</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-02-19 08:07:20 +0100
+Last updated 2026-03-23 14:33:24 +0100
 </div>
 </div>
 </body>
