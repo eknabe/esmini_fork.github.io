@@ -4456,7 +4456,7 @@ python tools/randomTrips.py ...</code></pre>
 <div class="sect2">
 <h3 id="_position_modes">6.1. Position modes</h3>
 <div class="paragraph">
-<p>The purpose of position modes is to allow flexible and detailed control whether to interpret Z (elevation), heading, pitch and roll as absolute values or relative to the road. X and Y will always be interpreted as absolute values.</p>
+<p>The purpose of position modes is to allow flexible and detailed control whether to interpret Z (elevation), heading, pitch and roll as absolute values or relative to the road. X and Y will always be interpreted as absolute values. There is also a position mode for snapping position reference to closest lane (default) or along any assigned route.</p>
 </div>
 <div class="paragraph">
 <p>For some use cases orientation should be aligned to road surface, e.g. a vehicle simply driving along a hilly road. In some cases pitch and roll should be zero, e.g. signs and buildings along the road. External vehicle models can choose whether to report relative or absolute values. It can also be combination, e.g. explicit/absolute heading while z, roll and pitch are realative (to the road) - or any other combination.</p>
@@ -4521,7 +4521,7 @@ python tools/randomTrips.py ...</code></pre>
 <strong>SET</strong>
 </td>
 <td class="hdlist2">
-<p>PosMode::Z_REL | PosMode::H_ABS | PosMode::P_REL | PosMode::R_REL</p>
+<p>PosMode::Z_REL | PosMode::H_ABS | PosMode::P_REL | PosMode::R_REL | PosMode::SNAP_TO_ROUTE_OFF</p>
 </td>
 </tr>
 <tr>
@@ -4529,7 +4529,7 @@ python tools/randomTrips.py ...</code></pre>
 <strong>UPDATE</strong>
 </td>
 <td class="hdlist2">
-<p>PosMode::Z_REL | PosMode::H_REL | PosMode::P_REL | PosMode::R_REL</p>
+<p>PosMode::Z_REL | PosMode::H_REL | PosMode::P_REL | PosMode::R_REL | PosMode::SNAP_TO_ROUTE_OFF</p>
 </td>
 </tr>
 </table>
@@ -4576,30 +4576,30 @@ python tools/randomTrips.py ...</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SKIP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XXX0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XXXX XXX0</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Z_DEF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XX01</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XXXX XX01</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is one, second is zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0001</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00001</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Z_ABS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX X011</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XXXX X011</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first and second bit is one, third zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0003</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00003</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">3</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Z_REL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX X111</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XXXX X111</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first, second and third bits are all one</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0007</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00007</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">7</p></td>
 </tr>
 </tbody>
@@ -4624,30 +4624,30 @@ python tools/randomTrips.py ...</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SKIP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXX0 XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XXX0 XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is zero</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0x0000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H_DEF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XX01 XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX XX01 XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is one, second is zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0010</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00010</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">16</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H_ABS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX X011 XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX X011 XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first and second bit is one, third zero</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0x0030</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">48</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">H_REL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX X111 XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXXX X111 XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first, second and third bits are all one</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0070</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00070</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">112</p></td>
 </tr>
 </tbody>
@@ -4672,30 +4672,30 @@ python tools/randomTrips.py ...</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SKIP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXX0 XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XXX0 XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P_DEF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XX01 XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX XX01 XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is one, second is zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00100</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">256</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P_ABS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX X011 XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX X011 XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first and second bit is one, third zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0300</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00300</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">768</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">P_REL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX X111 XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXXX X111 XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first, second and third bits are all one</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0700</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00700</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">1,792</p></td>
 </tr>
 </tbody>
@@ -4720,31 +4720,79 @@ python tools/randomTrips.py ...</code></pre>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SKIP</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XXX0 XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XXX0 XXXX XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x0000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R_DEF</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">XX01 XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XX01 XXXX XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first bit is one, second is zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x1000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x01000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">4,096</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R_ABS</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X011 XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX X011 XXXX XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first and second bit is one, third zero</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x3000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x03000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">12,288</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">R_REL</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X111 XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX X111 XXXX XXXX XXXX</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">first, second and third bits are all one</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">0x7000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x07000</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">28,672</p></td>
+</tr>
+</tbody>
+</table>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 12.5%;">
+<col style="width: 25%;">
+<col style="width: 37.5%;">
+<col style="width: 12.5%;">
+<col style="width: 12.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">SNAP_TO_ROUTE</th>
+<th class="tableblock halign-left valign-top">Comment</th>
+<th class="tableblock halign-left valign-top">Hex</th>
+<th class="tableblock halign-left valign-top">Int</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SKIP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXX0 XXXX XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first bit is zero</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x00000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNAP_TO_ROUTE_DEF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX XX01 XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first bit is one, second is zero</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x10000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">65,536</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNAP_TO_ROUTE_OFF</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX X011 XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first and second bit is one, third zero</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x30000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">196,608</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SNAP_TO_ROUTE_ON</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">XXXX X111 XXXX XXXX XXXX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">first, second and third bits are all one</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">0x70000</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">458,752</p></td>
 </tr>
 </tbody>
 </table>
@@ -4799,6 +4847,17 @@ Default controller will now move the pedestrian along the road but rotated 90 de
 <code>pos.SetZRelative(1.0);</code><br>
 <code>pos.SetMode(Position::PosModeType::UPDATE, PosMode::Z_REL | PosMode::H_REL);</code><br>
 Default controller will now move the pedestrian along the road 1 meter above ground, with maintained heading relative to the road.</p>
+</li>
+<li>
+<p>Set X,Y position, snap lane association to closest point on any assigned route instead of the closest lane, which is the default:<br>
+<code>pos.SetInertiaPosMode(x, y, 0, h, 0, 0, PosMode::Z_REL | PosMode::H_ABS | PosMode::P_REL | PosMode::R_REL | PosMode::SNAP_TO_ROUTE_ON);</code><br></p>
+</li>
+<li>
+<p>Set persistent snap to route, affecting any succeeding XY position setting:<br>
+<code>pos.SetMode(Position::PosModeType::SET, PosMode::SNAP_TO_ROUTE);</code><br>
+<code>pos.SetInertiaPos(x, y, h);</code><br>
+Entity road and lane position will be associated with closest point on any assigned route instead of any closest lane.<br>
+Note: Use SET type for route snap setting<br></p>
 </li>
 </ol>
 </div>
@@ -13574,15 +13633,15 @@ try update RubyGems as follows:<br>
 <h2 id="_version">19. Version</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ESMINI_GIT_TAG="v3.0.1"<br>
-ESMINI_GIT_REV="v3.0.1-0-edd82328"</p>
+<p>ESMINI_GIT_TAG="v3.0.2"<br>
+ESMINI_GIT_REV="v3.0.2-0-e504e8ae"</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-03-27 16:35:47 +0100
+Last updated 2026-04-16 18:19:02 +0200
 </div>
 </div>
 </body>
