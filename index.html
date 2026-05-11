@@ -523,173 +523,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .head .head{color:#f4f}
 </style>
 </head>
-<body class="article toc2 toc-left">
+<body class="article">
 <div id="header">
 <h1>esmini user guide</h1>
-<div id="toc" class="toc2">
-<div id="toctitle">Table of Contents</div>
-<ul class="sectlevel1">
-<li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_getting_started">2. Getting started</a>
-<ul class="sectlevel2">
-<li><a href="#_run_esmini">2.1. Run esmini</a></li>
-<li><a href="#_get_complete_esmini">2.2. Get complete esmini</a></li>
-<li><a href="#_build_esmini_quick_guide">2.3. Build esmini - quick guide</a></li>
-</ul>
-</li>
-<li><a href="#_tools_overview">3. Tools overview</a>
-<ul class="sectlevel2">
-<li><a href="#_applications">3.1. Applications</a></li>
-<li><a href="#_scripts">3.2. Scripts</a></li>
-<li><a href="#_shared_libraries">3.3. Shared libraries</a></li>
-</ul>
-</li>
-<li><a href="#_use_cases">4. Use cases</a>
-<ul class="sectlevel2">
-<li><a href="#_view_a_scenario">4.1. View a scenario</a></li>
-<li><a href="#_screenshots_and_video_clips">4.2. Screenshots and video clips</a></li>
-<li><a href="#_logging">4.3. Logging</a></li>
-<li><a href="#_replay_scenario">4.4. Replay scenario</a></li>
-<li><a href="#_view_road_network">4.5. View road network</a></li>
-<li><a href="#_plot_scenario_data">4.6. Plot scenario data</a></li>
-<li><a href="#_save_osi_data">4.7. Save OSI data</a></li>
-<li><a href="#_esmini_in_unity">4.8. esmini in Unity</a></li>
-</ul>
-</li>
-<li><a href="#_scenario_features">5. Scenario features</a>
-<ul class="sectlevel2">
-<li><a href="#_speed_profile">5.1. Speed profile</a></li>
-<li><a href="#_condition_delay">5.2. Condition delay</a></li>
-<li><a href="#_road_signs">5.3. Road signs</a></li>
-<li><a href="#_traffic_lights">5.4. Traffic Lights</a></li>
-<li><a href="#_expressions">5.5. Expressions</a></li>
-<li><a href="#_parameter_distributions">5.6. Parameter distributions</a></li>
-<li><a href="#_trajectories">5.7. Trajectories</a></li>
-<li><a href="#_friction">5.8. Friction</a></li>
-<li><a href="#_environment_conditions">5.9. Environment conditions</a></li>
-<li><a href="#_tunnels">5.10. Tunnels</a></li>
-<li><a href="#_2d_shape_outline">5.11. 2D shape outline</a></li>
-<li><a href="#_boundingbox_colors">5.12. Boundingbox Colors</a></li>
-<li><a href="#_sumo_integration">5.13. SUMO integration</a></li>
-</ul>
-</li>
-<li><a href="#_positioning">6. Positioning</a>
-<ul class="sectlevel2">
-<li><a href="#_position_modes">6.1. Position modes</a></li>
-<li><a href="#_mode_specification">6.2. Mode specification</a></li>
-<li><a href="#_trajectory_interpolation_and_alignment">6.3. Trajectory interpolation and alignment</a></li>
-<li><a href="#_example_2">6.4. Example</a></li>
-<li><a href="#_relative_positions_and_routes">6.5. Relative positions and routes</a></li>
-<li><a href="#_reference_line_and_center_lane">6.6. Reference line and center lane</a></li>
-<li><a href="#_lateral_distance_action_logics">6.7. Lateral distance action logics</a></li>
-<li><a href="#_shift_reference_point">6.8. Shift reference point</a></li>
-</ul>
-</li>
-<li><a href="#_controllers">7. Controllers</a>
-<ul class="sectlevel2">
-<li><a href="#_controller_concept">7.1. Controller concept</a></li>
-<li><a href="#_background_and_motivation">7.2. Background and motivation</a></li>
-<li><a href="#_brief_on_implementation">7.3. Brief on implementation</a></li>
-<li><a href="#_how_it_works_for_the_user">7.4. How it works for the user</a></li>
-<li><a href="#_the_ghost_concept">7.5. The ghost concept</a></li>
-<li><a href="#_esmini_embedded_controllers">7.6. esmini embedded controllers</a></li>
-<li><a href="#_how_to_add_a_new_controller">7.7. How to add a new controller</a></li>
-</ul>
-</li>
-<li><a href="#_openscenegraph_and_3d_models">8. OpenSceneGraph and 3D models</a>
-<ul class="sectlevel2">
-<li><a href="#_get_osgconv">8.1. Get osgconv</a></li>
-<li><a href="#_convert_osgb_models_for_use_in_unity">8.2. Convert osgb models for use in Unity</a></li>
-<li><a href="#_import_into_unity">8.3. Import into Unity</a></li>
-<li><a href="#_colors_textures_and_wheel_rotations">8.4. Colors, textures and wheel rotations</a></li>
-<li><a href="#_lighting">8.5. Lighting</a></li>
-<li><a href="#_convert_osgb_models_for_use_in_blender">8.6. Convert osgb models for use in Blender</a></li>
-<li><a href="#_import_into_blender">8.7. Import into Blender</a></li>
-<li><a href="#_material_settings_in_blender">8.8. Material settings in Blender</a></li>
-<li><a href="#_export_blender_obj">8.9. Export Blender obj</a></li>
-<li><a href="#_convert_back_to_osgb">8.10. Convert back to osgb</a></li>
-<li><a href="#_using_openx_assets_library">8.11. Using OpenX assets library</a></li>
-<li><a href="#_export_generated_3d_model">8.12. Export generated 3D model</a></li>
-</ul>
-</li>
-<li><a href="#_support_qa">9. Support / Q&amp;A</a>
-<ul class="sectlevel2">
-<li><a href="#_file_search_paths">9.1. File search paths</a></li>
-<li><a href="#_various_issues">9.2. Various issues</a></li>
-<li><a href="#_further_issues_at_esmini_github_page">9.3. Further issues at esmini GitHub page</a></li>
-</ul>
-</li>
-<li><a href="#_command_reference">10. Command reference</a>
-<ul class="sectlevel2">
-<li><a href="#_about_options_and_config_files">10.1. About options and config files</a></li>
-<li><a href="#_esmini">10.2. esmini</a></li>
-<li><a href="#_replayer">10.3. replayer</a></li>
-<li><a href="#_odrviewer">10.4. odrviewer</a></li>
-<li><a href="#_plot_dat_py">10.5. plot_dat.py</a></li>
-</ul>
-</li>
-<li><a href="#_build_guide">11. Build guide</a>
-<ul class="sectlevel2">
-<li><a href="#_external_dependencies">11.1. External dependencies</a></li>
-<li><a href="#_additional_platform_dependencies">11.2. Additional platform dependencies</a></li>
-<li><a href="#_debug_with_linux_and_vscode">11.3. Debug with Linux and VSCode</a></li>
-<li><a href="#_dynamic_protobuf_linking">11.4. Dynamic protobuf linking</a></li>
-<li><a href="#_slim_esmini_customize_configration">11.5. Slim esmini - customize configration</a></li>
-<li><a href="#_msys2_mingw_w64_support">11.6. MSYS2 / MinGW-w64 support</a></li>
-<li><a href="#_build_esmini_project">11.7. Build esmini project</a></li>
-<li><a href="#_centos_7_linux">11.8. CentOS 7 (Linux)</a></li>
-</ul>
-</li>
-<li><a href="#_for_esmini_developers_and_contributors">12. For esmini developers and contributors</a>
-<ul class="sectlevel2">
-<li><a href="#_branch_strategy">12.1. Branch strategy</a></li>
-<li><a href="#_formatting_and_code_analysis">12.2. Formatting and code analysis</a></li>
-<li><a href="#_test">12.3. Test</a></li>
-<li><a href="#_sanitizers">12.4. Sanitizers</a></li>
-<li><a href="#_implementation_guidelines">12.5. Implementation guidelines</a></li>
-</ul>
-</li>
-<li><a href="#_inner_workings">13. Inner workings</a>
-<ul class="sectlevel2">
-<li><a href="#_main_modules">13.1. Main modules</a></li>
-<li><a href="#_how_the_modules_interact">13.2. How the modules interact</a></li>
-<li><a href="#_on_execution_flow">13.3. On execution flow</a></li>
-</ul>
-</li>
-<li><a href="#_esmini_lib_programming">14. esmini lib programming</a>
-<ul class="sectlevel2">
-<li><a href="#_about_the_lib_itself">14.1. About the lib itself</a></li>
-<li><a href="#_how_to_interact_with_esmini_lib_api">14.2. How to interact with esmini lib API</a></li>
-<li><a href="#_functionality">14.3. Functionality</a></li>
-<li><a href="#_simplest_example">14.4. Simplest example</a></li>
-</ul>
-</li>
-<li><a href="#_hello_world_programming_tutorial">15. Hello World programming tutorial</a>
-<ul class="sectlevel2">
-<li><a href="#preparations">15.1. Preparations</a></li>
-<li><a href="#_how_to_build_run_and_debug_hello_world">15.2. How to build, run and debug "Hello World"</a></li>
-<li><a href="#_examples_2">15.3. Examples</a></li>
-<li><a href="#_python_binding">15.4. Python binding</a></li>
-<li><a href="#_c_binding">15.5. C# binding</a></li>
-</ul>
-</li>
-<li><a href="#_scenario_construction_tips">16. Scenario construction tips</a>
-<ul class="sectlevel2">
-<li><a href="#_opendrive">16.1. OpenDRIVE</a></li>
-<li><a href="#_openscenario_xml">16.2. OpenSCENARIO XML</a></li>
-<li><a href="#_scenario_creation_tips_examples">16.3. Examples</a></li>
-</ul>
-</li>
-<li><a href="#_run_asam_openscenario_examples">17. Run ASAM OpenSCENARIO examples</a></li>
-<li><a href="#_about_this_document">18. About this document</a>
-<ul class="sectlevel2">
-<li><a href="#_how_to_generate_html_from_asciidoc">18.1. How to generate HTML from AsciiDoc</a></li>
-<li><a href="#_how_to_view_previous_versions">18.2. How to view previous versions</a></li>
-</ul>
-</li>
-<li><a href="#_version">19. Version</a></li>
-</ul>
-</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -4044,7 +3880,80 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 </div>
 </div>
 <div class="sect2">
-<h3 id="_tunnels">5.10. Tunnels</h3>
+<h3 id="_vehicle_light_states">5.10. Vehicle light states</h3>
+<div class="paragraph">
+<p>From v3.1.0, esmini supports <a href="https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/generated/content/LightStateAction.html">LightStateAction</a> for controlling vehicle lighting. While all standard <a href="https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/generated/content/VehicleLightType.html">VehicleLightType</a> entries are supported, <a href="https://publications.pages.asam.net/standards/ASAM_OpenSCENARIO/ASAM_OpenSCENARIO_XML/latest/generated/content/UserDefinedLight.html">UserDefinedLight</a> is currently excluded.</p>
+</div>
+<div class="listingblock">
+<div class="title">Example: Activating brake lights</div>
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;AppearanceAction&gt;</span>
+    <span class="tag">&lt;LightStateAction</span> <span class="attribute-name">transitionTime</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">0</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+        <span class="tag">&lt;LightType&gt;</span>
+            <span class="tag">&lt;VehicleLight</span> <span class="attribute-name">vehicleLightType</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">brakeLights</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+        <span class="tag">&lt;/LightType&gt;</span>
+        <span class="tag">&lt;LightState</span> <span class="attribute-name">mode</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">on</span><span class="delimiter">&quot;</span></span> <span class="attribute-name">luminousIntensity</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">6000</span><span class="delimiter">&quot;</span></span> <span class="tag">/&gt;</span>
+    <span class="tag">&lt;/LightStateAction&gt;</span>
+<span class="tag">&lt;/AppearanceAction&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For scenario preview purposes esmini offers a simplified visualization of the light states. The light colors are deduced from the 3D model or falls back to internal defaults. For custom colors, esmini generates a dark base shade and a bright shade for full intensity; note that the visualized color may look different than anticipated due to this shade generation.</p>
+</div>
+<div class="paragraph">
+<p>Most vehicle 3D models have been updated with simple polygon faces representing each possible light source. Note that only the light faces themselves are illuminated, no light are casted on the surrounding environment.</p>
+</div>
+<div class="paragraph">
+<p>The image below is a screenshot from example scenario <a href="https://github.com/esmini/esmini/blob/dev/resources/xosc/light_state.xosc" class="bare">https://github.com/esmini/esmini/blob/dev/resources/xosc/light_state.xosc</a></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/esmini/esmini.github.io/raw/main/images/light_state.jpg" alt="light state">
+</div>
+</div>
+<div class="paragraph">
+<p>Video clip: <a href="https://youtu.be/MElGBJ5X7go" class="bare">https://youtu.be/MElGBJ5X7go</a></p>
+</div>
+<div class="paragraph">
+<p>By default no light faces are shown, only if the vehicle is involved in a LightStateAction. This is to avoid irrelevant visual clutter. Default behavior can be overriden with <code>light_mode</code> option, see <a href="#_esmini">esmini command reference</a>.</p>
+</div>
+<div class="paragraph">
+<p>Links to Blender resources for the vehicle 3D models are found in <a href="#_esmini_3d_assets">esmini 3D assets</a></p>
+</div>
+<div class="sect3">
+<h4 id="_osi_mapping">5.10.1. OSI Mapping</h4>
+<div class="paragraph">
+<p>esmini maps LightStateAction → OSI <a href="https://opensimulationinterface.github.io/osi-antora-generator/asamosi/V3.5.0/gen/structosi3_1_1MovingObject_1_1VehicleClassification_1_1LightState.html">LightState</a>, with some special assumptions made on the following combinations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>lowBeam, daytimeRunningLights → head_light</p>
+</li>
+<li>
+<p>brakeLights intensity &gt; 6000 → brake_light_state::BRAKE_LIGHT_STATE_STRONG</p>
+</li>
+<li>
+<p>specialPurposeLights flashing, Role: Ambulance/Police → emergency_vehicle_illumination::FLASHING_BLUE</p>
+</li>
+<li>
+<p>specialPurposeLights flashing, Role: Fire → emergency_vehicle_illumination::FLASHING_BLUE_AND_RED</p>
+</li>
+<li>
+<p>specialPurposeLights flashing, Other roles → service_vehicle_illumination::FLASHING_AMBER</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_visualization">5.10.2. Visualization</h4>
+<div class="paragraph">
+<p>esmini supports limited previeweing of light state actions. Most vehicle models</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tunnels">5.11. Tunnels</h3>
 <div class="paragraph">
 <p>From v2.49.0, esmini supports OpenDRIVE tunnels.</p>
 </div>
@@ -4063,7 +3972,7 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 <p>This will define a tunnel named "MyTunnel" starting at 30m along the road, with a length of 250m.</p>
 </div>
 <div class="sect3">
-<h4 id="_tunnel_3d_model_and_transparency">5.10.1. Tunnel 3D model and transparency</h4>
+<h4 id="_tunnel_3d_model_and_transparency">5.11.1. Tunnel 3D model and transparency</h4>
 <div class="paragraph">
 <p>By default, esmini will generate a simple 3D model of the tunnel. The width will cover all road lanes except any out lanes of type <code>none</code>. The height will be fixed to 4.5m. Walls and roof constructions 2m thick.</p>
 </div>
@@ -4109,7 +4018,7 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 </div>
 </div>
 <div class="sect3">
-<h4 id="_tunnel_example_scenario">5.10.2. Tunnel example scenario</h4>
+<h4 id="_tunnel_example_scenario">5.11.2. Tunnel example scenario</h4>
 <div class="paragraph">
 <p>Here&#8217;s a demo scenario including a few tunnels:<br>
 <a href="https://github.com/esmini/esmini/blob/dev/resources/xosc/tunnels.xosc" class="bare">https://github.com/esmini/esmini/blob/dev/resources/xosc/tunnels.xosc</a></p>
@@ -4129,7 +4038,7 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2d_shape_outline">5.11. 2D shape outline</h3>
+<h3 id="_2d_shape_outline">5.12. 2D shape outline</h3>
 <div class="paragraph">
 <p>In addition to bounding box, OSI supports defining a more precise 2D shape outline (<a href="https://opensimulationinterface.github.io/osi-antora-generator/asamosi/latest/gen/structosi3_1_1BaseMoving.html#a584e39108fe12db4933390975a172c63">base_polygon</a>) for entities, by specifying a set 2D (x,y) points in the entity&#8217;s local coordinate system.</p>
 </div>
@@ -4174,7 +4083,7 @@ And Assessment Criteria Calculation</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_boundingbox_colors">5.12. Boundingbox Colors</h3>
+<h3 id="_boundingbox_colors">5.13. Boundingbox Colors</h3>
 <div class="paragraph">
 <p>On any EntityObject (Vehicle, Pedestrian, MiscObject) in OpenSCENARIO XML, esmini will, in addition to visualizing 3D models and boundingbox wireframe, generate a filled boundingbox with specified boundingbox dimensions and optional color.</p>
 </div>
@@ -4207,7 +4116,7 @@ And Assessment Criteria Calculation</a></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_sumo_integration">5.13. SUMO integration</h3>
+<h3 id="_sumo_integration">5.14. SUMO integration</h3>
 <div class="paragraph">
 <p><a href="https://eclipse.dev/sumo/">SUMO</a> is a great open source traffic simulation tool. It has been integrated with esmini, making it possible to run SUMO simulations in esmini, and even mix or co-simulate SUMO vehicles with OpenSCENARIO vehicles.</p>
 </div>
@@ -4218,7 +4127,7 @@ And Assessment Criteria Calculation</a></p>
 <p>This chapter explains how to create a SUMO simulation and then how to use it in esmini. For just using SUMO simulations there is no need to install SUMO, it is already embedded with esmini (as long as it has not been explicitly excluded, see <a href="#_slim_esmini_customize_configration">Slim esmini - customize configration</a>). Only to create SUMO content it has to be installed.</p>
 </div>
 <div class="sect3">
-<h4 id="_install_sumo">5.13.1. Install SUMO</h4>
+<h4 id="_install_sumo">5.14.1. Install SUMO</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4231,7 +4140,7 @@ And Assessment Criteria Calculation</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_try_example_from_esmini">5.13.2. Try example from esmini</h4>
+<h4 id="_try_example_from_esmini">5.14.2. Try example from esmini</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4253,7 +4162,7 @@ And Assessment Criteria Calculation</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_running_the_same_scenario_in_esmini">5.13.3. Running the same scenario in esmini</h4>
+<h4 id="_running_the_same_scenario_in_esmini">5.14.3. Running the same scenario in esmini</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4266,7 +4175,7 @@ And Assessment Criteria Calculation</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_create_a_sumo_simulation">5.13.4. Create a SUMO simulation</h4>
+<h4 id="_create_a_sumo_simulation">5.14.4. Create a SUMO simulation</h4>
 <div class="paragraph">
 <p>First, there is a great complete guide at <a href="https://sumo.dlr.de/docs/" class="bare">https://sumo.dlr.de/docs/</a></p>
 </div>
@@ -4355,7 +4264,7 @@ python tools/randomTrips.py ...</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_connect_a_sumo_simulation_to_a_scenario_in_esmini">5.13.5. Connect a SUMO simulation to a scenario in esmini</h4>
+<h4 id="_connect_a_sumo_simulation_to_a_scenario_in_esmini">5.14.5. Connect a SUMO simulation to a scenario in esmini</h4>
 <div class="paragraph">
 <p>Currently, as of esmini v2.37.1, SUMO is integrated in terms of a controller. To add a SUMO simulation, define an entity as usual, assign the SumoController and set its "filepath" property to the sumocfg file.</p>
 </div>
@@ -5092,7 +5001,7 @@ followingMode = position will make smoothly transitions at vertex corners.</p>
 <p><strong>Note</strong>: In esmini versions prior to 2.43 the reference line was incorrectly affected by lane offset as well. The <code>t</code>-values in the table then became -5.25 for the white car and -1.75 for the red car.</p>
 </div>
 <div class="sect3">
-<h4 id="_visualization">6.6.1. Visualization</h4>
+<h4 id="_visualization_2">6.6.1. Visualization</h4>
 <div class="paragraph">
 <p>esmini can indicate various road features; toggle key 'o' or launch option <code>--road_features</code>.
 The center lane is indicated by thick red line and reference line is indicated by semi-thick yellow line.</p>
@@ -7333,6 +7242,77 @@ road_signal
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_esmini_3d_assets">8.13. esmini 3D assets</h3>
+<div class="paragraph">
+<p>Package includes a few vehicles, library assets and scripts, created in Blender:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://drive.google.com/file/d/1z2e2-LABQ00beAtrS4VY0A5CiGZix__Q/view?usp=drive_link">esmini_blender_assets.7z</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The scripts are collected in <code>esmini_tools.py</code> which can be installed as a legacy add-on, see <a href="https://docs.blender.org/manual/en/latest/editors/preferences/addons.html#add-ons">Blender - Add-ons</a>. It will appear in side panel object properties.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://github.com/esmini/esmini.github.io/raw/main/images/esmini_blender_menu.png" alt="esmini blender menu">
+</div>
+<div class="title">esmini blender add-on</div>
+</div>
+<div class="paragraph">
+<p>It includes a few convenience functions:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>FBX export</strong><br>
+Export selected node, including all children, with some settings tuned for esmini. Save in same folder as .blender file.</p>
+</li>
+<li>
+<p><strong>Reuse Base Color</strong><br>
+For all materials, copy base color to object viewport color - which is the color ending up in FBX export.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="_convert_exported_fbx_models_into_osgb_for_use_in_esmini">8.13.1. Convert exported <code>.fbx</code> models into <code>.osgb</code> for use in esmini:</h4>
+<div class="paragraph">
+<p>Step 1: Establish environment variable for OSG optimization</p>
+</div>
+<div class="paragraph">
+<p>This is only needed and recommended in case the model have light faces for use with OpenSCENARIO <code>LightStateAction</code> (see <a href="#_vehicle_light_states">Vehicle light states</a>):</p>
+</div>
+<div class="paragraph">
+<p><code>export OSG_OPTIMIZER="FLATTEN_STATIC_TRANSFORMS | REMOVE_REDUNDANT_NODES | REMOVE_LOADED_PROXY_NODES | COMBINE_ADJACENT_LODS | MERGE_GEOMETRY | MAKE_FAST_GEOMETRY | CHECK_GEOMETRY | OPTIMIZE_TEXTURE_SETTINGS | STATIC_OBJECT_DETECTION"</code></p>
+</div>
+<div class="paragraph">
+<p>It will prevent optimization of merging and sharing identical materials cross nodes. For light state action esmini needs to control material of each face individually, as defined in the original model.</p>
+</div>
+<div class="paragraph">
+<p>Step 2: Actual conversion of all exported <code>.fbx</code> files to <code>.osgb</code> format</p>
+</div>
+<div class="paragraph">
+<p><code>for file in *.fbx; do osgconv "$file" "${file%.fbx}.osgb" -s 0.01,0.01,0.01 -o 90-1,0,0 --use-world-frame -O CopyDiffuseToAmbient; done</code></p>
+</div>
+<div class="paragraph">
+<p>The plugin option <code>CopyDiffuseToAmbient</code> is needed for the object to receive ambient light from the environment. Without it, polygons facing away from sun light source will be very dark. The option is an extension implemented in esmini OSG fork and branch:
+<a href="https://github.com/esmini/OpenSceneGraph_for_esmini/tree/OpenSceneGraph_for_esmini" class="bare">https://github.com/esmini/OpenSceneGraph_for_esmini/tree/OpenSceneGraph_for_esmini</a></p>
+</div>
+<div class="paragraph">
+<p>You can utilize the provided <a href="https://github.com/esmini/esmini/blob/master/scripts/compile_osg_apps.sh">compile_osg_apps.sh</a> script to compile the OSG tools, including <code>osgconv</code> with the esmini extensions.</p>
+</div>
+<div class="paragraph">
+<p>Step 3: Copy .osgb files to esmini default model resources folder</p>
+</div>
+<div class="paragraph">
+<p><code>cp *.osgb &lt;esmini root folder&gt;/resources/models</code></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -8454,6 +8434,8 @@ Options:
       Ignore provided roll values from OSC file and place vehicle relative to road
   --info_text [mode]  (default if option or value omitted: 1)
       Show on-screen info text. Modes: 0=None 1=current 2=per_object 3=both. Toggle key 'i'
+  --light_mode [mode]  (default if option or value omitted: auto)
+      Show lights for light state actions. Modes: on, off, auto. Toggle key 'L'
   --log_append
       Log all scenarios in the same txt file
   --logfile_path [path]  (default if option or value omitted: log.txt)
@@ -8670,6 +8652,8 @@ Options:
       Hide any object 2D shape outlines (toggle key ';')
   --info_text [mode]  (default if option or value omitted: 1)
       Show on-screen info text. Modes: 0=None 1=current 2=per_object 3=both. Toggle key 'i'
+  --light_mode [mode]  (default if option or value omitted: auto)
+      Show lights for light state actions. Modes: on, off, auto. Toggle key 'L'
   --logfile_path [path]  (default if option or value omitted: replayer_log.txt)
       Logfile path/filename, e.g. &quot;../my_log.txt&quot;
   --log_level [mode]  (default if option or value omitted: info)
@@ -13633,15 +13617,15 @@ try update RubyGems as follows:<br>
 <h2 id="_version">19. Version</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>ESMINI_GIT_TAG="v3.0.2"<br>
-ESMINI_GIT_REV="v3.0.2-0-e504e8ae"</p>
+<p>ESMINI_GIT_TAG=""<br>
+ESMINI_GIT_REV="v3.0.4-37-af1fef61-dirty"</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-04-16 18:19:02 +0200
+Last updated 2026-05-11 14:13:48 +0200
 </div>
 </div>
 </body>
