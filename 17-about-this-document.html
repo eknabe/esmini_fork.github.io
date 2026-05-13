@@ -546,7 +546,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p><a href="index.html"><strong>Home</strong></a></p>
 </div>
 <form id="doc-search-form" action="search.html" method="get" style="margin:0.6rem 0 0 0;">
-  <input id="doc-search-input" type="search" name="q" placeholder="Search all docs..." style="width:18rem;max-width:100%;" />
+  <input id="doc-search-input" type="search" name="q" placeholder="Search..." style="width:18rem;max-width:100%;" />
   <button type="submit">Search</button>
 </form>
 <details>
@@ -635,60 +635,19 @@ try update RubyGems as follows:<br>
 </table>
 </div>
 <div class="sect3">
-<h4 id="_generate_all_pages_multi_page_output">Generate all pages (multi-page output)</h4>
+<h4 id="_generate_html_document">Generate HTML document</h4>
 <div class="paragraph">
-<p>From the <code>docs/user_guide/</code> folder, render each page individually:</p>
-</div>
-<div class="paragraph">
-<p><strong>Linux / macOS (bash):</strong></p>
+<p>From the <code>docs/user_guide/</code> folder, render each page individually (bash):</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="CodeRay highlight"><code data-lang="bash">cd &lt;esmini root&gt;/docs/user_guide
-for f in &lt;esmini root&gt;/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-kroki -D . &quot;$f&quot;; done
+for f in *.adoc; do asciidoctor -r asciidoctor-kroki &quot;$f&quot;; done
 ./generate-search-index.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Windows (PowerShell):</strong></p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="powershell">cd &lt;esmini root&gt;\docs\user_guide
-Get-ChildItem *.adoc | ForEach-Object { asciidoctor -r asciidoctor-kroki $_.FullName }
-.\generate-search-index.ps1</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This produces one <code>.html</code> file per <code>.adoc</code> file. Open <code>index.html</code> as the landing page.</p>
-</div>
-<div class="paragraph">
-<p>To refresh the local content search index after changing the documentation, rerun <code>./generate-search-index.ps1</code> from the <code>docs/user_guide/</code> folder.
-On Linux and macOS, run <code>./generate-search-index.sh</code> instead.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_generate_a_single_combined_page_legacy">Generate a single combined page (legacy)</h4>
-<div class="paragraph">
-<p>From the <code>docs/</code> folder:</p>
-</div>
-<div class="paragraph">
-<p>PowerShell:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="powershell">Get-ChildItem &quot;../esmini_ps/docs/user_guide/*.adoc&quot; | Where-Object { $_.Name -notlike '_*' } | ForEach-Object { asciidoctor -r asciidoctor-kroki -D . $_.FullName }</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">bash:
-for f in ../esmini_ps/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-kroki -D . &quot;$f&quot;; done</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This still works and produces a single monolithic <code>index.html</code> from the original
-<code>docs/index.adoc</code> source (which is kept for backward compatibility).</p>
+<p>This produces a collection of <code>.html</code> files, <code>index.html</code> being the landing page and the <code>search_index.json</code> file that is used for the search functionality in the published document.</p>
 </div>
 </div>
 </div>
@@ -715,7 +674,7 @@ for f in ../esmini_ps/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-krok
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:20:45 +0200
+Last updated 2026-05-13 12:07:05 +0200
 </div>
 </div>
 </body>
