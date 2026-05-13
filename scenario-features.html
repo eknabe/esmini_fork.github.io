@@ -528,7 +528,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_4_scenario_features">4. Scenario features</a>
+<li><a href="#_scenario_features">Scenario features</a>
 <ul class="sectlevel2">
 <li><a href="#_speed_profile">Speed profile</a></li>
 <li><a href="#_condition_delay">Condition delay</a></li>
@@ -565,7 +565,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <summary class="title">Navigator</summary>
 <div class="content">
 <div class="paragraph nav-bar">
-<p><a href="toc.html">Table of contents</a> | <a href="01-getting-started.html">Getting started</a> | <a href="02-tools-overview.html">Tools overview</a> | <a href="03-use-cases.html">Use cases</a> | <a href="#">Scenario features</a> | <a href="05-positioning.html">Positioning</a> | <a href="06-controllers.html">Controllers</a> | <a href="07-openscenegraph-3d-models.html">OpenSceneGraph and 3D models</a> | <a href="08-support-qa.html">Support / Q&amp;A</a> | <a href="09-command-reference.html">Command reference</a> | <a href="10-build-guide.html">Build guide</a> | <a href="11-developers-contributors.html">For esmini developers and contributors</a> | <a href="12-inner-workings.html">Inner workings</a> | <a href="13-esmini-lib-programming.html">esmini lib programming</a> | <a href="14-hello-world-tutorial.html">Hello World programming tutorial</a> | <a href="15-scenario-construction-tips.html">Scenario construction tips</a> | <a href="16-run-asam-examples.html">Run ASAM OpenSCENARIO examples</a> | <a href="17-about-this-document.html">About this document</a> | <a href="18-version.html">Version</a> | <a href="monolith.html">Single page document</a></p>
+<p><a href="toc.html">Table of contents</a> | <a href="getting-started.html">Getting started</a> | <a href="tools-overview.html">Tools overview</a> | <a href="use-cases.html">Use cases</a> | <a href="#">Scenario features</a> | <a href="positioning.html">Positioning</a> | <a href="controllers.html">Controllers</a> | <a href="openscenegraph-3d-models.html">OpenSceneGraph and 3D models</a> | <a href="support-qa.html">Support / Q&amp;A</a> | <a href="command-reference.html">Command reference</a> | <a href="build-guide.html">Build guide</a> | <a href="developers-contributors.html">For esmini developers and contributors</a> | <a href="inner-workings.html">Inner workings</a> | <a href="esmini-lib-programming.html">esmini lib programming</a> | <a href="hello-world-tutorial.html">Hello World programming tutorial</a> | <a href="scenario-construction-tips.html">Scenario construction tips</a> | <a href="run-asam-examples.html">Run ASAM OpenSCENARIO examples</a> | <a href="about-this-document.html">About this document</a> | <a href="version.html">Version</a> | <a href="monolith.html">Single page document</a></p>
 </div>
 </div>
 </details>
@@ -574,7 +574,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="sect1">
-<h2 id="_4_scenario_features">4. Scenario features</h2>
+<h2 id="_scenario_features">Scenario features</h2>
 <div class="sectionbody">
 <!-- toc disabled -->
 <div class="sect2">
@@ -606,7 +606,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="paragraph">
-<p><strong>Note:</strong> You might need to add <code>python</code> or <code>python2</code> in front of the python command. And matplotlib is needed, see odrplot in <a href="03-tools-overview.html#_tools_overview">Tools overview</a>.</p>
+<p><strong>Note:</strong> You might need to add <code>python</code> or <code>python2</code> in front of the python command. And matplotlib is needed, see odrplot in <a href="tools-overview.html#_tools_overview">Tools overview</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Tip:</strong> For quick experiments, skip the visualization and bring the plot asap by replacing the two commands with:</p>
@@ -1228,7 +1228,7 @@ German example: <code>274=TYPE_SPEED_LIMIT_BEGIN</code></p>
 <div class="title">Screenshot from traffic_lights.xosc</div>
 </div>
 <div class="paragraph">
-<p>esmini model package (see <a href="09-support-qa.html#_update_3d_model_pack">here</a> how to get or update it) includes a set of predefined textures for traffic lights. As of v2.56.0 esmini supports 19 of the types defined in <a href="https://publications.pages.asam.net/standards/ASAM_OpenDRIVE/ASAM_OpenDRIVE_Signal_reference/1.0.0/signal-catalog/01_road_signals/road_signals.html">OpenDRIVE 1.8 - Signal reference</a>. The corresponding texture images are located in model package folder <code>models/roads_signal_textures/</code>.</p>
+<p>esmini model package (see <a href="support-qa.html#_update_3d_model_pack">here</a> how to get or update it) includes a set of predefined textures for traffic lights. As of v2.56.0 esmini supports 19 of the types defined in <a href="https://publications.pages.asam.net/standards/ASAM_OpenDRIVE/ASAM_OpenDRIVE_Signal_reference/1.0.0/signal-catalog/01_road_signals/road_signals.html">OpenDRIVE 1.8 - Signal reference</a>. The corresponding texture images are located in model package folder <code>models/roads_signal_textures/</code>.</p>
 </div>
 <div class="paragraph">
 <p>It&#8217;s easy to replace a lamp face image or even add new ones. Just prepare a <code>.png</code> file named as follows:</p>
@@ -2451,10 +2451,10 @@ You can create a catalog of environments and reference them in your OpenSCENARIO
 <p>Video clip: <a href="https://youtu.be/MElGBJ5X7go" class="bare">https://youtu.be/MElGBJ5X7go</a></p>
 </div>
 <div class="paragraph">
-<p>By default no light faces are shown, only if the vehicle is involved in a LightStateAction. This is to avoid irrelevant visual clutter. Default behavior can be overriden with <code>light_mode</code> option, see <a href="10-command-reference.html#_esmini">esmini command reference</a>.</p>
+<p>By default no light faces are shown, only if the vehicle is involved in a LightStateAction. This is to avoid irrelevant visual clutter. Default behavior can be overriden with <code>light_mode</code> option, see <a href="command-reference.html#_esmini">esmini command reference</a>.</p>
 </div>
 <div class="paragraph">
-<p>Links to Blender resources for the vehicle 3D models are found in <a href="08-openscenegraph-3d-models.html#_esmini_3d_assets">esmini 3D assets</a></p>
+<p>Links to Blender resources for the vehicle 3D models are found in <a href="openscenegraph-3d-models.html#_esmini_3d_assets">esmini 3D assets</a></p>
 </div>
 <div class="sect3">
 <h4 id="_osi_mapping">OSI Mapping</h4>
@@ -2660,7 +2660,7 @@ And Assessment Criteria Calculation</a></p>
 <p><strong>NOTE:</strong> Even though SUMO has been linked with esmini for quite long, it&#8217;s on a experimental level and has not been used a lot. Hence, expect shortcomings and issues. The currently integrated SUMO version, as of esmini v2.37.1, is 1.6.0 while the current SUMO version is 1.19.0. There is plans to update SUMO version in esmini in a soon future.</p>
 </div>
 <div class="paragraph">
-<p>This chapter explains how to create a SUMO simulation and then how to use it in esmini. For just using SUMO simulations there is no need to install SUMO, it is already embedded with esmini (as long as it has not been explicitly excluded, see <a href="11-build-guide.html#_slim_esmini_customize_configration">Slim esmini - customize configration</a>). Only to create SUMO content it has to be installed.</p>
+<p>This chapter explains how to create a SUMO simulation and then how to use it in esmini. For just using SUMO simulations there is no need to install SUMO, it is already embedded with esmini (as long as it has not been explicitly excluded, see <a href="build-guide.html#_slim_esmini_customize_configration">Slim esmini - customize configration</a>). Only to create SUMO content it has to be installed.</p>
 </div>
 <div class="sect3">
 <h4 id="_install_sumo">Install SUMO</h4>
@@ -2872,7 +2872,7 @@ python tools/randomTrips.py ...</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-12 15:44:20 +0200
+Last updated 2026-05-13 12:44:02 +0200
 </div>
 </div>
 </body>

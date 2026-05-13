@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.26">
-<title>esmini user guide – Inner workings</title>
+<title>esmini user guide – About this document</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -528,11 +528,10 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_12_inner_workings">12. Inner workings</a>
+<li><a href="#_about_this_document">About this document</a>
 <ul class="sectlevel2">
-<li><a href="#_main_modules">Main modules</a></li>
-<li><a href="#_how_the_modules_interact">How the modules interact</a></li>
-<li><a href="#_on_execution_flow">On execution flow</a></li>
+<li><a href="#_how_to_generate_html_from_asciidoc">How to generate HTML from AsciiDoc</a></li>
+<li><a href="#_how_to_view_previous_versions">How to view previous versions</a></li>
 </ul>
 </li>
 </ul>
@@ -554,7 +553,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <summary class="title">Navigator</summary>
 <div class="content">
 <div class="paragraph nav-bar">
-<p><a href="toc.html">Table of contents</a> | <a href="01-getting-started.html">Getting started</a> | <a href="02-tools-overview.html">Tools overview</a> | <a href="03-use-cases.html">Use cases</a> | <a href="04-scenario-features.html">Scenario features</a> | <a href="05-positioning.html">Positioning</a> | <a href="06-controllers.html">Controllers</a> | <a href="07-openscenegraph-3d-models.html">OpenSceneGraph and 3D models</a> | <a href="08-support-qa.html">Support / Q&amp;A</a> | <a href="09-command-reference.html">Command reference</a> | <a href="10-build-guide.html">Build guide</a> | <a href="11-developers-contributors.html">For esmini developers and contributors</a> | <a href="#">Inner workings</a> | <a href="13-esmini-lib-programming.html">esmini lib programming</a> | <a href="14-hello-world-tutorial.html">Hello World programming tutorial</a> | <a href="15-scenario-construction-tips.html">Scenario construction tips</a> | <a href="16-run-asam-examples.html">Run ASAM OpenSCENARIO examples</a> | <a href="17-about-this-document.html">About this document</a> | <a href="18-version.html">Version</a> | <a href="monolith.html">Single page document</a></p>
+<p><a href="toc.html">Table of contents</a> | <a href="getting-started.html">Getting started</a> | <a href="tools-overview.html">Tools overview</a> | <a href="use-cases.html">Use cases</a> | <a href="scenario-features.html">Scenario features</a> | <a href="positioning.html">Positioning</a> | <a href="controllers.html">Controllers</a> | <a href="openscenegraph-3d-models.html">OpenSceneGraph and 3D models</a> | <a href="support-qa.html">Support / Q&amp;A</a> | <a href="command-reference.html">Command reference</a> | <a href="build-guide.html">Build guide</a> | <a href="developers-contributors.html">For esmini developers and contributors</a> | <a href="inner-workings.html">Inner workings</a> | <a href="esmini-lib-programming.html">esmini lib programming</a> | <a href="hello-world-tutorial.html">Hello World programming tutorial</a> | <a href="scenario-construction-tips.html">Scenario construction tips</a> | <a href="run-asam-examples.html">Run ASAM OpenSCENARIO examples</a> | <a href="#">About this document</a> | <a href="version.html">Version</a> | <a href="monolith.html">Single page document</a></p>
 </div>
 </div>
 </details>
@@ -563,230 +562,110 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 </div>
 <div class="sect1">
-<h2 id="_12_inner_workings">12. Inner workings</h2>
+<h2 id="_about_this_document">About this document</h2>
 <div class="sectionbody">
 <!-- toc disabled -->
+<div class="paragraph">
+<p>The source of this document is written in the <a href="https://asciidoc-py.github.io/index.html">asciidoc</a> format.
+The source is split into one file per top-level section, located in the
+<a href="https://github.com/esmini/esmini/blob/master/docs/user_guide/">docs/user_guide/</a> folder.
+The entry point is <a href="https://github.com/esmini/esmini/blob/master/docs/user_guide/index.adoc">user_guide/index.adoc</a>.</p>
+</div>
 <div class="sect2">
-<h3 id="_main_modules">Main modules</h3>
+<h3 id="_how_to_generate_html_from_asciidoc">How to generate HTML from AsciiDoc</h3>
 <div class="paragraph">
-<p>The class diagram below shows the main <a href="https://github.com/esmini/esmini/tree/master/EnvironmentSimulator/Modules">modules</a> of esmini.</p>
-</div>
-<div class="paragraph">
-<p>It illustrates how the main esmini application uses PlayerBase to orchestrate the simulation. PlayerBase in turn utilizes ScenarioEngine for the simulation logic and ViewerBase for visualization. Both ScenarioEngine and ViewerBase depend on RoadManager for road network data. Controllers are managed by the ScenarioEngine, and CommonMini provides utility functions used by several other modules.</p>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="https://kroki.io/mermaid/svg/eNp1kEFLxDAQhe_9FSF7UbCX7ckKgrvrsbCoeCkiYzPtBtOkJC2r_94m3ZqkdCeXecw3L3lpNHQn8nZIyFhm-Gqcfuo6wSvouZJuYAtNyyX_bIHLkk6C3Fh1Sz8chJIlsQ3dK42kUGwQaOi_01HAL-odGCyp7y8utl4rlKC5epYNlyMU6wB853ienXwfAC8KWAESGtQlDUSA7JXstRICtSlpICKkbZUsxsSWmPtl7OCDSJo-BjGnudduHIdaI3yiZHKIVxwTPPgaEsS-7jKHmi7yN686LMbL7eBNq_NKgDEHrAnDGgbRk5oLkW_qe3vuzLj7jfkmy7JLn54560_5tvt5-AOZI9TO" alt="Diagram">
-</div>
-</div>
-<div class="sect3">
-<h4 id="_roadmanager">RoadManager</h4>
-<div class="paragraph">
-<p>Implementation of <a href="https://www.asam.net/standards/detail/opendrive/">OpenDRIVE</a> data model and interface. Coverage is not complete at all. The goal is to provide needed and most useful features for esmini. Functionality grows continuously. While being based on 1.4 version it will probably support newer features when needed, so we avoid tagging a specific version.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_scenarioengine">ScenarioEngine</h4>
-<div class="paragraph">
-<p>This is where the dynamics of the scenario takes place. It parses the <a href="https://www.asam.net/standards/detail/openscenario-xml/">OpenSCENARIO XML</a> file, creates a data model of the entities, triggers and actions. And finally steps the scenario, evaluating the triggers and executing the actions accordingly.</p>
+<p>The html is generated with <a href="https://asciidoctor.org/">asciidoctor</a>. Code snippets, images and other resources are included in the process. Also the version numbers are automatically inserted to avoid "human errors".</p>
 </div>
 <div class="paragraph">
-<p>ScenarioEngine also takes care of reporting ground truth on OSI standard protocol in various ways:
-1. API functions to fetch the OSI structures
-2. Saving to OSI trace file
-3. Sending OSI data over IP/UDP to an external host.</p>
+<p>The final HTML document is published in this repo: <a href="https://github.com/esmini/esmini.github.io" class="bare">https://github.com/esmini/esmini.github.io</a></p>
 </div>
 <div class="paragraph">
-<p>Another feature is ideal sensors, defined by a view frustum positioned anywhere on an entity via the API. It will detect any other entity being inside the view frustum. Please note current limitation that only entity reference point is considered for detection, so an entity might be partly inside the frustum and still not detected.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_controllers">Controllers</h4>
-<div class="paragraph">
-<p>Implementation of OpenSCENARIO controller concept, which is a way of handing over control of individual entities such as vehicles and pedestrians to an external/custom function instead of the Default Controller, which is embedded the ScenarioEngine.</p>
+<p>Access URL: <a href="https://esmini.github.io/" class="bare">https://esmini.github.io/</a></p>
 </div>
 <div class="paragraph">
-<p>The base class <a href="https://github.com/esmini/esmini/blob/master/EnvironmentSimulator/Modules/Controllers/Controller.hpp#L32-L171"><code>Controller</code></a> defines the interface (API) for a controller and also implements some common functionality, such as assigning and activating the controller.</p>
+<p>Install tools:</p>
 </div>
-<div class="paragraph">
-<p>Then there is a collection of more or less useful controllers. Some might provide useful functionality, e.g. interactive driving with arrow keys, while other can at least provide ideas on how to implement a custom controller.</p>
-</div>
-<div class="paragraph">
-<p>More information about the controller concept and the provided controllers, please see <a href="https://esmini.github.io/#_controllers">User guide - Controllers</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_viewerbase">ViewerBase</h4>
-<div class="paragraph">
-<p>Provides a basic 3D viewer to preview scenarios. It&#8217;s based on the excellent <a href="http://www.openscenegraph.org/">OpenSceneGraph</a> open source graphics library. Let&#8217;s say that it prioritizes stability, performance and portability over flashiness - fitting the purposes of esmini.</p>
-</div>
-<div class="paragraph">
-<p>Briefly the module provides the following features:</p>
-</div>
+<div class="hdlist">
+<table>
+<tr>
+<td class="hdlist1">
+<strong>Linux</strong>
+</td>
+<td class="hdlist2">
+<p><code>sudo apt install asciidoctor</code><br>
+<code>sudo apt install ruby-coderay</code></p>
+</td>
+</tr>
+<tr>
+<td class="hdlist1">
+<strong>Windows</strong>
+</td>
+<td class="hdlist2">
 <div class="ulist">
 <ul>
 <li>
-<p>Optional 3D visual representation of the road network and surroundings. <code>.osgb</code> (OpenSceneGraph binary) file format is directly supported, but indirectly many file formats are supported by conversion using the <a href="http://www.openscenegraph.org/index.php/documentation/user-guides/55-osgconv">osgconv</a> tool (not included in esmini). See more info in <a href="https://esmini.github.io/#_openscenegraph_and_3d_models">User guide - OpenSceneGraph and 3D models</a>.</p>
-</li>
-<li>
-<p>3D visual representation of scenario entities. Either using supplied 3D models or esmini will create stand-in dummy model, e.g. a 3D bounding box according to specified dimensions.</p>
-</li>
-<li>
-<p>Road feature visualization. E.g. OpenDRIVE geometries, lanes and road marks. These features are indicated by points and lines in a very simple way. So it does not replace the value of a 3D model, but at least it gives some guidance when 3D model is not available. It can also be useful for debugging issues in the OpenDRIVE road network definition.</p>
-</li>
-<li>
-<p>Keyboard input. First OSG provides a set of key shortcuts to control visual features, e.g. enable/disable textures or wireframe/shading mode. Then esmini adds a set of shortcuts to control various functionality such as toggling road features visualization or changing camera behavior. A complete list of keyboard shortcuts is found in <a href="https://github.com/esmini/esmini/blob/master/docs/readme.txt">docs/readme.txt</a>. The keyboard input is also routed to Controllers, which is useful for interactive driving modes.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_playerbase">PlayerBase</h4>
-<div class="paragraph">
-<p>This module ties together the ScenarioEngine with the Viewer also providing high a level API for initializing, stepping and controlling a scenario in a custom player application.</p>
-</div>
-<div class="paragraph">
-<p>The initial purpose of this module was to collect common code from various early example applications.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_commonmini">CommonMini</h4>
-<div class="paragraph">
-<p>Collection of handy functions shared between modules and applications, for example:
-- Argument parser
-- Timers
-- Threads and Mutex
-- Math operations
-- Logger</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_parameters">Parameters</h4>
-<div class="paragraph">
-<p>esmini supports three parameter types: integer, double and string. A parameter is declared in the OpenSCENARIO file, in the global ParameterDeclaration. Values can be set by ParameterAction/ParameterSetAction. And it can be used in ParameterCondition to trig storyboard elements. For a simple example see use of "DummyParameter" in <a href="https://github.com/esmini/esmini/blob/master/resources/xosc/lane_change.xosc">lane_change.xosc</a> and <a href="https://github.com/esmini/esmini/blob/master/EnvironmentSimulator/Applications/esmini-dyn/main.cpp">esmini-dyn/main.cpp</a> (enable DEMONSTRATE_PARAMETER to test).</p>
-</div>
-<div class="paragraph">
-<p>To set and read values via esminiLib/C++ you can do as following examples:</p>
-</div>
-<div class="sect4">
-<h5 id="_integer">integer</h5>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>int number = 99;
-SE_Parameter param;
-param.name = &quot;MyIntParameter&quot;;
-param.value = &amp;number;
-SE_SetParameter(param);
-SE_GetParameter(&amp;param);
-printf(&quot;param value: %d\n&quot;, number);
-// or by casting the value
-printf(&quot;param value: %d\n&quot;, *((int*)param.value));</code></pre>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_double">double</h5>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>double number = 1.5;
-SE_Parameter param;
-param.name = &quot;MyDoubleParameter&quot;;
-param.value = &amp;number;
-SE_SetParameter(param);
-SE_GetParameter(&amp;param);
-printf(&quot;param value: %.2f\n&quot;, number);
-// or by casting the value
-printf(&quot;param value: %.2f\n&quot;, *((double*)param.value));</code></pre>
-</div>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_string">string</h5>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code>std::string myString = &quot;Hello&quot;;
-SE_Parameter param;
-param.name = &quot;MyStringParameter&quot;;
-param.value = &amp;myString;
-SE_SetParameter(param);
-SE_GetParameter(&amp;param);
-printf(&quot;param value: %s\n&quot;, myString.c_str());
-// or by casting the value
-printf(&quot;param value: %s\n&quot;, (*((std::string*)param.value)).c_str());</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_how_the_modules_interact">How the modules interact</h3>
-<div class="paragraph">
-<p>Consider a custom application/tool utilizing esmini as a library. The interaction is illustrated below through a few sequence diagrams. Note that the signals are named conceptually. For exact function names and arguments, see header files and code examples.</p>
-</div>
-<div class="paragraph">
-<p>First we look at high level interaction between app and esmini lib.</p>
-</div>
-<div class="paragraph">
-<p>A simplistic scenario player application (C/C++/C#/Python) utilizing esmini lib:</p>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="https://kroki.io/mermaid/svg/eNply7EOgzAMBNCdr_AIQ3-gAxISCxJbv8AEC50UHDdx_79pusFNJ927Iu-PaJAZfGQ-O6oxzo4AY3ViM-JCk1lEYEfSG4nYfkTKCcWKrYH6e4xjnZ60KLwvQZQz0tDWmJK1cqEvF-v_RHT_Ag4lMQY=" alt="Diagram">
-</div>
-</div>
-<div class="paragraph">
-<p>A typical test tool involving a system under test (Ego):</p>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="https://kroki.io/mermaid/svg/eNptjkFqw0AMRfc9hZbjRS6QRSDQUAKFQE0OII9FqmKPFI18_8qTEAjJrDT8975U6bpQyfTJeDGcPyCeojlnViwOqApYYa86cUZnKS_IxMOKUJ258DcPDQhvs9tFtIVjYU81U0Fj6Vo6iWgbnskfUjE_XKR3dErdG6R30rfBF_lp-KPsza2pgxRHVbclewUxOPXH9Us4P_QQN-FHyxaMfLEC0joCXEue1zTsrGMkEDfeGEgDVhpBQvVfsntBve2gMv4DcbFujg==" alt="Diagram">
-</div>
-</div>
-<div class="paragraph">
-<p>Now, let&#8217;s zoom in. Adding some features and looking inside esminiLib to see interaction between modules:</p>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="https://kroki.io/mermaid/svg/eNqNVF1v2zAMfN-vELAXF93aYkVeNqBA6gRDgQ0zmrXvtMO62mRJk5Ru-fejJH9bzWYggWIeyTvyFIu_Digr3HCoDTRvGD2l-sNMXWYfVqt34XN9dcbyg3WqYaC14BU4rmTA0qPBOF5xDdL5MAPL1jMUyn1fGW3DJf_CS5afn1_mb69Xny6Lo3tWkq2Lu1RRQVgqGhNfA2kBRzQeV4TTLVhM4Sx6zK5CCYarray5TOIqZ4RH5ko6o4RAY1OwF46_Y9vHeMqU9rJBnPXKw4Em8_7mhqR8ZHeSu8y2DCKM3lM0akgCYogwFtt4fG-xfXePsO9UzWMFGIv0BQ06NBusBJ09S9siiXMnLiQR2ZC1SMhBiBKqn23eVNdXkFwfBLih1yOIA9oBHXV6Tv8Cd5aZikgp9JuazGSkph9b3NME1nWYjHbnUGdXF2T4jMxGdnHEcLaCoWGhrIt2W8t9NAAVjxtVSrMdb7xEGlwo3LEaMxwNMUz9Qe-pI9vWKvZO4MKw71Er4wi286hhwoPjZglB2QCbOm4WXI5kiPUL2b7Qvqj3d8Prmq5HCuNz19XYagn5g-V2TpljqcDsg6r8GWSN3nO3E8_1q1v02uATHIQbLu2cVNzdTJJ_2RaJ499Kxx3HE5z7CQXe38ofWLkE0dcuSEyYAlN3Y4EbK5-7aGH2KOb_skc0P6OLfcMSbIpl55uT0ImLTiJpNaOiwfc2UakjuAR4Vt0yZtGx5tE9s2QB_7v7K_gLnuYHPQ==" alt="Diagram">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_on_execution_flow">On execution flow</h3>
-<div class="paragraph">
-<p>Actions are executed in order of appearance in the storyboard structure. All state updates are applied directly on the entities. So, if an action is based on the state of another entity, it will depend on whether the action is executed before or after the other entity&#8217;s state is updated. This is especially important to consider when using relative actions, like <code>SpeedAction</code> with <code>RelativeTargetSpeed</code>, which is based on the speed of another entity. The resulting speed will depend on whether the referenced entity has been updated or not.</p>
-</div>
-<div class="paragraph">
-<p>Example:<br>
-SpeedAction (assigned to entity A) with RelativeTargetSpeed, refering to entity B, in continuous mode and step dynamics (instant change to target speed).</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;SpeedActionTarget&gt;</span>
-   <span class="tag">&lt;RelativeTargetSpeed</span> <span class="attribute-name">entityRef</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">B</span><span class="delimiter">&quot;</span></span>
-                        <span class="attribute-name">value</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">1.1</span><span class="delimiter">&quot;</span></span>
-                        <span class="attribute-name">speedTargetValueType</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">factor</span><span class="delimiter">&quot;</span></span>
-                        <span class="attribute-name">continuous</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">/&gt;</span>
-<span class="tag">&lt;/SpeedActionTarget&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>You expect speed of A to be exactly 10% faster than B. Now, assume speed of B is suddenly updated from 100 to 50 km/h. In the same timestep, resulting speed of A will depend on whether it&#8217;s being calculated before or after speed change for B.</p>
-</div>
+<p>First, if not already done, install ruby:<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>If the A action is applied first: speed(A) = 110<br>
-unexpected result due to B has not been updated yet, still speed = 100</p>
+<p>Pick latest Ruby x64 package, without devkit, here: <a href="https://rubyinstaller.org/downloads/" class="bare">https://rubyinstaller.org/downloads/</a><br></p>
 </li>
 <li>
-<p>If the B action is applied first: speed(A) = 55<br>
-expected result since B has already new speed = 50 when evaluating A action</p>
+<p>Install it. In the end you can leave "Run 'rid install' to setup MSYS2 and development toolchain" un-checked<br></p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Then run:<br>
+<code>gem install asciidoctor</code><br>
+<code>gem install coderay</code><br>
+<code>gem install asciidoctor-kroki</code></p>
 <div class="paragraph">
-<p>Conclusion: Consider order of the storyboard elements when designing scenarios, especially when involving relative actions.</p>
+<p>Troubleshooting: If you get an error like<br>
+<code>Unable to download data from <a href="https://rubygems.org/" class="bare">https://rubygems.org/</a> - SSL_connect &#8230;&#8203;</code><br>
+try update RubyGems as follows:<br>
+<code>gem update --system</code></p>
+</div>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_generate_html_document">Generate HTML document</h4>
+<div class="paragraph">
+<p>From the <code>docs/user_guide/</code> folder, render each page individually (bash):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bash">for f in *.adoc; do asciidoctor -r asciidoctor-kroki &quot;$f&quot;; done
+./generate-search-index.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This produces a collection of <code>.html</code> files (<code>index.html</code> being the landing page) and the <code>search_index.json</code> file that is used for the search functionality in the published document.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_how_to_view_previous_versions">How to view previous versions</h3>
+<div class="paragraph">
+<p>Full commit history is found <a href="https://github.com/esmini/esmini.github.io/commits/main">here</a></p>
+</div>
+<div class="paragraph">
+<p>To view a previous version, utilizing <a href="https://htmlpreview.github.io/">htmlpreview.github.io</a>, either refer to a <a href="https://github.com/esmini/esmini.github.io/tags">tag</a>, like this:</p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/esmini/esmini.github.io/refs/tags/v2.42.0/index.html" class="bare">https://htmlpreview.github.io/?https://raw.githubusercontent.com/esmini/esmini.github.io/refs/tags/v2.42.0/index.html</a></code></p>
+</div>
+<div class="paragraph">
+<p>or refer to any commit, like this:</p>
+</div>
+<div class="paragraph">
+<p><code><a href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/esmini/esmini.github.io/47a9267a5935d0bd2648950e4d9d3e23f1e8ff3a/index.html" class="bare">https://htmlpreview.github.io/?https://raw.githubusercontent.com/esmini/esmini.github.io/47a9267a5935d0bd2648950e4d9d3e23f1e8ff3a/index.html</a></code></p>
 </div>
 </div>
 </div>
@@ -794,7 +673,7 @@ expected result since B has already new speed = 50 when evaluating A action</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-12 15:44:20 +0200
+Last updated 2026-05-13 12:44:02 +0200
 </div>
 </div>
 </body>
