@@ -523,8 +523,173 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 .CodeRay .head .head{color:#f4f}
 </style>
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_1_getting_started">1. Getting started</a>
+<ul class="sectlevel2">
+<li><a href="#_run_esmini">Run esmini</a></li>
+<li><a href="#_get_complete_esmini">Get complete esmini</a></li>
+<li><a href="#_build_esmini_quick_guide">Build esmini - quick guide</a></li>
+</ul>
+</li>
+<li><a href="#_2_tools_overview">2. Tools overview</a>
+<ul class="sectlevel2">
+<li><a href="#_applications">Applications</a></li>
+<li><a href="#_scripts">Scripts</a></li>
+<li><a href="#_shared_libraries">Shared libraries</a></li>
+</ul>
+</li>
+<li><a href="#_3_use_cases">3. Use cases</a>
+<ul class="sectlevel2">
+<li><a href="#_view_a_scenario">View a scenario</a></li>
+<li><a href="#_screenshots_and_video_clips">Screenshots and video clips</a></li>
+<li><a href="#_logging">Logging</a></li>
+<li><a href="#_replay_scenario">Replay scenario</a></li>
+<li><a href="#_view_road_network">View road network</a></li>
+<li><a href="#_plot_scenario_data">Plot scenario data</a></li>
+<li><a href="#_save_osi_data">Save OSI data</a></li>
+<li><a href="#_esmini_in_unity">esmini in Unity</a></li>
+</ul>
+</li>
+<li><a href="#_4_scenario_features">4. Scenario features</a>
+<ul class="sectlevel2">
+<li><a href="#_speed_profile">Speed profile</a></li>
+<li><a href="#_condition_delay">Condition delay</a></li>
+<li><a href="#_road_signs">Road signs</a></li>
+<li><a href="#_traffic_lights">Traffic Lights</a></li>
+<li><a href="#_expressions">Expressions</a></li>
+<li><a href="#_parameter_distributions">Parameter distributions</a></li>
+<li><a href="#_trajectories">Trajectories</a></li>
+<li><a href="#_friction">Friction</a></li>
+<li><a href="#_environment_conditions">Environment conditions</a></li>
+<li><a href="#_vehicle_light_states">Vehicle light states</a></li>
+<li><a href="#_tunnels">Tunnels</a></li>
+<li><a href="#_2d_shape_outline">2D shape outline</a></li>
+<li><a href="#_boundingbox_colors">Boundingbox Colors</a></li>
+<li><a href="#_sumo_integration">SUMO integration</a></li>
+</ul>
+</li>
+<li><a href="#_5_positioning">5. Positioning</a>
+<ul class="sectlevel2">
+<li><a href="#_position_modes">Position modes</a></li>
+<li><a href="#_mode_specification">Mode specification</a></li>
+<li><a href="#_trajectory_interpolation_and_alignment">Trajectory interpolation and alignment</a></li>
+<li><a href="#_example_2">Example</a></li>
+<li><a href="#_relative_positions_and_routes">Relative positions and routes</a></li>
+<li><a href="#_reference_line_and_center_lane">Reference line and center lane</a></li>
+<li><a href="#_lateral_distance_action_logics">Lateral distance action logics</a></li>
+<li><a href="#_shift_reference_point">Shift reference point</a></li>
+</ul>
+</li>
+<li><a href="#_6_controllers">6. Controllers</a>
+<ul class="sectlevel2">
+<li><a href="#_controller_concept">Controller concept</a></li>
+<li><a href="#_background_and_motivation">Background and motivation</a></li>
+<li><a href="#_brief_on_implementation">Brief on implementation</a></li>
+<li><a href="#_how_it_works_for_the_user">How it works for the user</a></li>
+<li><a href="#_the_ghost_concept">The ghost concept</a></li>
+<li><a href="#_esmini_embedded_controllers">esmini embedded controllers</a></li>
+<li><a href="#_how_to_add_a_new_controller">How to add a new controller</a></li>
+</ul>
+</li>
+<li><a href="#_7_openscenegraph_and_3d_models">7. OpenSceneGraph and 3D models</a>
+<ul class="sectlevel2">
+<li><a href="#_get_osgconv">Get osgconv</a></li>
+<li><a href="#_convert_osgb_models_for_use_in_unity">Convert osgb models for use in Unity</a></li>
+<li><a href="#_import_into_unity">Import into Unity</a></li>
+<li><a href="#_colors_textures_and_wheel_rotations">Colors, textures and wheel rotations</a></li>
+<li><a href="#_lighting">Lighting</a></li>
+<li><a href="#_convert_osgb_models_for_use_in_blender">Convert osgb models for use in Blender</a></li>
+<li><a href="#_import_into_blender">Import into Blender</a></li>
+<li><a href="#_material_settings_in_blender">Material settings in Blender</a></li>
+<li><a href="#_export_blender_obj">Export Blender obj</a></li>
+<li><a href="#_convert_back_to_osgb">Convert back to osgb</a></li>
+<li><a href="#_using_openx_assets_library">Using OpenX assets library</a></li>
+<li><a href="#_export_generated_3d_model">Export generated 3D model</a></li>
+<li><a href="#_esmini_3d_assets">esmini 3D assets</a></li>
+</ul>
+</li>
+<li><a href="#_8_support_qa">8. Support / Q&amp;A</a>
+<ul class="sectlevel2">
+<li><a href="#_file_search_paths">File search paths</a></li>
+<li><a href="#_various_issues">Various issues</a></li>
+<li><a href="#_further_issues_at_esmini_github_page">Further issues at esmini GitHub page</a></li>
+</ul>
+</li>
+<li><a href="#_9_command_reference">9. Command reference</a>
+<ul class="sectlevel2">
+<li><a href="#_about_options_and_config_files">About options and config files</a></li>
+<li><a href="#_esmini">esmini</a></li>
+<li><a href="#_replayer">replayer</a></li>
+<li><a href="#_odrviewer">odrviewer</a></li>
+<li><a href="#_plot_dat_py">plot_dat.py</a></li>
+</ul>
+</li>
+<li><a href="#_10_build_guide">10. Build guide</a>
+<ul class="sectlevel2">
+<li><a href="#_external_dependencies">External dependencies</a></li>
+<li><a href="#_additional_platform_dependencies">Additional platform dependencies</a></li>
+<li><a href="#_debug_with_linux_and_vscode">Debug with Linux and VSCode</a></li>
+<li><a href="#_dynamic_protobuf_linking">Dynamic protobuf linking</a></li>
+<li><a href="#_slim_esmini_customize_configration">Slim esmini - customize configration</a></li>
+<li><a href="#_msys2_mingw_w64_support">MSYS2 / MinGW-w64 support</a></li>
+<li><a href="#_build_esmini_project">Build esmini project</a></li>
+<li><a href="#_centos_7_linux">CentOS 7 (Linux)</a></li>
+</ul>
+</li>
+<li><a href="#_11_for_esmini_developers_and_contributors">11. For esmini developers and contributors</a>
+<ul class="sectlevel2">
+<li><a href="#_branch_strategy">Branch strategy</a></li>
+<li><a href="#_formatting_and_code_analysis">Formatting and code analysis</a></li>
+<li><a href="#_test">Test</a></li>
+<li><a href="#_sanitizers">Sanitizers</a></li>
+<li><a href="#_implementation_guidelines">Implementation guidelines</a></li>
+</ul>
+</li>
+<li><a href="#_12_inner_workings">12. Inner workings</a>
+<ul class="sectlevel2">
+<li><a href="#_main_modules">Main modules</a></li>
+<li><a href="#_how_the_modules_interact">How the modules interact</a></li>
+<li><a href="#_on_execution_flow">On execution flow</a></li>
+</ul>
+</li>
+<li><a href="#_13_esmini_lib_programming">13. esmini lib programming</a>
+<ul class="sectlevel2">
+<li><a href="#_about_the_lib_itself">About the lib itself</a></li>
+<li><a href="#_how_to_interact_with_esmini_lib_api">How to interact with esmini lib API</a></li>
+<li><a href="#_functionality">Functionality</a></li>
+<li><a href="#_simplest_example">Simplest example</a></li>
+</ul>
+</li>
+<li><a href="#_14_hello_world_programming_tutorial">14. Hello World programming tutorial</a>
+<ul class="sectlevel2">
+<li><a href="#preparations">Preparations</a></li>
+<li><a href="#_how_to_build_run_and_debug_hello_world">How to build, run and debug "Hello World"</a></li>
+<li><a href="#_examples_2">Examples</a></li>
+<li><a href="#_python_binding">Python binding</a></li>
+<li><a href="#_c_binding">C# binding</a></li>
+</ul>
+</li>
+<li><a href="#_15_scenario_construction_tips">15. Scenario construction tips</a>
+<ul class="sectlevel2">
+<li><a href="#_opendrive">OpenDRIVE</a></li>
+<li><a href="#_openscenario_xml">OpenSCENARIO XML</a></li>
+<li><a href="#_scenario_creation_tips_examples">Examples</a></li>
+</ul>
+</li>
+<li><a href="#_16_run_asam_openscenario_examples">16. Run ASAM OpenSCENARIO examples</a></li>
+<li><a href="#_17_about_this_document">17. About this document</a>
+<ul class="sectlevel2">
+<li><a href="#_how_to_generate_html_from_asciidoc">How to generate HTML from AsciiDoc</a></li>
+<li><a href="#_how_to_view_previous_versions">How to view previous versions</a></li>
+</ul>
+</li>
+<li><a href="#_18_version">18. Version</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -13596,7 +13761,9 @@ try update RubyGems as follows:<br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">for f in &lt;esmini root&gt;/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-kroki -D . &quot;$f&quot;; done</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">cd &lt;esmini root&gt;/docs/user_guide
+for f in &lt;esmini root&gt;/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-kroki -D . &quot;$f&quot;; done
+./generate-search-index.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -13613,7 +13780,8 @@ Get-ChildItem *.adoc | ForEach-Object { asciidoctor -r asciidoctor-kroki $_.Full
 <p>This produces one <code>.html</code> file per <code>.adoc</code> file. Open <code>index.html</code> as the landing page.</p>
 </div>
 <div class="paragraph">
-<p>To refresh the local content search index after changing the documentation, rerun <code>./generate-search-index.ps1</code> from the <code>docs/user_guide/</code> folder.</p>
+<p>To refresh the local content search index after changing the documentation, rerun <code>./generate-search-index.ps1</code> from the <code>docs/user_guide/</code> folder.
+On Linux and macOS, run <code>./generate-search-index.sh</code> instead.</p>
 </div>
 </div>
 <div class="sect3">
@@ -13673,7 +13841,7 @@ ESMINI_GIT_REV="v3.0.4-37-af1fef61-dirty"</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 08:07:27 +0200
+Last updated 2026-05-13 08:13:01 +0200
 </div>
 </div>
 </body>

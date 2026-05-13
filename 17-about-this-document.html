@@ -646,7 +646,9 @@ try update RubyGems as follows:<br>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="bash">for f in &lt;esmini root&gt;/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-kroki -D . &quot;$f&quot;; done</code></pre>
+<pre class="CodeRay highlight"><code data-lang="bash">cd &lt;esmini root&gt;/docs/user_guide
+for f in &lt;esmini root&gt;/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-kroki -D . &quot;$f&quot;; done
+./generate-search-index.sh</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -663,7 +665,8 @@ Get-ChildItem *.adoc | ForEach-Object { asciidoctor -r asciidoctor-kroki $_.Full
 <p>This produces one <code>.html</code> file per <code>.adoc</code> file. Open <code>index.html</code> as the landing page.</p>
 </div>
 <div class="paragraph">
-<p>To refresh the local content search index after changing the documentation, rerun <code>./generate-search-index.ps1</code> from the <code>docs/user_guide/</code> folder.</p>
+<p>To refresh the local content search index after changing the documentation, rerun <code>./generate-search-index.ps1</code> from the <code>docs/user_guide/</code> folder.
+On Linux and macOS, run <code>./generate-search-index.sh</code> instead.</p>
 </div>
 </div>
 <div class="sect3">
@@ -714,7 +717,7 @@ for f in ../esmini_ps/docs/user_guide/*.adoc; do asciidoctor -r asciidoctor-krok
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2026-05-13 07:40:57 +0200
+Last updated 2026-05-13 08:20:45 +0200
 </div>
 </div>
 </body>
